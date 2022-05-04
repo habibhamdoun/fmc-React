@@ -14,7 +14,6 @@ html {
   --color-accent: #737373;
   --color-content: #2c2e35;
 }
-
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -363,7 +362,12 @@ a {
 .nav__item {
   margin-bottom: 1rem;
 }
-
+.nav__item .active{
+  color: var(--color-secondary);
+}
+.nav__item .inactive{
+  color: var(--color-primary);
+}
 .nav__item a {
   text-decoration: none;
   color: var(--color-primary);
@@ -808,6 +812,11 @@ a {
 .contact__message{
   resize: none;
 }
+.errMsg{
+  color: var(--color-secondary);
+  margin: 0%;
+  font-size: 1.5rem ;
+}
 .contact__item {
   background-color: #24337030;
   border-radius: 10px;
@@ -862,6 +871,9 @@ a {
   .contact__inputs {
     display: flex;
     flex-direction: row;
+  }
+  .errMsg{
+    font-size: 1.8rem;
   }
   .contact__item {
     max-width: 60rem;

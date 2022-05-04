@@ -57,7 +57,7 @@ const ContactUs = () => {
           name="user_name" 
           className="contact__item contact__input" 
         />
-        {nameErrMsg && <p id="errorTextName">{nameErrMsg}</p>}
+        {nameErrMsg && <p className='errMsg'>{nameErrMsg}</p>}
         <label className='label'>Return Email:</label>
         <input 
           id="emailInput"
@@ -67,7 +67,7 @@ const ContactUs = () => {
           name="user_email" 
           className="contact__item contact__input"
           />
-        {<p id="errorTextEmail"></p>}
+        {emailErrMsg && <p className='errMsg'>{emailErrMsg}</p>}
         <label className='label'>Message:</label>
         <textarea 
           id="messageInput"
@@ -76,8 +76,13 @@ const ContactUs = () => {
           name="message" 
           className="contact__item contact__message" 
           />
-        <h6 id="errorTextMessage"></h6>
-        <input id='contactBtn' className="btn btn--primary contact__btn" type="submit" value="Send" />
+          {messageErrMsg && <p className='errMsg'>{messageErrMsg}</p>}
+        <input 
+        type="submit" 
+        id='contactBtn' 
+        className="btn btn--primary contact__btn" 
+        value="Send" 
+        />
       </form>
       <div className="contact__alternative">
         <ul className="list list--inline">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Image from "../images/logo-fmc-removebg-preview.webp"
 
 
@@ -12,13 +12,13 @@ const Navbar = () => {
         </div>
     </div>
     <ul className="list list--inline nav__list collapsible__content">
-        <li className="nav__item"><Link to="./">Home</Link></li>
-        <li className="nav__item"><Link to="./Vision"  >Vision</Link></li>
-        <li className="nav__item"><Link to="./Mission"  >Mission</Link></li>
-        <li className="nav__item"><Link to="./Clients"  >Clients</Link></li>
-        <li className="nav__item"><Link to="./Services" >Services</Link></li>
-        <li className="nav__item"><Link to="./Why-Us" >Why Us</Link></li>
-        <li className="nav__item"><Link to="./Contact-Us" >Contact Us</Link></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to="./">Home</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')}  to="./Vision"  >Vision</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')}  to="./Mission"  >Mission</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')}  to="./Clients"  >Clients</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to="./Services" >Services</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')}  to="./Why-Us" >Why Us</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to="./Contact-Us" >Contact Us</NavLink></li>
     </ul>
 </nav>
   )
