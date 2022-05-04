@@ -1,31 +1,43 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 const ContactUs = () => {
   const form = useRef();
-  function check(){
-    if(document.getElementById('nameInput').value === ''){
-      document.getElementById('errorTextName').innerText='Please type in a Name!';
-      console.log('invalid name')
-      return
-    }
-    else if(document.getElementById('emailInput').value === ''){
-      document.getElementById('errorTextEmail').innerText='Please type in an Email!';
-      return
-    }
-    else if(document.getElementById('messageInput').value === ''){
-      document.getElementById('errorTextMessage').innerText='Please type in a Message!';
-      return
-    }
-  }
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [nameErrMsg, setNameErrMsg] = useState('');
+  const [emailErrMsg, setEmailErrMsg] = useState('');
+  const [messageErrMsg, setMessageErrMsg] = useState('');
+
   const sendEmail = (e) => {
     e.preventDefault();
-    emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
-    .then((result) => {
-      console.log(result.text);
-    }, (error) => {
-      console.log(error.text);
-    });
+    setNameErrMsg('');
+    setEmailErrMsg('');
+    setMessageErrMsg('');
+    if(!name){
+      setNameErrMsg('Name is required');
+    }
+    if(!email){
+      setEmailErrMsg('Email is required');
+    }
+    if(!message){
+      setMessageErrMsg('Message is required');
+    }
+    if(message.length > 1000){
+      setMessageErrMsg('Message is too long.')
+    }
+    if(name.length > 69){
+      setNameErrMsg('Your name is not that long, change it bitch, or elseeeee, i will fuck your mom,mhuahahahah, that was my dumb cousin,no it was professor x, that was him again, Aany way fuck you.')
+    }
+    if(!nameErrMsg && !emailErrMsg && !messageErrMsg){
+      emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    }
   };
 
   return (
@@ -37,15 +49,35 @@ const ContactUs = () => {
         </div>
       <form ref={form} onSubmit={sendEmail} id="contact-form" className="contact__field" autoComplete="off">
         <label className='label'>Name:</label>
-        <input tid="nameInput" type="text" name="user_name" className="contact__item contact__input" />
-        <h6 id="errorTextName"></h6>
+        <input 
+          type="text" 
+          value={name}
+          onChange={(e)=>setName(e.target.value)}
+          id="nameInput" 
+          name="user_name" 
+          className="contact__item contact__input" 
+        />
+        {nameErrMsg && <p id="errorTextName">{nameErrMsg}</p>}
         <label className='label'>Return Email:</label>
-        <input id="emailInput" type="email" name="user_email" className="contact__item contact__input"/>
-        <h6 id="errorTextEmail"></h6>
+        <input 
+          id="emailInput"
+          value={email}
+          onChange={(e)=>setEmail(e.target.value)}
+          type="email"  
+          name="user_email" 
+          className="contact__item contact__input"
+          />
+        {<p id="errorTextEmail"></p>}
         <label className='label'>Message:</label>
-        <textarea id="messageInput" name="message" className="contact__item contact__message" />
+        <textarea 
+          id="messageInput"
+          value={message}
+          onChange={(e)=>setMessage(e.target.value)}
+          name="message" 
+          className="contact__item contact__message" 
+          />
         <h6 id="errorTextMessage"></h6>
-        <input id='contactBtn' className="btn btn--primary contact__btn" type="submit" value="Send" onClick={check}/>
+        <input id='contactBtn' className="btn btn--primary contact__btn" type="submit" value="Send" />
       </form>
       <div className="contact__alternative">
         <ul className="list list--inline">

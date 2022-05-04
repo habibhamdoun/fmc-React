@@ -4,11 +4,14 @@ import "./index.css";
 import "./normalize.css";
 import App from "./App";
 import "aos/dist/aos.css"; // You can also use <link> for styles
+import { BrowserRouter } from "react-router-dom";
 // ..
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </BrowserRouter>
 );

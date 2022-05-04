@@ -1,5 +1,7 @@
-import React from 'react'
-import Image from '../images/logo-fmc-removebg-preview.webp'
+import React from 'react';
+import { Link } from "react-router-dom";
+import Image from "../images/logo-fmc-removebg-preview.webp"
+
 
 const Navbar = () => {
   return (
@@ -10,13 +12,13 @@ const Navbar = () => {
         </div>
     </div>
     <ul className="list list--inline nav__list collapsible__content">
-        <li className="nav__item current-tab"><a href="./index.html">Home</a></li>
-        <li className="nav__item"><a href="./vision-page.html">Vision</a></li>
-        <li className="nav__item"><a href="./mission-page.html">Mission</a></li>
-        <li className="nav__item"><a href="./clients-page.html">Clients</a></li>
-        <li className="nav__item"><a href="./services-page.html">Services</a></li>
-        <li className="nav__item"><a href="./whyus-page.html">Why Us</a></li>
-        <li className="nav__item"><a href="./contact-page.html">Contact Us</a></li>
+        <li className="nav__item"><Link to="./">Home</Link></li>
+        <li className="nav__item"><Link to="./Vision"  >Vision</Link></li>
+        <li className="nav__item"><Link to="./Mission"  >Mission</Link></li>
+        <li className="nav__item"><Link to="./Clients"  >Clients</Link></li>
+        <li className="nav__item"><Link to="./Services" >Services</Link></li>
+        <li className="nav__item"><Link to="./Why-Us" >Why Us</Link></li>
+        <li className="nav__item"><Link to="./Contact-Us" >Contact Us</Link></li>
     </ul>
 </nav>
   )

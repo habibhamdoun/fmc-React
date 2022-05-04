@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "../images/aboutus-bg.webp";
+import { Link } from "react-router-dom";
+
 
 function About() {
   return (
@@ -23,7 +25,7 @@ function About() {
           storage, distribution logistics and out sourcing solutions.
         </p>
         <button className="btn btn--outline btn--primary about__btn">
-          <a href="./vision-page.html">Read More</a>
+          <Link to="./Vision">Read More</Link>
         </button>
       </div>
       <img src={Image} data-aos="fade-left" className="about__img" alt="" />

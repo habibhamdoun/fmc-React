@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const WhyUs = () => {
   return (
@@ -27,7 +28,7 @@ const WhyUs = () => {
             
             </p>
     </div>
-    <button className="btn btn--outline btn--secondary whyUs__btn" data-aos="fade-left"><a href="./contact-page.html">Contact Us</a></button>
+    <button className="btn btn--outline btn--secondary whyUs__btn" data-aos="fade-left"><Link to="/Contact-Us">Contact Us</Link></button>
     <div className="whyUs__img" data-aos="fade-right"></div>
     <div className="img__bg"></div>
 </section>

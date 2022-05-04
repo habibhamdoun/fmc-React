@@ -465,6 +465,7 @@ a {
   width: 100vw;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
 
 .hero__header {
@@ -492,10 +493,16 @@ a {
   margin: 0;
   color: white;
 }
-
-.hero__arrow {
-  text-align: center;
+.hero__link{
   color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero__arrow {
+  fill: white;
+  width: 30px;
   margin-bottom: 20px;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
@@ -519,6 +526,7 @@ a {
     background-size: cover;
     background-position: center;
     height: 95vh;
+    background-attachment: fixed;
   }
 }
 /* about */
@@ -971,12 +979,12 @@ a {
     margin-bottom: 10rem;
     -webkit-box-shadow: 38px 38px 0px 1px var(--color-secondary); 
     box-shadow: 38px 38px 0px 1px var(--color-secondary);
-    border: 1px solid #00000010;
   }
   .section__content{
     width: 75%;
     height: 75%;
-    padding: 2rem;
+    padding: 2rem 3rem;
+    text-align: justify;
   }
   .section__img{
     width: 65vw;
