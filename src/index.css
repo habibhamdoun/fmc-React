@@ -179,17 +179,14 @@ a {
   text-transform: uppercase;
   white-space: nowrap;
   text-align: center;
-  margin: 1rem 0;
-  color: white;
-}
-.btn--outline {
-  background-color: white;
+  margin: 1rem 0; 
   transition-duration:  0.6s;
   transition: background , color;
 }
 .btn--primary {
   border: 3px solid var(--color-primary);
   color: var(--color-primary);
+  background-color: #ffffff;
 }
 .btn--secondary {
   color: var(--color-secondary);
@@ -800,6 +797,9 @@ a {
   justify-content: center;
   align-items: center;
 }
+.contact__message{
+  resize: none;
+}
 .contact__item {
   background-color: #24337030;
   border-radius: 10px;
@@ -814,16 +814,25 @@ a {
 .contact__item::placeholder {
   padding-left: 1rem;
 }
-.contact__field label {
+.contact__field .label {
   align-self: flex-start;
   margin-top: 2rem;
-  margin-left: 7rem;
+  margin-left: 8rem;
+  margin-bottom: 0.5rem;
   color: var(--color-primary);
   font-size: 2rem;
 }
+
 .contact__btn {
+  align-self: center;
+  margin-bottom: 2rem;
   padding: 2rem 5rem;
   margin-top: 5rem;
+  flex-grow: 0;
+  transition: all 0.6s;
+}
+.about__btn a{
+  color: var(--color-primary);
 }
 .contact__alternative ul {
   color: var(--color-primary);
@@ -858,9 +867,9 @@ a {
     align-items: center;
     justify-content: center;
   }
-  .contact__field label {
+  .contact__field .label {
     align-self: flex-start;
-    margin: 2rem 0 0 0;
+    margin: 2rem 0 0 0.5rem;
   }
   .contact__alternative {
     font-size: 3rem;
