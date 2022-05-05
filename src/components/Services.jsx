@@ -23,7 +23,7 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">Air Freight</h4>
                     </div>
                     <div className="flip-card-back">
-                        <h4>Air Freight</h4>
+                        <h4 className='icon__header'>Air Freight</h4>
                         <p>Another term for air cargo that is, the shipment of products through an air carrier</p>
                     </div>
                 </div>
