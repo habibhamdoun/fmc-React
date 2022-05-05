@@ -68,7 +68,7 @@ const ContactUs = ({isMobile}) => {
 
   return (
     <>
-      {!modal && (
+      {modal && (
           <div onClick={toggleModal} className="modal">
             {/* <div className="overlay"></div> */}
             <div className="modal-content">
