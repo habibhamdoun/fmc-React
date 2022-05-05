@@ -2,7 +2,12 @@ html {
   font-size: 62.5%;
   height: fit-content;
 }
-
+@media screen and (max-width:400px) {
+  html{
+    overflow: hidden;
+  }  
+    
+}
 ::placeholder {
   color: #cdcbd7;
   opacity: 0.6;
@@ -480,7 +485,7 @@ input{
   width: 100vw;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
 }
 
 .hero__header {
