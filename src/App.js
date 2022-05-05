@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div style={{ position: "relative" }}>
       <Navbar isMobile={isMobile} />
       <Routes>
         <Route path="/" element={<Home isMobile={isMobile} />} />
@@ -34,7 +34,7 @@ function App() {
         <Route path="/Why-Us" element={<WhyUs isMobile={isMobile} />} />
         <Route path="/Contact-Us" element={<ContactUs isMobile={isMobile} />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

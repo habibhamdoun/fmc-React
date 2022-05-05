@@ -1038,28 +1038,20 @@ input{
   color: var(--color-secondary);
 }
 /* modal */
-.modal, .overlay {
-  /* position: fixed; */
+.modal {
   width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  position: fixed;
   z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.overlay {
   background: rgba(49,49,49,0.8);
 }
 .modal-content {
   color: var(--color-primary);
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   line-height: 1.4;
   background: #f1f1f1;
   padding: 1.4rem 2.8rem;
