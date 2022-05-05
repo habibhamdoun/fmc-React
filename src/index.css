@@ -946,6 +946,7 @@ input{
   flex-direction: column;
   height: fit-content;
   padding: 2rem;
+  padding-top: 2rem;
   padding-bottom: 2rem;
   align-items: center;
 }
@@ -1008,6 +1009,7 @@ input{
   margin-top: 7%;
   margin-left: 5%;
   padding-bottom: 2rem;
+  padding-top: 2rem;
 }
 
 .section__img{
