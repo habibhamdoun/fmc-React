@@ -629,9 +629,9 @@ input{
   background-size: cover;
   background-repeat: no-repeat;
   width: 100vw;
-  height: 90vh;
+  height: 100%;
   overflow-y: hidden;
-  padding-bottom: 2rem;
+  padding-top: 5rem;
 }
 .info__title {
   font-size: 2rem;
