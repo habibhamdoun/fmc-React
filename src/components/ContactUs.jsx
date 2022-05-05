@@ -16,7 +16,10 @@ const ContactUs = ({isMobile}) => {
   const [nameErrMsg, setNameErrMsg] = useState('');
   const [emailErrMsg, setEmailErrMsg] = useState('');
   const [messageErrMsg, setMessageErrMsg] = useState('');
-
+  const [modal,setModal]=useState(false);
+    function toggleModal(){
+        setModal(!modal)
+    }
   const sendEmail = (e) => {
     e.preventDefault();
     setNameErrMsg('');
@@ -41,6 +44,7 @@ const ContactUs = ({isMobile}) => {
       emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
       .then((result) => {
         console.log(result.text);
+        setModal(true);
       }, (error) => {
         console.log(error.text);
       // const data = {
@@ -57,6 +61,15 @@ const ContactUs = ({isMobile}) => {
   };
 
   return (
+    <>
+    {modal && (
+        <div className="modal">
+          <div onClick={toggleModal} className="overlay"></div>
+          <div className="modal-content">
+            <h2>Message Sent!</h2>
+          </div>
+        </div>
+      )}
     <section className="contact" data-aos={isMobile ? '' : "fade-up"}>
         <div className="title">
             <div className="line line--blue"></div>
@@ -111,6 +124,7 @@ const ContactUs = ({isMobile}) => {
         </ul>
       </div>
     </section>
+    </>
   );
 };
 export default ContactUs

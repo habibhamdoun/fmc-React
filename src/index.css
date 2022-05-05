@@ -557,6 +557,7 @@ input{
 .about {
   /* background-color: #e41f2620; */
   margin-top: 6rem;
+  padding-bottom: 2rem;
 }
 .about__content {
   margin: 0 2rem;
@@ -616,6 +617,7 @@ input{
   width: 100vw;
   height: 90vh;
   overflow-y: hidden;
+  padding-bottom: 2rem;
 }
 .info__title {
   font-size: 2rem;
@@ -680,6 +682,7 @@ input{
 .clients{
     display: flex;
     flex-direction: column;
+    padding-bottom: 2rem;
 }
 .clients__icons {
   display: flex;
@@ -717,6 +720,7 @@ input{
   height: 100vh;
   width: 100vw;
   margin-top: 3rem;
+  padding-bottom: 2rem;
 }
 .services__title{
   display: flex;
@@ -824,6 +828,8 @@ input{
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-bottom: 2rem;
+  z-index: 0;
 }
 .contact__field {
   display: flex;
@@ -869,9 +875,7 @@ input{
   flex-grow: 0;
   transition: all 0.6s;
 }
-.about__btn a{
-  color: var(--color-primary);
-}
+
 .contact__alternative ul {
   color: var(--color-primary);
   font-size: 2rem;
@@ -922,6 +926,7 @@ input{
   flex-direction: column;
   height: fit-content;
   padding: 2rem;
+  padding-bottom: 2rem;
   align-items: center;
 }
 .whyUs__img {
@@ -982,6 +987,7 @@ input{
   width: 85vw;
   margin-top: 7%;
   margin-left: 5%;
+  padding-bottom: 2rem;
 }
 
 .section__img{
@@ -1030,4 +1036,39 @@ input{
 }
 .current-tab a{
   color: var(--color-secondary);
+}
+/* modal */
+.modal, .overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  z-index: 1;
+}
+
+.overlay {
+  background: rgba(49,49,49,0.8);
+}
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding: 14px 28px;
+  border-radius: 3px;
+  max-width: 600px;
+  min-width: 300px;
+  z-index: 3;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
 }
