@@ -25,6 +25,7 @@ const Mission = ({isMobile}) => {
                 are adaptable to the new  
                 business trends.
                 </p>
+                <button className='btn btn--secondary section__btn'>Our Clients</button>
         </div>
     </section>
   )

@@ -28,7 +28,7 @@ const WhyUs = ({isMobile}) => {
             
             </p>
     </div>
-    <button className="btn btn--outline btn--secondary whyUs__btn" data-aos="fade-left"><Link to="/Contact-Us">Contact Us</Link></button>
+    <button className="btn btn--secondary whyUs__btn" data-aos={isMobile ? '' :"fade-left"}><Link to="/Contact-Us">Contact Us</Link></button>
     <div className="whyUs__img" data-aos={isMobile ? '' :"fade-right"}></div>
     <div className="img__bg"></div>
 </section>

@@ -1,7 +1,6 @@
 html {
   font-size: 62.5%;
   height: fit-content;
-  overflow-x: hidden;
 }
 
 ::placeholder {
@@ -191,13 +190,12 @@ input{
   text-align: center;
   margin: 1rem 0; 
   background-color: #ffffff;
-  transition-duration:  0.6s;
   transition: background , color;
+  transition-duration:  0.6s;
 }
 .btn--primary {
   border: 2px solid var(--color-primary);
   color: var(--color-primary);
-  background-color: #ffffff;
 }
 .btn--secondary {
   color: var(--color-secondary);
@@ -218,8 +216,8 @@ input{
   border: 2px solid var(--color-primary);
 }
 .btn--secondary:hover {
-  background-color: var(--color-secondary);
   color: white;
+  background-color: var(--color-secondary);
   border: 2px solid var(--color-secondary);
 }
 .btn--primary:hover a{
