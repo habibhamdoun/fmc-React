@@ -60,6 +60,7 @@ h6{
 p {
   margin: 0;
   font-size: 1.2rem;
+  text-align: justify;
 }
 input{
   font-size: 1.6rem;
@@ -175,6 +176,7 @@ input{
 }
 .flip-card-back p {
   text-transform: none;
+  font-size: 1.5rem;
 }
 @media screen and (min-width: 600px) {
   .flip-card {
@@ -343,9 +345,11 @@ input{
 
 /* nav */
 .nav {
+  position: fixed;
+  top:0%;
   z-index: 1;
   width: 100%;
-  background-color: #ffffff60;
+  background-color: #ffffff;
   box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
   -webkit-box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
   -moz-box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
@@ -408,6 +412,7 @@ input{
 }
 @media screen and (min-width: 768px) {
   .nav {
+    position: static;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -436,6 +441,7 @@ input{
   }
 
   .nav__item a {
+    font-size: 2rem;
     border: 0;
     white-space: nowrap;
     transition: color 0.4s;
@@ -730,7 +736,7 @@ input{
 @media screen and (min-width: 768px) {
   .triangle {
     height: 70%;
-    top: 60%;
+    top: 55%;
     z-index: 0;
   }
   .triangle--right {
