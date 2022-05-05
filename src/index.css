@@ -836,7 +836,7 @@ input{
 .contact__item {
   border-radius: 5px;
   border: 0;
-  max-width: 70%;
+  width: 70vw;
   padding: 1.5rem;
   color: #2c2e35;
   box-shadow:0 0 2px #000 ;
@@ -850,7 +850,6 @@ input{
 .contact__field .label {
   align-self: flex-start;
   margin-top: 2rem;
-  margin-left: 8rem;
   margin-bottom: 0.5rem;
   color: var(--color-primary);
   font-size: 2rem;
