@@ -621,10 +621,10 @@ input{
   width: 100%;
 }
 .info__text {
-  margin: 2rem;
+  margin: 3rem;
   font-size: 2.7rem;
   padding: 1rem;
-  margin-bottom: 1rem;
+  align-self: center;
   text-align: center;
   overflow: hidden;
   width: 85vw;
