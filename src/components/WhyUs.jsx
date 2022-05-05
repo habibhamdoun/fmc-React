@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const WhyUs = (isMobile) => {
+const WhyUs = ({isMobile}) => {
   return (
     <section className="whyUs">
     <div className="whyUs__header" data-aos={isMobile ? '' :"fade-left"}>

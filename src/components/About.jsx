@@ -3,7 +3,7 @@ import Image from "../images/aboutus-bg.webp";
 import { Link } from "react-router-dom";
 
 
-function About(isMobile) {
+function About({isMobile}) {
   return (
     <section className="about grid grid--1x2" id="aboutUs">
       <div className="about__content" data-aos={isMobile ? '' :"fade-right"}>

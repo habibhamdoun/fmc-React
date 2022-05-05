@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Services = (isMobile) => {
+const Services = ({isMobile}) => {
   return (
     <section className="services" data-aos={isMobile ? '' :"fade-up"}
     data-aos-anchor-placement={isMobile ? '' :"top-center"}>

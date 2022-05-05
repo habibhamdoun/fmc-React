@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Vision = (isMobile) => {
+const Vision = ({isMobile}) => {
   return (
     <section className="info" data-aos={isMobile ? '' :"zoom-in"}>
     <div className=" title info__title">

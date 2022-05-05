@@ -8,7 +8,7 @@ const schema = yup.object().shape({
   message: yup.string().min(5).max(1000).required()
 })
 
-const ContactUs = (isMobile) => {
+const ContactUs = ({isMobile}) => {
   const form = useRef();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');

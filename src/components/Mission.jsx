@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Mission = (isMobile) => {
+const Mission = ({isMobile}) => {
   return (
     <section className="section" data-aos={isMobile ? '' :"fade-down"}>
         <div className="section__img" data-aos={isMobile ? '' :"fade-down"}></div>

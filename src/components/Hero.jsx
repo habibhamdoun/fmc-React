@@ -1,5 +1,5 @@
 import React from "react";
-function Hero(isMobile) {
+function Hero({isMobile}) {
   return (
     <section className="hero" data-aos={isMobile ? '' :"zoom-in-up"}>
       <div className="hero__image"></div>

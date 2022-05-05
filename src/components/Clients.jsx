@@ -5,7 +5,7 @@ import Client3 from "../images/client-3-removebg-preview.webp"
 import Client4 from "../images/client-4.2.webp"
 import Client5 from "../images/client-5-removebg-preview.webp"
 import Client6 from "../images/client-6-removebg-preview.webp"
-const Clients = (isMobile) => {
+const Clients = ({isMobile}) => {
   return (
     <section className="clients" data-aos={isMobile ? '' :"zoom-out"}>
     <h1 className="clients__header">
