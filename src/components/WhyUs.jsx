@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const WhyUs = () => {
+const WhyUs = (isMobile) => {
   return (
     <section className="whyUs">
-    <div className="whyUs__header" data-aos="fade-left">
+    <div className="whyUs__header" data-aos={isMobile ? '' :"fade-left"}>
         <div className="title">
             <h3 className="title__header whyUs__title">Why Choose Us?
             </h3>
@@ -29,7 +29,7 @@ const WhyUs = () => {
             </p>
     </div>
     <button className="btn btn--outline btn--secondary whyUs__btn" data-aos="fade-left"><Link to="/Contact-Us">Contact Us</Link></button>
-    <div className="whyUs__img" data-aos="fade-right"></div>
+    <div className="whyUs__img" data-aos={isMobile ? '' :"fade-right"}></div>
     <div className="img__bg"></div>
 </section>
   )

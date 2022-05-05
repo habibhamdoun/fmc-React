@@ -34,7 +34,7 @@ h4 {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 4.5rem;
 }
 
 h2 {
@@ -55,6 +55,9 @@ h6{
 p {
   margin: 0;
 }
+input{
+  font-size: 1.6rem;
+}
 
 @media screen and (min-width: 768px) {
   body {
@@ -62,17 +65,23 @@ p {
   }
 
   h1 {
-    font-size: 10rem;
+    font-size: 5rem;
     font-family: "Libre Bodoni", serif;
     font-weight: 700;
   }
 
   h2 {
-    font-size: 6rem;
+    font-size: 4rem;
   }
 }
 a {
   text-decoration: none;
+}
+p{
+  font-size: 1.2rem;
+}
+input{
+  font-size: 1.6rem;
 }
 /* list */
 .list {
@@ -184,7 +193,7 @@ a {
   transition: background , color;
 }
 .btn--primary {
-  border: 3px solid var(--color-primary);
+  border: 2px solid var(--color-primary);
   color: var(--color-primary);
   background-color: #ffffff;
 }
@@ -370,6 +379,7 @@ a {
   color: var(--color-primary);
 }
 .nav__item a {
+  font-size:2.5rem ;
   text-decoration: none;
   color: var(--color-primary);
   border-bottom: 1px solid var(--color-secondary);
@@ -557,6 +567,7 @@ a {
 }
 .about__img {
   width: 90%;
+  margin-bottom: 1rem;
   justify-self: center;
   align-self: center;
 }
@@ -611,7 +622,7 @@ a {
   margin-bottom: 1rem;
   text-align: center;
   overflow: hidden;
-  width: 90vw;
+  width: 85vw;
   height: fit-content;
   background-color: white;
   box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
@@ -819,12 +830,12 @@ a {
   font-size: 1.5rem ;
 }
 .contact__item {
-  background-color: #24337030;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 0;
   max-width: 70%;
   padding: 1.5rem;
-  color: var(--color-primary);
+  color: #2c2e35;
+  box-shadow:0 0 2px #000 ;
 }
 .contact__item:focus {
   outline: 0;

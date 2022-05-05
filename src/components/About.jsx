@@ -3,10 +3,10 @@ import Image from "../images/aboutus-bg.webp";
 import { Link } from "react-router-dom";
 
 
-function About() {
+function About(isMobile) {
   return (
     <section className="about grid grid--1x2" id="aboutUs">
-      <div className="about__content" data-aos="fade-right">
+      <div className="about__content" data-aos={isMobile ? '' :"fade-right"}>
         <h3 className="about__title">
           <div className="title">
             <h3 className="title__header">About Us</h3>
@@ -28,7 +28,7 @@ function About() {
           <Link to="./Vision">Read More</Link>
         </button>
       </div>
-      <img src={Image} data-aos="fade-left" className="about__img" alt="" />
+      <img src={Image} data-aos={isMobile ? '' :"fade-left"} className="about__img" alt="" />
     </section>
   );
 }

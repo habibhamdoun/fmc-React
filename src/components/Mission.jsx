@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Mission = () => {
+const Mission = (isMobile) => {
   return (
-    <section className="section" data-aos="fade-down">
-        <div className="section__img" data-aos="fade-down"></div>
+    <section className="section" data-aos={isMobile ? '' :"fade-down"}>
+        <div className="section__img" data-aos={isMobile ? '' :"fade-down"}></div>
         <div className="section__content">
             <div className="title">
                 <h2 className="title__header">Our Mission</h2>

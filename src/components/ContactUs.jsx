@@ -1,7 +1,14 @@
 import React, { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import * as yup from 'yup';
 
-const ContactUs = () => {
+const schema = yup.object().shape({
+  name: yup.string().min(3).max(20).required(),
+  email: yup.string().email().required(),
+  message: yup.string().min(5).max(1000).required()
+})
+
+const ContactUs = (isMobile) => {
   const form = useRef();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -18,30 +25,39 @@ const ContactUs = () => {
     if(!name){
       setNameErrMsg('Name is required');
     }
-    if(!email){
+    else if(!email){
       setEmailErrMsg('Email is required');
     }
-    if(!message){
+    else if(!message){
       setMessageErrMsg('Message is required');
     }
-    if(message.length > 1000){
+    else if(message.length > 1000){
       setMessageErrMsg('Message is too long.')
     }
-    if(name.length > 69){
+    else if(name.length > 20){
       setNameErrMsg('Your name is not that long, change it bitch, or elseeeee, i will fuck your mom,mhuahahahah, that was my dumb cousin,no it was professor x, that was him again, Aany way fuck you.')
     }
-    if(!nameErrMsg && !emailErrMsg && !messageErrMsg){
+    else if(!nameErrMsg && !emailErrMsg && !messageErrMsg){
       emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
       .then((result) => {
         console.log(result.text);
       }, (error) => {
         console.log(error.text);
-      });
+      // const data = {
+      //   user_name: name,
+      //   user_email: email,
+      //   message: message
+      // }
+      // schema.validate({name, email, message}).then(()=>{
+        // }).catch((err)=>{
+          //   console.log(err)
+          // });
+        });
     }
   };
 
   return (
-    <section className="contact" data-aos="fade-up">
+    <section className="contact" data-aos={isMobile ? '' : "fade-up"}>
         <div className="title">
             <div className="line line--blue"></div>
             <h2 className="title__header">Contact Us</h2>

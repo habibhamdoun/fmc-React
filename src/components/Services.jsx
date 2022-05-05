@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Services = () => {
+const Services = (isMobile) => {
   return (
-    <section className="services" data-aos="fade-up"
-    data-aos-anchor-placement="top-center">
+    <section className="services" data-aos={isMobile ? '' :"fade-up"}
+    data-aos-anchor-placement={isMobile ? '' :"top-center"}>
         <div className="right--side">
-            <div className="triangle triangle--right triangle--top triangle--red"></div>
-            <div className="triangle triangle--right triangle--bottom triangle--blue"></div>
+            <div className="triangle triangle--right triangle--top triangle--red" data-aos={isMobile ? '' :"fade-right"}></div>
+            <div className="triangle triangle--right triangle--bottom triangle--blue" data-aos={isMobile ? '' :"fade-right"}></div>
         </div>
         <div className="services__title">
             <div className="title">
@@ -158,8 +158,8 @@ const Services = () => {
             </div>
         </div>
         <div className="left--side">
-            <div className="triangle triangle--left triangle--top triangle--blue"></div>
-            <div className="triangle triangle--left triangle--bottom triangle--red"></div>
+            <div className="triangle triangle--left triangle--top triangle--blue" data-aos={isMobile ? '' :"fade-left"}></div>
+            <div className="triangle triangle--left triangle--bottom triangle--red" data-aos={isMobile ? '' :"fade-left"}></div>
         </div>
     </section>
   )

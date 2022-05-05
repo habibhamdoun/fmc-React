@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import Navbar from "./components/Navbar";
 import Vision from "./components/Vision";
@@ -10,19 +10,28 @@ import ContactUs from "./components/ContactUs";
 import Home from "./components/Home";
 import { Routes, Route } from "react-router-dom";
 
-function App(history) {
+function App() {
   AOS.init();
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (window.screen.width < 768) {
+      setIsMobile(true);
+    }
+  }, []);
+
   return (
     <>
-      <Navbar />
+      <Navbar isMobile={isMobile} />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Vision" element={<Vision />} />
-        <Route path="/Mission" element={<Mission />} />
-        <Route path="/Clients" element={<Clients />} />
-        <Route path="/Services" element={<Services />} />
-        <Route path="/Why-Us" element={<WhyUs />} />
-        <Route path="/Contact-Us" element={<ContactUs />} />
+        <Route path="/" element={<Home isMobile={isMobile} />} />
+        <Route path="/Vision" element={<Vision isMobile={isMobile} />} />
+        <Route path="/Mission" element={<Mission isMobile={isMobile} />} />
+        <Route path="/Clients" element={<Clients isMobile={isMobile} />} />
+        <Route path="/Services" element={<Services isMobile={isMobile} />} />
+        <Route path="/Why-Us" element={<WhyUs isMobile={isMobile} />} />
+        <Route path="/Contact-Us" element={<ContactUs isMobile={isMobile} />} />
       </Routes>
     </>
   );
