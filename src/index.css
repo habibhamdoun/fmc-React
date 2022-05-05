@@ -54,6 +54,7 @@ h6{
 }
 p {
   margin: 0;
+  font-size: 1.2rem;
 }
 input{
   font-size: 1.6rem;
@@ -78,7 +79,7 @@ a {
   text-decoration: none;
 }
 p{
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 input{
   font-size: 1.6rem;
@@ -486,7 +487,7 @@ input{
 .hero__header {
   font-size: 5rem;
   position: absolute;
-  top: 50%;
+  top: 43%;
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
@@ -514,6 +515,9 @@ input{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.hero__link >p{
+  font-size: 2rem;
 }
 .hero__arrow {
   fill: white;
