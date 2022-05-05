@@ -45,9 +45,12 @@ const ContactUs = ({isMobile}) => {
       .then((result) => {
         console.log(result.text);
         setModal(true);
+        setTimeout(()=>{
+          setModal(false)
+        },3000)
         setName('');
-      setEmail('')
-      setMessage('')
+        setEmail('')
+        setMessage('')
       }, (error) => {
         console.log(error.text);
       // const data = {
