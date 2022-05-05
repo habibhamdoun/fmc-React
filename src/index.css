@@ -631,7 +631,7 @@ input{
   background-size: cover;
   background-repeat: no-repeat;
   width: 100vw;
-  height: fit-content;
+  height: 100vh;
   overflow-y: hidden;
   padding-top: 5rem;
   padding-bottom: 3rem;
