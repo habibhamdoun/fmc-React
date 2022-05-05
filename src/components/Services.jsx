@@ -23,7 +23,6 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">Air Freight</h4>
                     </div>
                     <div className="flip-card-back">
-                        <h4 className='icon__header'>Air Freight</h4>
                         <p>Another term for air cargo that is, the shipment of products through an air carrier</p>
                     </div>
                 </div>
@@ -35,7 +34,6 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">Land Freight</h4>
                     </div>
                     <div className="flip-card-back">
-                        <h4>Land Freight</h4>
                         <p>Movement of cargo from point A to point B by road through trucks or railway.</p>
                     </div>
                 </div>
@@ -47,7 +45,6 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">Custom clearance</h4>
                     </div>
                     <div className="flip-card-back">
-                        <h4>Custom clearance</h4>
                         <p>Customs clearance is a necessary procedure before products and shipments can be imported or exported internationally.</p>
                     </div>
                 </div>
@@ -73,7 +70,6 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">Packing & relocating</h4>
                     </div>
                     <div className="flip-card-back">
-                        <h4>Packing & relocating</h4>
                         <p>Packing and transfering products all around the globe.</p>
                     </div>
                 </div>
@@ -101,7 +97,6 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">DGR</h4>
                     </div>
                     <div className="flip-card-back">
-                        <h4>DGR</h4>
                         <p>Dangerous Goods Regulations manual used to make sure dangerous products are transported safely and efficiently.</p>
                     </div>
                 </div>
@@ -113,7 +108,6 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">Warehousing & distribution</h4>
                     </div>
                     <div className="flip-card-back">
-                        <h4>Warehousing & distribution</h4>
                         <p>A warehouse is used for storing products while a distribution center, apart from storing products offers value-added services</p>
                     </div>
                 </div>
@@ -127,7 +121,6 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">cargo insurance</h4>
                     </div>
                     <div className="flip-card-back">
-                        <h4>cargo insurance</h4>
                         <p>Cargo insurance is the method used in protecting shipments from physical damage or theft</p>
                     </div>
                 </div>
@@ -139,7 +132,6 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">project cargo</h4>
                     </div>
                     <div className="flip-card-back">
-                        <h4>project cargo</h4>
                         <p>Also known as project forwarding or project logistics, is the transportation of large, complex, or high-value pieces of equipment.</p>
                     </div>
                 </div>
@@ -151,7 +143,6 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">break bulk & roro services</h4>
                     </div>
                     <div className="flip-card-back">
-                        <h4>break bulk & roro services</h4>
                         <p>Breakbulk ocean shipping is a common method used to successfully transport cargo or goods that cannot fit in standard-size shipping containers or cargo bins.RO/RO(Roll On-Roll Off) is typically used when transporting breakbulk shipments. Most heavy breakbulk shipments use RO/RO and avoid fees</p>
                     </div>
                 </div>
