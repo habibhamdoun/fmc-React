@@ -730,7 +730,7 @@ input{
 @media screen and (min-width: 768px) {
   .triangle {
     height: 70%;
-    top: 65%;
+    top: 60%;
     z-index: 0;
   }
   .triangle--right {
