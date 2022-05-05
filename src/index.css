@@ -283,9 +283,11 @@ input{
 }
 .line--red {
   border-color: var(--color-secondary);
+  background-color: var(--color-secondary);
 }
 .line--blue {
   border-color: var(--color-primary);
+  background-color: var(--color-primary);
 }
 
 .title__header {
