@@ -503,6 +503,7 @@ input{
   display: flex;
   flex-direction: column;
   font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero__toggle > p {
