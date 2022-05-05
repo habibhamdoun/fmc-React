@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
 
 const Mission = ({isMobile}) => {
   return (
@@ -25,7 +26,7 @@ const Mission = ({isMobile}) => {
                 are adaptable to the new  
                 business trends.
                 </p>
-                <button className='btn btn--secondary section__btn'>Our Clients</button>
+                <button className='btn btn--secondary section__btn'><Link to="/Clients">Our Clients</Link></button>
         </div>
     </section>
   )
