@@ -739,6 +739,7 @@ input{
   width: 100vw;
   margin-top: 3rem;
   padding-bottom: 2rem;
+  padding-top: 1rem;
 }
 .services__title{
   display: flex;
@@ -839,6 +840,7 @@ input{
 }
 /* contact */
 .contact {
+  padding-block: 5rem;
   background-color: white;
   height: fit-content;
   width: 98vw;
