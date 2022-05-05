@@ -1,6 +1,7 @@
 html {
   font-size: 62.5%;
   height: fit-content;
+  overflow-x: hidden;
 }
 
 ::placeholder {

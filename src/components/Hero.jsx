@@ -1,7 +1,7 @@
 import React from "react";
 function Hero({isMobile}) {
   return (
-    <section className="hero" data-aos={isMobile ? '' :"zoom-in-up"}>
+    <section className="hero" data-aos={isMobile ? '' :"zoom-in-up"} data-aos-anchor='#nav' >
       <div className="hero__image"></div>
       <div className="hero__content">
         <h1 className="hero__header">

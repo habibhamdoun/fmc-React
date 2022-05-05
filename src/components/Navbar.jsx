@@ -9,7 +9,7 @@ const Navbar = ({isMobile}) => {
 
   
   return (
-    <nav className={isOpen ? "nav collapsible collapsible--expanded" : "nav collapsible"} data-aos={isMobile ? '' : 'zoom-in-up'} >
+    <nav className={isOpen ? "nav collapsible collapsible--expanded" : "nav collapsible"} data-aos-once='true' data-aos={isMobile ? '' : 'zoom-in-up'} >
     <div className="nav__brand__container">
         <img src={Image} className="nav__brand" alt="" />
         <div onClick={()=>setIsOpen(old => old ? false : true)} className="nav__collapsible__container">
@@ -18,13 +18,13 @@ const Navbar = ({isMobile}) => {
         </div>
     </div>
     <ul className="list list--inline nav__list collapsible__content">
-        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to="./">Home</NavLink></li>
-        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')}  to="./Vision"  >Vision</NavLink></li>
-        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')}  to="./Mission"  >Mission</NavLink></li>
-        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')}  to="./Clients"  >Clients</NavLink></li>
-        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to="./Services" >Services</NavLink></li>
-        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')}  to="./Why-Us" >Why Us</NavLink></li>
-        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} to="./Contact-Us" >Contact Us</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=>setIsOpen(old => old ? false : true)}  to="./">Home</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=>setIsOpen(old => old ? false : true)}   to="./Vision"  >Vision</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=>setIsOpen(old => old ? false : true)}   to="./Mission"  >Mission</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=>setIsOpen(old => old ? false : true)}   to="./Clients"  >Clients</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=>setIsOpen(old => old ? false : true)}  to="./Services" >Services</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=>setIsOpen(old => old ? false : true)}   to="./Why-Us" >Why Us</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=>setIsOpen(old => old ? false : true)}  to="./Contact-Us" >Contact Us</NavLink></li>
     </ul>
 </nav>
   )
