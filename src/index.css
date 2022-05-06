@@ -636,6 +636,10 @@ input{
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
   width: 100vw;
   height: 100vh;
   padding-top: 5rem;
