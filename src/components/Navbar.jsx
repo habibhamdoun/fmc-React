@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
-import Image from "../images/logo-fmc-removebg-preview.webp"
+import Image from "../images/logo-fmc-removebg-preview.webp";
+import { motion } from 'framer-motion';
+
 
 
 const Navbar = ({isMobile}) => {
@@ -9,7 +11,10 @@ const Navbar = ({isMobile}) => {
 
   
   return (
-    <nav className={isOpen ? "nav collapsible collapsible--expanded" : "nav collapsible"} data-aos={isMobile ? '' : 'zoom-in-up'} >
+    <motion.nav className={isOpen ? "nav collapsible collapsible--expanded" : "nav collapsible"} 
+    initial={{translateY:-200}}
+    animate={{translateY:0}}
+    >
     <div className="nav__brand__container">
         <img src={Image} className="nav__brand" alt="" />
         <div onClick={()=>setIsOpen(old => old ? false : true)} className="nav__collapsible__container">
@@ -26,7 +31,7 @@ const Navbar = ({isMobile}) => {
         <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={isMobile ?()=>setIsOpen(old => old ? false : true) : ''}   to="./Why-Us" >Why Us</NavLink></li>
         <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={isMobile ?()=>setIsOpen(old => old ? false : true) : ''}  to="./Contact-Us" >Contact Us</NavLink></li>
     </ul>
-</nav>
+</motion.nav>
   )
 }
 

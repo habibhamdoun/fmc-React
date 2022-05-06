@@ -1,10 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion';
+
 
 const WhyUs = ({isMobile}) => {
   return (
-    <section className="whyUs">
-    <div className="whyUs__header" data-aos={isMobile ? '' :"fade-left"}>
+    <motion.section 
+    initial={{translateX:1000}}
+    animate={{translateX:0}}
+    transition={{duration:0.4}}
+    className="whyUs"
+    >
+    <div className="whyUs__header">
         <div className="title">
             <h3 className="title__header whyUs__title">Why Choose Us?
             </h3>
@@ -28,10 +35,17 @@ const WhyUs = ({isMobile}) => {
             
             </p>
     </div>
-    <button className="btn btn--secondary whyUs__btn" data-aos={isMobile ? '' :"fade-left"}><Link to="/Contact-Us">Contact Us</Link></button>
-    <div className="whyUs__img" data-aos={isMobile ? '' :"fade-right"}></div>
-    <div className="img__bg"></div>
-</section>
+    <motion.button 
+    className="btn btn--secondary whyUs__btn" 
+    initial={{translateX:1000}}
+    animate={{translateX:0}}
+    transition={{duration:0.45}}
+    ><Link to="/Contact-Us">Contact Us</Link></motion.button>
+    <motion.div 
+    initial={{translateX:1000}}
+    animate={{translateX:0}}
+    transition={{duration:0.5}} className="whyUs__img" ></motion.div>
+</motion.section>
   )
 }
 

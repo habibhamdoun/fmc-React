@@ -1,12 +1,17 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
+
 
 const Services = ({isMobile}) => {
   return (
-    <section className="services" data-aos={isMobile ? '' :"fade-up"}
-    data-aos-anchor-placement={isMobile ? '' :"top-center"}>
+    <motion.section className="services" 
+    initial={{translateY:1000}}
+    animate={{translateY:0}}
+    transition={{duration:0.4}}
+    >
         <div className="right--side">
-            <div className="triangle triangle--right triangle--top triangle--red" data-aos={isMobile ? '' :"fade-right"}></div>
-            <div className="triangle triangle--right triangle--bottom triangle--blue" data-aos={isMobile ? '' :"fade-right"}></div>
+            <motion.div initial={{translateX:-1000}} animate={{translateX:0}} transition={{duration:0.35}} className="triangle triangle--right triangle--top triangle--red" data-aos={isMobile ? '' :"fade-right"}></motion.div>
+            <motion.div initial={{translateX:-1000}} animate={{translateX:0}} transition={{duration:0.4}} className="triangle triangle--right triangle--bottom triangle--blue" data-aos={isMobile ? '' :"fade-right"}></motion.div>
         </div>
         <div className="services__title">
             <div className="title">
@@ -83,7 +88,6 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">sea Freight</h4>
                     </div>
                     <div className="flip-card-back">
-                        <h4>sea Freight</h4>
                         <p>A method of transporting large quantities of products via cargo ships.</p>
                     </div>
                 </div>
@@ -149,10 +153,10 @@ const Services = ({isMobile}) => {
             </div>
         </div>
         <div className="left--side">
-            <div className="triangle triangle--left triangle--top triangle--blue" data-aos={isMobile ? '' :"fade-left"}></div>
-            <div className="triangle triangle--left triangle--bottom triangle--red" data-aos={isMobile ? '' :"fade-left"}></div>
+            <motion.div initial={{translateX:1000}} animate={{translateX:0}} transition={{duration:0.35}} className="triangle triangle--left triangle--top triangle--blue" data-aos={isMobile ? '' :"fade-left"}></motion.div>
+            <motion.div initial={{translateX:1000}} animate={{translateX:0}} transition={{duration:0.4}} className="triangle triangle--left triangle--bottom triangle--red" data-aos={isMobile ? '' :"fade-left"}></motion.div>
         </div>
-    </section>
+    </motion.section>
   )
 }
 

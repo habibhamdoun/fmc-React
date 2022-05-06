@@ -35,7 +35,7 @@ h1,
 h2,
 h4 {
   font-weight: bold;
-  font-family: "Libre Bodoni", serif;
+  font-family: "Playfair Display", serif;
 }
 
 h1 {
@@ -73,7 +73,6 @@ input{
 
   h1 {
     font-size: 5rem;
-    font-family: "Libre Bodoni", serif;
     font-weight: 700;
   }
 
@@ -422,7 +421,9 @@ input{
 }
 @media screen and (min-width: 768px) {
   .nav {
-    position: static;
+    position: fixed;
+    background-color: #ffffff80;
+    backdrop-filter: blur(5px);
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -561,11 +562,14 @@ input{
   }
 }
 @media screen and (min-width: 768px) {
+  .hero{
+    height: 100vh;
+  }
   .hero__image {
     background: url(./images/hero-image-blur.webp);
     background-size: cover;
     background-position: center;
-    height: 95vh;
+    height: 100%;
     background-attachment: fixed;
   }
 }
@@ -597,6 +601,8 @@ input{
   margin-bottom: 1rem;
   justify-self: center;
   align-self: center;
+  -webkit-box-shadow: 11px 11px 0px 2px var(--color-primary); 
+  box-shadow: 11px 11px 0px 2px var(--color-primary);
 }
 .about__text {
   padding-bottom: 2rem;
@@ -1019,6 +1025,8 @@ input{
   background-size: cover;
   width: 90vw;
   height: 50vh;
+  -webkit-box-shadow: 12px 12px 0px 1px var(--color-secondary); 
+  box-shadow: 12px 12px 0px 1px var(--color-secondary);
 }
 .section__content{
   font-size: 2.5rem;
@@ -1052,6 +1060,7 @@ input{
   .section__img{
     width: 65vw;
     height: 65vh;
+    box-shadow: 0px 0px 0px 1px #ffffff;
   }
   .section__btn{
     align-self: flex-start;
@@ -1099,4 +1108,15 @@ input{
   top: 1rem;
   right: 1rem;
   padding: 0.5rem 0.7rem;
+}
+@media screen and (min-width:768px) {
+  .contact .title, 
+  .about .title ,
+  .info  .title,
+  .whyUs .title,
+  .clients .title,
+  .services .title{
+    padding-top: 6rem;
+  }
+  
 }

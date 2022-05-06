@@ -1,8 +1,20 @@
 import React from "react";
+import { motion } from 'framer-motion';
+
 function Hero({isMobile}) {
+
+
+
   return (
-    <section className="hero" data-aos={isMobile ? '' :"zoom-in-up"} data-aos-anchor='#nav' >
-      <div className="hero__image"></div>
+    <motion.section 
+      className="hero" 
+      initial={{scale: 0.1}}
+      animate={{scale: 1}} 
+      transition={{duration: 0.3}}
+    >
+      <motion.div
+        className="hero__image"
+      ></motion.div>
       <div className="hero__content">
         <h1 className="hero__header">
           First Modern <br /> Company
@@ -14,7 +26,7 @@ function Hero({isMobile}) {
           </div>
         </a>
       </div>
-    </section>
+    </motion.section>
   );
 }
 export default Hero;

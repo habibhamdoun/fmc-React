@@ -1,11 +1,30 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
+
 
 const Mission = ({isMobile}) => {
   return (
-    <section className="section" data-aos={isMobile ? '' :"fade-down"}>
-        <div className="section__img" data-aos={isMobile ? '' :"fade-down"}></div>
-        <div className="section__content">
+    <motion.section className="section" 
+      initial={isMobile ? '':{boxShadow:'0'}}
+      animate={isMobile ? '':{boxShadow:"38px 38px 0px 1px rgb(211, 29, 35)"}}
+      transition={{duration:0.4}}
+    >
+        <motion.div 
+        className="section__img" 
+        initial={isMobile ? {
+          boxShadow:'0',
+          translateY:-1000
+        }:{translateY:-1000}}
+        animate={isMobile ? {boxShadow:"12px 12px 0px 1px rgb(211, 29, 35)",translateY:0}:{translateY:0}}
+        transition={{duration:0.4}}
+        ></motion.div>
+        <motion.div 
+        className="section__content"
+        initial={{translateY:-1000}}
+        animate={{translateY:0}}
+        transition={{duration:0.4}}
+        >
             <div className="title">
                 <h2 className="title__header">Our Mission</h2>
                 <div className="line line--blue"></div>
@@ -27,8 +46,8 @@ const Mission = ({isMobile}) => {
                 business trends.
                 </p>
                 <button className='btn btn--secondary section__btn'><Link to="/Clients">Our Clients</Link></button>
-        </div>
-    </section>
+        </motion.div>
+    </motion.section>
   )
 }
 
