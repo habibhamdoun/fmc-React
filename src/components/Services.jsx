@@ -63,7 +63,6 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">pharma logistics</h4>
                     </div>
                     <div className="flip-card-back">
-                        <h4>pharma logistics</h4>
                         <p>Pharmaceutical logistics is related to the handling, transport and chain management of multiple and varied products.</p>
                     </div>
                 </div>
