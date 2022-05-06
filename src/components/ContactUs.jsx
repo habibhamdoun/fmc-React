@@ -106,7 +106,7 @@ const ContactUs = ({isMobile}) => {
             id="nameInput"
             name="user_name"
             className="contact__item contact__input"
-          />
+            />
           {nameErrMsg && <p className='errMsg'>{nameErrMsg}</p>}
           <label className='label'>Return Email:</label>
           <input
@@ -127,6 +127,7 @@ const ContactUs = ({isMobile}) => {
             className="contact__item contact__message"
             />
             {messageErrMsg && <p className='errMsg'>{messageErrMsg}</p>}
+            {isSending && <p style={{color:'#d31d23'}}>Sending...</p>}         
           <input
           disabled={isSending}
           type="submit"
