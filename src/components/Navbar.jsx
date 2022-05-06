@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 const Navbar = ({isMobile}) => {
 
   const [isOpen, setIsOpen] = useState(false);
-
+  
   
   return (
     <motion.nav className={isOpen ? "nav collapsible collapsible--expanded" : "nav collapsible"} 

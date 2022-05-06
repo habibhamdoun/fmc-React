@@ -12,10 +12,14 @@ const Mission = ({isMobile}) => {
     >
         <motion.div 
         className="section__img" 
-        initial={isMobile ? {
-          boxShadow:'0',
-          translateY:-1000
-        }:{translateY:-1000}}
+        initial={isMobile ? 
+          {
+            boxShadow:'0',
+            translateY:-1000
+          }:{
+            translateY:-1000
+          }
+        }
         animate={isMobile ? {boxShadow:"12px 12px 0px 1px rgb(211, 29, 35)",translateY:0}:{translateY:0}}
         transition={{duration:0.4}}
         ></motion.div>

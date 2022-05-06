@@ -953,7 +953,7 @@ input{
   flex-direction: column;
   height: fit-content;
   padding: 2rem;
-  padding-top: 2rem;
+  padding-top: 4rem;
   padding-bottom: 2rem;
   align-items: center;
 }

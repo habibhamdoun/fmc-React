@@ -1,8 +1,15 @@
-import React from 'react'
+import React from 'react';
+import { motion } from 'framer-motion';
+
 
 const Vision = ({isMobile}) => {
   return (
-    <section className="info" data-aos={isMobile ? '' :"zoom-in"}>
+    <motion.section 
+    className="info" 
+    initial={{opacity:0}}
+    animate={{opacity:1}}
+    transition={{duration:0.3}}
+    >
     <div className=" title info__title">
         <div className="line line--blue">
         </div>
@@ -13,7 +20,7 @@ const Vision = ({isMobile}) => {
     <div className="info__text">
         <p>Every customer is different, and every solution is unique.  FMC offers tailored solutions customized to meet the  specific needs and requirements of each customer.  Through our emphasis on precision, innovation and  continuous technological development, we are committed  to becoming industry pioneers in the MENA region.</p>
     </div>
-    </section>
+    </motion.section>
   )
 }
 
