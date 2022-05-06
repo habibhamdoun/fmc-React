@@ -621,8 +621,7 @@ input{
     align-self: flex-start;
   }
   .about {
-    margin: 2rem;
-    margin-top: 10rem;
+    margin-block: 8rem;
     height: 90vh;
   }
 }
@@ -639,7 +638,6 @@ input{
   background-repeat: no-repeat;
   width: 100vw;
   height: 100vh;
-  overflow-y: hidden;
   padding-top: 5rem;
   padding-bottom: 3rem;
 }
@@ -668,9 +666,11 @@ input{
   border-radius: 5px;
   overflow: hidden;
 }
+.info__btn{
+  background-color: #ffffff40;
+}
 @media screen and (min-width: 768px) {
   .info {
-    height: 100vh;
     padding-top: 0%;
     display: flex;
     flex-direction: column;
@@ -680,7 +680,6 @@ input{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    width: 100vw;
   }
   .info__title {
     text-align: center;
@@ -693,7 +692,6 @@ input{
     height: fit-content;
     margin-top: 15rem;
     overflow: scroll;
-    background-color: white;
     box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
     -webkit-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
     -moz-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);

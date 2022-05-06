@@ -24,9 +24,11 @@ function About({isMobile}) {
           along individual logistics services, namely transport solutions,
           storage, distribution logistics and out sourcing solutions.
         </p>
-        <button className="btn btn--outline btn--primary about__btn">
-          <Link to="./Vision">Read More</Link>
-        </button>
+        <Link to='/Vision'>
+          <a className="btn btn--outline btn--primary about__btn">
+            Read More
+          </a>
+        </Link>
       </div>
       <img src={Image} data-aos={isMobile ? '' :"fade-left"} className="about__img" alt="" />
     </section>
