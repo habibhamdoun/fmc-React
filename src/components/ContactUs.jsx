@@ -127,13 +127,12 @@ const ContactUs = ({isMobile}) => {
             className="contact__item contact__message"
             />
             {messageErrMsg && <p className='errMsg'>{messageErrMsg}</p>}
-            {isSending && <p style={{color:'#d31d23'}}>Sending...</p>}         
           <input
           disabled={isSending}
           type="submit"
           id='contactBtn'
           className="btn btn--primary contact__btn"
-          value="Send"
+          value={isSending ? 'Sending...':'Send'}
           />
         </form>
         <div className="contact__alternative">
