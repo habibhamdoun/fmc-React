@@ -18,6 +18,7 @@ const ContactUs = ({isMobile}) => {
   const [nameErrMsg, setNameErrMsg] = useState('');
   const [emailErrMsg, setEmailErrMsg] = useState('');
   const [messageErrMsg, setMessageErrMsg] = useState('');
+  const [isSending,setIsSending]=useState(false);
   const [modal,setModal]=useState(false);
     function toggleModal(){
         setModal(old => old ? false : true);
@@ -40,9 +41,10 @@ const ContactUs = ({isMobile}) => {
       setMessageErrMsg('Message is too long.')
     }
     else if(name.length > 20){
-      setNameErrMsg('Your name is not that long, change it bitch, or elseeeee, i will fuck your mom,mhuahahahah, that was my dumb cousin,no it was professor x, that was him again, Aany way fuck you.')
+      setNameErrMsg('Your name is too long.')
     }
     else {
+      setIsSending(true);
       emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_PUBLIC_KEY)
       .then((result) => {
         console.log(result.text);
@@ -64,7 +66,9 @@ const ContactUs = ({isMobile}) => {
         // }).catch((err)=>{
           //   console.log(err)
           // });
-        });
+        }).finally(()=>{
+          setIsSending(false)
+        })
     }
   };
 
@@ -124,6 +128,7 @@ const ContactUs = ({isMobile}) => {
             />
             {messageErrMsg && <p className='errMsg'>{messageErrMsg}</p>}
           <input
+          disabled={isSending}
           type="submit"
           id='contactBtn'
           className="btn btn--primary contact__btn"
