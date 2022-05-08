@@ -24,12 +24,12 @@ const Clients = ({ isMobile }) => {
       <Alert p={'Click on icons for details'
       } />
       <div className="clients__icons">
-        <a href="https://ae.elnlondon.com/" className="client__img" target="_blank"><img src={Client1} alt="" /></a>
-        <a href="http://kababji.com/#!/" className="client__img" target="_blank"><img src={Client2} alt="" /></a>
-        <a href="https://saudi-technical.com/" className="client__img" target="_blank"><img src={Client3} alt="" /></a>
-        <a href="https://www.jumlaty.app/" className="client__img" target="_blank"><img src={Client4} alt="" /></a>
-        <a href="https://www.sushiart.sa/" className="client__img" target="_blank"><img src={Client5} alt="" /></a>
-        <a href="https://www.woodenbakery.com/" className="client__img" target="_blank"><img src={Client6} alt="" /></a>
+        <a href="https://ae.elnlondon.com/" className="client__img" rel='noreferrer' target="_blank"><img src={Client1} alt="" /></a>
+        <a href="http://kababji.com/#!/" className="client__img" rel='noreferrer' target="_blank"><img src={Client2} alt="" /></a>
+        <a href="https://saudi-technical.com/" className="client__img" rel='noreferrer' target="_blank"><img src={Client3} alt="" /></a>
+        <a href="https://www.jumlaty.app/" className="client__img" rel='noreferrer' target="_blank"><img src={Client4} alt="" /></a>
+        <a href="https://www.sushiart.sa/" className="client__img" rel='noreferrer' target="_blank"><img src={Client5} alt="" /></a>
+        <a href="https://www.woodenbakery.com/" className="client__img" rel='noreferrer' target="_blank"><img src={Client6} alt="" /></a>
       </div>
     </motion.section>
   )
