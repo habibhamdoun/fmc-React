@@ -35,12 +35,13 @@ const WhyUs = ({isMobile}) => {
             
             </p>
     </div>
+    <Link to="/Contact-Us">
     <motion.button 
     className="btn btn--secondary whyUs__btn" 
     initial={{translateX:1000}}
     animate={{translateX:0}}
     transition={{duration:0.45}}
-    ><Link to="/Contact-Us">Contact Us</Link></motion.button>
+    >Contact Us</motion.button></Link>
     <motion.div 
     initial={{translateX:1000}}
     animate={{translateX:0}}

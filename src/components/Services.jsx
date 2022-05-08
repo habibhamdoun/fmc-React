@@ -23,7 +23,7 @@ const Services = ({isMobile}) => {
             </div>
         </div>
         <Alert 
-        p={isMobile ?'Click on icons for details' :"hover over icons for details"}
+        p={isMobile ?'Click on icons for details' :"Hover over icons for details"}
         />
     <div className="row row--3">
             <div className="flip-card">
