@@ -96,6 +96,7 @@ input{
   color: var(--color-secondary);
   border: 1px solid var(--color-primary);
   transform: skew(-10deg);
+  margin: 0;
 }
 @media screen and (min-width:768px) {
   .alert{
@@ -801,6 +802,8 @@ input{
   }
 }
 .row {
+  width: 100%;
+  height: 25%;
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
@@ -811,38 +814,35 @@ input{
 .row .flip-card {
   font-size: 1rem;
   margin: 1rem;
-  width: 10rem;
-}
-.row--3 {
-  width: 100%;
-  height: 25%;
+  flex-grow: 0;
 }
 .row .icon__header {
   font-size: 1.3rem;
 }
 .row .icon {
-  font-size: 3.5rem;
+  width: 10rem;
+}
+.row--1 {
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (min-width: 768px) {
   .row {
     justify-content: space-around;
   }
   .row .flip-card {
-    width: 13rem;
+    width: 15rem;
     height: 17rem;
     z-index: 1;
   }
   .row--2 {
     justify-content: space-evenly;
   }
-  .row--3 .flip-card {
-    width: 15%;
-  }
   .row .icon__header {
     font-size: 1.5rem;
   }
   .row .icon {
-    font-size: 5rem;
+    width: 5rem;
   }
 }
 @media screen and (max-width: 350px) {
@@ -850,18 +850,8 @@ input{
     font-size: 1rem;
   }
   .row .icon {
-    font-size: 3rem;
+    width: 3rem;
   }
-}
-.row--2 {
-  width: 100%;
-  height: 25%;
-}
-.row--1 {
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 25%;
 }
 /* contact */
 .contact {
@@ -1132,9 +1122,10 @@ input{
   .about .title ,
   .info  .title,
   .whyUs .title,
-  .clients .title,
-  .services .title{
+  .clients .title{
     padding-top: 6rem;
   }
-  
+  .services .title{
+    padding-top: 3rem;
+  }
 }
