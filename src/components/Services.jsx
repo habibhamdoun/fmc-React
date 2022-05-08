@@ -1,8 +1,10 @@
-import React from 'react';
+import React  from 'react';
 import { motion } from 'framer-motion';
+import Alert from './Alert';
 
 
 const Services = ({isMobile}) => {
+    
   return (
     <motion.section className="services" 
     initial={{translateY:1000}}
@@ -20,6 +22,9 @@ const Services = ({isMobile}) => {
                 <div className="line line--blue"></div>
             </div>
         </div>
+        <Alert 
+        p={isMobile ?'Click on icons for details' :"hover over icons for details"}
+        />
     <div className="row row--3">
             <div className="flip-card">
                 <div className="flip-card-inner">
