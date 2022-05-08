@@ -97,6 +97,7 @@ input{
   border: 1px solid var(--color-primary);
   transform: skew(-10deg);
   margin: 0;
+  z-index: 4;
 }
 @media screen and (min-width:768px) {
   .alert{
