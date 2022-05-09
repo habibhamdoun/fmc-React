@@ -38,6 +38,14 @@ html {
     }
     
   }
+.more__btn{
+  border: none;
+  display: inline-block;
+  background-color: transparent;
+  color: #ffffff;
+  text-decoration: underline;
+  
+}
 body {
   color: var(--color-content);
   font-size: 3.3rem;
@@ -806,12 +814,15 @@ input{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
 }
 .row .flip-card {
   font-size: 1rem;
   margin: 1rem;
   width: 10rem;
+}
+.row .flip-card-back p{
+  text-align: left;
+  font-size: 1.3rem;
 }
 .row--3 {
   width: 100%;
@@ -831,6 +842,10 @@ input{
     width: 13rem;
     height: 17rem;
     z-index: 1;
+  }
+  .row .flip-card-back p{
+    text-align: left;
+    font-size: 1.6rem;
   }
   .row--2 {
     justify-content: space-evenly;

@@ -1,10 +1,14 @@
-import React  from 'react';
+import React, { useState }  from 'react';
 import { motion } from 'framer-motion';
 import Alert from './Alert';
 
 
 const Services = ({isMobile}) => {
-    
+    const [more,setMore]=useState(false);
+    function toggleMore(){
+        setMore(!more)
+        console.log(more)
+    }
   return (
     <motion.section className="services" 
     initial={{translateY:1000}}
@@ -55,7 +59,8 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">Custom clearance</h4>
                     </div>
                     <div className="flip-card-back">
-                        <p>Customs clearance is a necessary procedure before products and shipments can be imported or exported internationally.</p>
+                        <p>{more ?"Customs clearance is a necessary procedure before products and shipments can be imported or exported internationally. " : "Customs clearance is a necessary procedure "} <a onClick={toggleMore} className='more__btn'>{more ? '...less':'...more'}</a></p>
+                        
                     </div>
                 </div>
             </div>
@@ -68,7 +73,7 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">pharma logistics</h4>
                     </div>
                     <div className="flip-card-back">
-                        <p>Pharmaceutical logistics is related to the handling, transport and chain management of multiple and varied products.</p>
+                        <p>{more ?"Pharmaceutical logistics is related to the handling, transport and chain management of multiple and varied products. " : "Pharmaceutical logistics is related to the handling, "} <a onClick={toggleMore} className='more__btn'>{more ? '...less':'...more'}</a></p>
                     </div>
                 </div>
             </div>
@@ -105,7 +110,8 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">DGR</h4>
                     </div>
                     <div className="flip-card-back">
-                        <p>Dangerous Goods Regulations manual used to make sure dangerous products are transported safely and efficiently.</p>
+                        <p>{more ?"Dangerous Goods Regulations manual used to make sure dangerous products are transported safely and efficiently. " : "Dangerous Goods Regulations manual "} <a onClick={toggleMore} className='more__btn'>{more ? '...less':'...more'}</a></p>
+                        
                     </div>
                 </div>
             </div>
@@ -116,7 +122,8 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">Warehousing & distribution</h4>
                     </div>
                     <div className="flip-card-back">
-                        <p>A warehouse is used for storing products while a distribution center, apart from storing products offers value-added services</p>
+                         <p>{more ?"A warehouse is used for storing products while a distribution center, apart from storing products offers value-added services " : "A warehouse is used for storing products while a distribution center "} <a onClick={toggleMore} className='more__btn'>{more ? '...less':'..more'}</a> </p>
+                        
                     </div>
                 </div>
             </div>
@@ -129,7 +136,8 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">cargo insurance</h4>
                     </div>
                     <div className="flip-card-back">
-                        <p>Cargo insurance is the method used in protecting shipments from physical damage or theft</p>
+                        <p>{more ?"Cargo insurance is the method used in protecting shipments from physical damage or theft " : "Cargo insurance is the method used in protecting shipments "} <a onClick={toggleMore} className='more__btn'>{more ? '...less':'..more'}</a> </p>
+                        
                     </div>
                 </div>
             </div>
@@ -140,7 +148,8 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">project cargo</h4>
                     </div>
                     <div className="flip-card-back">
-                        <p>Also known as project forwarding or project logistics, is the transportation of large, complex, or high-value pieces of equipment.</p>
+                        <p>{more ?"Also known as project forwarding or project logistics, is the transportation of large, complex, or high-value pieces of equipment. " : "Also known as project forwarding or project logistics "} <a onClick={toggleMore} className='more__btn'>{more ? '...less':'..more'}</a> </p>
+                        
                     </div>
                 </div>
             </div>
@@ -151,7 +160,7 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">break bulk & roro services</h4>
                     </div>
                     <div className="flip-card-back">
-                        <p>Breakbulk ocean shipping is a common method used to successfully transport cargo or goods that cannot fit in standard-size shipping containers or cargo bins.RO/RO(Roll On-Roll Off) is typically used when transporting breakbulk shipments. Most heavy breakbulk shipments use RO/RO and avoid fees</p>
+                        <p>{more ?"Breakbulk ocean shipping is a common method used to successfully transport cargo or goods that cannot fit in standard-size shipping containers or cargo bins.RO/RO(Roll On-Roll Off) is typically used when transporting breakbulk shipments. Most heavy breakbulk shipments use RO/RO and avoid fees " : "Breakbulk ocean shipping is a common method used to  transport cargo "} <a onClick={toggleMore} className='more__btn'>{more ? '...less':'..more'}</a> </p>
                     </div>
                 </div>
             </div>
