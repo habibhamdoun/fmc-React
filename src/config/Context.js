@@ -1,15 +1,8 @@
 import React from "react";
 import { auth } from '../firebase';
-import { 
-    createUserWithEmailAndPassword, 
-    onAuthStateChanged, 
-    signInWithEmailAndPassword, 
-    sendPasswordResetEmail, 
-    updatePassword, 
-    updateEmail 
-} from '@firebase/auth';
-import { collection, addDoc, deleteDoc, doc, getDoc, setDoc } from '@firebase/firestore';
-import { projectFireStore, projectStorage } from '../firebase';
+import { onAuthStateChanged, signInWithEmailAndPassword } from '@firebase/auth';
+import { collection, addDoc, deleteDoc, doc } from '@firebase/firestore';
+import { projectFireStore } from '../Firebase';
 import { Timestamp } from '@firebase/firestore';
 
 const AppContext = React.createContext();
@@ -22,29 +15,43 @@ export const AppContextProvider = ({ children }) => {
 
     const [currentUser, setCurrentUser] = React.useState(null)
 
-    async function signUp(email, password){
-        await createUserWithEmailAndPassword(auth, email, password);
-        await setDoc(doc(projectFireStore, 'users', auth.currentUser.uid), {
-            email: auth.currentUser.email,
-            username: auth.currentUser.email.split('@')[0]
-        })
-    }
-
-    async function signIn(email, password){
+    async function logIn(email, password){
         return signInWithEmailAndPassword(auth, email, password);
     }
 
-    function logout(){
+    async function logout(){
         return auth.signOut();
     }
 
-    // function postContent(posterId, content){
-    //     const collectionRef = collection(projectFireStore, 'posts');
-    //     return addDoc(collectionRef, {posterId: posterId, content: content, timeStamp: Timestamp.now(), likes: [], comments: []})
-    // }
+    async function order(location, companyName, email, name, PhoneNumber, additionalInfo){
+        const collectionRef = collection(projectFireStore, 'orders');
+        return addDoc(collectionRef, {
+            location, 
+            companyName, 
+            email, 
+            name, 
+            PhoneNumber, 
+            additionalInfo,
+            timeStamp: Timestamp.now(),
+        })
+    }
 
-    function deleteComment(id){
-        return deleteDoc(doc(projectFireStore,'comments',id));
+    async function deleteOrder(id){
+        await deleteDoc(doc(projectFireStore,'orders',id));
+    }
+
+    async function sendMessage(email, name, message){
+        const collectionRef = collection(projectFireStore, 'messages');
+        return addDoc(collectionRef, {
+            email,
+            name,
+            message,
+            timeStamp: Timestamp.now(),
+        })
+    }
+
+    async function deleteMessage(id){
+        await deleteDoc(doc(projectFireStore,'messages',id));
     }
     
     React.useEffect(()=>{
@@ -60,10 +67,12 @@ export const AppContextProvider = ({ children }) => {
     }, [])
 
     const value = {
-        signUp,
-        signIn,
+        logIn,
         logout,
-        deleteComment,
+        order,
+        deleteOrder,
+        sendMessage,
+        deleteMessage,
         currentUser
     }
 
