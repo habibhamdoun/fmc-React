@@ -9,6 +9,7 @@ import Clients from "./components/Clients";
 import ContactUs from "./components/ContactUs";
 import Home from "./components/Home";
 import { Routes, Route } from "react-router-dom";
+import { AppContextProvider } from "./config/Context";
 
 function App() {
   AOS.init();
@@ -23,18 +24,20 @@ function App() {
   }, []);
 
   return (
-    <div style={{ position: "relative" }}>
-      <Navbar isMobile={isMobile} />
-      <Routes>
-        <Route path="/" element={<Home isMobile={isMobile} />} />
-        <Route path="/Vision" element={<Vision isMobile={isMobile} />} />
-        <Route path="/Mission" element={<Mission isMobile={isMobile} />} />
-        <Route path="/Clients" element={<Clients isMobile={isMobile} />} />
-        <Route path="/Services" element={<Services isMobile={isMobile} />} />
-        <Route path="/Why-Us" element={<WhyUs isMobile={isMobile} />} />
-        <Route path="/Contact-Us" element={<ContactUs isMobile={isMobile} />} />
-      </Routes>
-    </div>
+    <AppContextProvider>
+      <div style={{ position: "relative" }}>
+        <Navbar isMobile={isMobile} />
+        <Routes>
+          <Route path="/" element={<Home isMobile={isMobile} />} />
+          <Route path="/Vision" element={<Vision isMobile={isMobile} />} />
+          <Route path="/Mission" element={<Mission isMobile={isMobile} />} />
+          <Route path="/Clients" element={<Clients isMobile={isMobile} />} />
+          <Route path="/Services" element={<Services isMobile={isMobile} />} />
+          <Route path="/Why-Us" element={<WhyUs isMobile={isMobile} />} />
+          <Route path="/Contact-Us" element={<ContactUs isMobile={isMobile} />} />
+        </Routes>
+      </div>
+    </AppContextProvider>
   );
 }
 
