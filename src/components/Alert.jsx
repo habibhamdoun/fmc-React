@@ -12,11 +12,11 @@ const Alert = ({p}) => {
     <motion.div 
         className='alert'
         initial={{
-            translateX:1000,
+            translateX:'100vw',
             skew:10
         }}
         animate={!alert?{
-            translateX:1000,
+            translateX:'100vw',
             skew:10
         }:{
             translateX:0,
