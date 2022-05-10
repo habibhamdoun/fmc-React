@@ -1169,3 +1169,35 @@ input{
   }
   
 }
+/* admin */
+.admin{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.admin__side{
+  width: 12%;
+  height: 25%;
+  margin: 1rem;
+  background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.admin__btn{
+  border: none;
+  margin: 0 0.5rem;
+  width: 100%;
+  padding: 0.5rem;
+}
+.admin__btn ::hover{
+  
+}
+.admin__table,
+.admin__table th ,
+.admin__table td 
+  {
+  border: 1px solid black;
+}

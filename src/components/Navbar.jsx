@@ -30,6 +30,7 @@ const Navbar = ({isMobile}) => {
         <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="./Services" >Services</NavLink></li>
         <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="./Why-Us" >Why Us</NavLink></li>
         <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="./Contact-Us" >Contact Us</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="./Admin" >Admin</NavLink></li>
     </ul>
 </motion.nav>
   )
