@@ -162,8 +162,7 @@ input{
   width: 30%;
   height: 100%;
   max-height: 15rem;
-  border: 1px solid #f1f1f1;
-  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px; 
   border-radius: 10px;
 }
 
