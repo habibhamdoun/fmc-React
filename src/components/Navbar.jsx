@@ -23,13 +23,13 @@ const Navbar = ({isMobile}) => {
         </div>
     </div>
     <ul className="list list--inline nav__list collapsible__content">
-        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> isMobile ? setIsOpen(old => old ? false : true) : ''}  to="./">Home</NavLink></li>
-        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> isMobile ? setIsOpen(old => old ? false : true) : ''}   to="./Vision"  >Vision</NavLink></li>
-        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> isMobile ? setIsOpen(old => old ? false : true) : ''}   to="./Mission"  >Mission</NavLink></li>
-        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> isMobile ? setIsOpen(old => old ? false : true) : ''}   to="./Clients"  >Clients</NavLink></li>
-        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> isMobile ? setIsOpen(old => old ? false : true) : ''}  to="./Services" >Services</NavLink></li>
-        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> isMobile ? setIsOpen(old => old ? false : true) : ''}   to="./Why-Us" >Why Us</NavLink></li>
-        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> isMobile ? setIsOpen(old => old ? false : true) : ''}  to="./Contact-Us" >Contact Us</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="./">Home</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="./Vision"  >Vision</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="./Mission"  >Mission</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="./Clients"  >Clients</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="./Services" >Services</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="./Why-Us" >Why Us</NavLink></li>
+        <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="./Contact-Us" >Contact Us</NavLink></li>
     </ul>
 </motion.nav>
   )
