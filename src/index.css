@@ -1201,3 +1201,11 @@ input{
   {
   border: 1px solid black;
 }
+
+
+/* login page */
+.login__page {
+  width: 100vw;
+  height: 100vh;
+  background: #313131;
+}

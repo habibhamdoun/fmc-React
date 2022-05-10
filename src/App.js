@@ -29,12 +29,13 @@ function App() {
         <Navbar isMobile={isMobile} />
         <Routes>
           <Route path="/" element={<Home isMobile={isMobile} />} />
-          <Route path="/Vision" element={<Vision isMobile={isMobile} />} />
-          <Route path="/Mission" element={<Mission isMobile={isMobile} />} />
-          <Route path="/Clients" element={<Clients isMobile={isMobile} />} />
-          <Route path="/Services" element={<Services isMobile={isMobile} />} />
-          <Route path="/Why-Us" element={<WhyUs isMobile={isMobile} />} />
-          <Route path="/Contact-Us" element={<ContactUs isMobile={isMobile} />} />
+          <Route path="/vision" element={<Vision isMobile={isMobile} />} />
+          <Route path="/mission" element={<Mission isMobile={isMobile} />} />
+          <Route path="/clients" element={<Clients isMobile={isMobile} />} />
+          <Route path="/services" element={<Services isMobile={isMobile} />} />
+          <Route path="/why-us" element={<WhyUs isMobile={isMobile} />} />
+          <Route path="/contact-us" element={<ContactUs isMobile={isMobile} />} />
+          <Route path="/login" element={<ContactUs isMobile={isMobile} />} />
         </Routes>
       </div>
     </AppContextProvider>

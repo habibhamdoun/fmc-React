@@ -5,24 +5,25 @@ import { motion } from 'framer-motion';
 
 const Mission = ({isMobile}) => {
   return (
-    <motion.section className="section" 
+    <motion.section 
+      className="section" 
       initial={isMobile ? '':{boxShadow:'0'}}
       animate={isMobile ? '':{boxShadow:"38px 38px 0px 1px rgb(211, 29, 35)"}}
       transition={{duration:0.4}}
     >
         <motion.div 
-        className="section__img" 
-        initial={isMobile ? 
-          {
-            boxShadow:'0',
-            translateY:-1000
-          }:{
-            translateY:-1000
+          className="section__img" 
+          initial={isMobile ? 
+            {
+              boxShadow:'0',
+              translateY:-1000
+            }:{
+              translateY:-1000
+            }
           }
-        }
-        animate={isMobile ? {boxShadow:"12px 12px 0px 1px rgb(211, 29, 35)",translateY:0}:{translateY:0}}
-        transition={{duration:0.4}}
-        ></motion.div>
+          animate={isMobile ? {boxShadow:"12px 12px 0px 1px rgb(211, 29, 35)",translateY:0}:{translateY:0}}
+          transition={{duration:0.4}}
+        />
         <motion.div 
         className="section__content"
         initial={{translateY:-1000}}
@@ -49,7 +50,9 @@ const Mission = ({isMobile}) => {
                 are adaptable to the new  
                 business trends.
                 </p>
-                 <Link to='/Clients'><button className='btn btn--secondary section__btn'>Our Clients</button></Link>
+                <Link to='/Clients'>
+                  <a className='btn btn--secondary section__btn'>Our Clients</a>
+                </Link>
         </motion.div>
     </motion.section>
   )
