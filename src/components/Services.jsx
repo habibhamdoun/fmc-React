@@ -4,11 +4,11 @@ import Alert from './Alert';
 
 
 const Services = ({isMobile}) => {
-    const [more,setMore]=useState(false);
-    function toggleMore(){
-        setMore(!more)
-        console.log(more)
-    }
+    const [more,setMore]=useState('0');
+    // function toggleMore(){
+    //     setMore(!more)
+    //     console.log(more)
+    // }
   return (
     <motion.section className="services" 
     initial={{translateY:1000}}
@@ -59,7 +59,9 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">Custom clearance</h4>
                     </div>
                     <div className="flip-card-back">
-                        <p>{more ?"Customs clearance is a necessary procedure before products and shipments can be imported or exported internationally. " : "Customs clearance is a necessary procedure "} <a onClick={toggleMore} className='more__btn'>{more ? '...less':'...more'}</a></p>
+                        <p>{more === '1' ?"Customs clearance is a necessary procedure before products and shipments can be imported or exported internationally. " : "Customs clearance is a necessary procedure "} <a onClick={()=>{
+                            more ==='1' ? setMore('0') : setMore('1')
+                        }} className='more__btn'>{more==='1' ? '...less':'...more'}</a></p>
                         
                     </div>
                 </div>
@@ -73,7 +75,9 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">pharma logistics</h4>
                     </div>
                     <div className="flip-card-back">
-                        <p>{more ?"Pharmaceutical logistics is related to the handling, transport and chain management of multiple and varied products. " : "Pharmaceutical logistics is related to the handling, "} <a onClick={toggleMore} className='more__btn'>{more ? '...less':'...more'}</a></p>
+                        <p>{more ==='2' ?"Pharmaceutical logistics is related to the handling, transport and chain management of multiple and varied products. " : "Pharmaceutical logistics is related to the handling, "} <a onClick={()=>{
+                            more ==='2' ? setMore('0') : setMore('2')
+                        }} className='more__btn'>{more==='2' ? '...less':'...more'}</a></p>
                     </div>
                 </div>
             </div>
@@ -110,7 +114,9 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">DGR</h4>
                     </div>
                     <div className="flip-card-back">
-                        <p>{more ?"Dangerous Goods Regulations manual used to make sure dangerous products are transported safely and efficiently. " : "Dangerous Goods Regulations manual "} <a onClick={toggleMore} className='more__btn'>{more ? '...less':'...more'}</a></p>
+                        <p>{more ==='3' ?"Dangerous Goods Regulations manual used to make sure dangerous products are transported safely and efficiently. " : "Dangerous Goods Regulations manual "} <a onClick={()=>{
+                            more ==='3' ? setMore('0') : setMore('3')
+                        }} className='more__btn'>{more==='3' ? '...less':'...more'}</a></p>
                         
                     </div>
                 </div>
@@ -122,7 +128,9 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">Warehousing & distribution</h4>
                     </div>
                     <div className="flip-card-back">
-                         <p>{more ?"A warehouse is used for storing products while a distribution center, apart from storing products offers value-added services " : "A warehouse is used for storing products while a distribution center "} <a onClick={toggleMore} className='more__btn'>{more ? '...less':'..more'}</a> </p>
+                         <p>{more ==='4' ?"A warehouse is used for storing products while a distribution center, apart from storing products offers value-added services " : "A warehouse is used for storing products while a distribution center "} <a onClick={()=>{
+                            more ==='4' ? setMore('0') : setMore('4')
+                        }} className='more__btn'>{more==='4' ? '...less':'...more'}</a></p>
                         
                     </div>
                 </div>
@@ -136,7 +144,9 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">cargo insurance</h4>
                     </div>
                     <div className="flip-card-back">
-                        <p>{more ?"Cargo insurance is the method used in protecting shipments from physical damage or theft " : "Cargo insurance is the method used in protecting shipments "} <a onClick={toggleMore} className='more__btn'>{more ? '...less':'..more'}</a> </p>
+                        <p>{more ==='5' ?"Cargo insurance is the method used in protecting shipments from physical damage or theft " : "Cargo insurance is the method used in protecting shipments "} <a onClick={()=>{
+                            more ==='5' ? setMore('0') : setMore('5')
+                        }} className='more__btn'>{more==='5' ? '...less':'...more'}</a></p>
                         
                     </div>
                 </div>
@@ -148,7 +158,9 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">project cargo</h4>
                     </div>
                     <div className="flip-card-back">
-                        <p>{more ?"Also known as project forwarding or project logistics, is the transportation of large, complex, or high-value pieces of equipment. " : "Also known as project forwarding or project logistics "} <a onClick={toggleMore} className='more__btn'>{more ? '...less':'..more'}</a> </p>
+                        <p>{more === '6' ?"Also known as project forwarding or project logistics, is the transportation of large, complex, or high-value pieces of equipment. " : "Also known as project forwarding or project logistics "} <a onClick={()=>{
+                            more ==='6' ? setMore('0') : setMore('6')
+                        }} className='more__btn'>{more==='6' ? '...less':'...more'}</a></p>
                         
                     </div>
                 </div>
@@ -160,7 +172,9 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">break bulk & roro services</h4>
                     </div>
                     <div className="flip-card-back">
-                        <p>{more ?"Breakbulk ocean shipping is a common method used to successfully transport cargo or goods that cannot fit in standard-size shipping containers or cargo bins.RO/RO(Roll On-Roll Off) is typically used when transporting breakbulk shipments. Most heavy breakbulk shipments use RO/RO and avoid fees " : "Breakbulk ocean shipping is a common method used to  transport cargo "} <a onClick={toggleMore} className='more__btn'>{more ? '...less':'..more'}</a> </p>
+                        <p>{more ==='7' ?"Breakbulk ocean shipping is a common method used to successfully transport cargo or goods that cannot fit in standard-size shipping containers or cargo bins.RO/RO(Roll On-Roll Off) is typically used when transporting breakbulk shipments. Most heavy breakbulk shipments use RO/RO and avoid fees " : "Breakbulk ocean shipping is a common method used to  transport cargo "} <a onClick={()=>{
+                            more ==='7' ? setMore('0') : setMore('7')
+                        }} className='more__btn'>{more==='7' ? '...less':'...more'}</a></p>
                     </div>
                 </div>
             </div>
