@@ -7,13 +7,13 @@ function About({isMobile}) {
   return (
     <section className="about grid grid--1x2" id="aboutUs">
       <div className="about__content" data-aos={isMobile ? '' :"fade-right"}>
+        <p className="about__text">
         <h3 className="about__title">
           <div className="title">
             <h3 className="title__header">About Us</h3>
             <div className="line line--blue"></div>
           </div>
         </h3>
-        <p className="about__text">
           FMC Is a fully integrated and specialized international logistics
           service provider with vast experience in freight forwarding custom
           clearance, warehousing, fulfillment and last mile and project cargo

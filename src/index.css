@@ -627,12 +627,24 @@ input{
   box-shadow: 11px 11px 0px 2px var(--color-primary);
 }
 .about__text {
-  padding-bottom: 2rem;
+  margin-bottom: 2rem;
   font-size: 2rem;
 }
 @media screen and (min-width: 768px) {
+  .about {
+    margin-block: 8rem;
+    height: 90vh;
+  }
+  .about__title{
+    margin: 0;
+    margin-bottom: 1rem;
+  }
   .about__title .title {
     text-align: left;
+  }
+  .about__text{
+    margin-top: 5rem;
+    align-self: flex-start;
   }
   .about__img {
     width: 80%;
@@ -642,10 +654,7 @@ input{
   }
   .about__btn {
     align-self: flex-start;
-  }
-  .about {
-    margin-block: 8rem;
-    height: 90vh;
+    margin-top: 1rem;
   }
 }
 @media screen and (min-width: 1024px) {
@@ -914,7 +923,7 @@ input{
   box-shadow:0 0 2px #000;
   -webkit-box-shadow: 0 0 2px #000;
   -moz-box-shadow: 0 0 2px #000;
-  -webkit-appearance: none;
+  -webkit-appearance: none ;
 }
 .contact__item:focus {
   outline: 0;
