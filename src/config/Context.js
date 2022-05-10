@@ -1,8 +1,8 @@
 import React from "react";
-import { auth } from '../firebase';
+import { auth } from './Firebase';
 import { onAuthStateChanged, signInWithEmailAndPassword } from '@firebase/auth';
 import { collection, addDoc, deleteDoc, doc } from '@firebase/firestore';
-import { projectFireStore } from '../Firebase';
+import { projectFireStore } from './Firebase';
 import { Timestamp } from '@firebase/firestore';
 
 const AppContext = React.createContext();
