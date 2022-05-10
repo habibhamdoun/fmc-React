@@ -1208,4 +1208,66 @@ input{
   width: 100vw;
   height: 100vh;
   background: #313131;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.login__content {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .login__content {
+    width: 330px;
+  }
+}
+
+.login__input {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+  background: #737373;
+  color: white;
+  padding: 0 10px;
+}
+
+.login__button {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  margin: 15px 0 0 0;
+  font-size: 1.8rem;
+  background: #d31d23;
+  color: white;
+}
+
+.login__button:active {
+  transform: scale(0.98);
+}
+
+.login__button:disabled {
+  opacity: 0.5;
+}
+
+.err__msg {  
+  width: 100%;
+  min-height: 40px;
+  border-radius: 4px;
+  border: none;
+  margin: 0 0 10px 0;
+  font-size: 1.8rem;
+  background: red;
+  color: white;
+  padding: 0 10px;
 }
