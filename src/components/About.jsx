@@ -24,7 +24,7 @@ function About({isMobile}) {
           along individual logistics services, namely transport solutions,
           storage, distribution logistics and out sourcing solutions.
         </p>
-        <Link to='/Vision'>
+        <Link to='/vision'>
           <a className="btn btn--outline btn--primary about__btn">
             Read More
           </a>

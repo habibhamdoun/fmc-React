@@ -21,8 +21,8 @@ const Vision = ({isMobile}) => {
     <div className="info__text">
         <p>Every customer is different, and every solution is unique.  FMC offers tailored solutions customized to meet the  specific needs and requirements of each customer.  Through our emphasis on precision, innovation and  continuous technological development, we are committed  to becoming industry pioneers in the MENA region.</p>
     </div>
-    <Link to='/Mission'>
-    <button className='btn btn--primary info__btn'>Our Mission</button>
+    <Link to='/mission'>
+      <a className='btn btn--primary info__btn'>Our Mission</a>
     </Link>
     </motion.section>
   )

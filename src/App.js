@@ -10,7 +10,9 @@ import ContactUs from "./components/ContactUs";
 import Home from "./components/Home";
 import { Routes, Route } from "react-router-dom";
 import { AppContextProvider } from "./config/Context";
+import LogInPage from "./components/LogInPage";
 import Admin from "./components/Admin";
+import Quote from "./components/Quote";
 
 function App() {
   AOS.init();
@@ -30,16 +32,18 @@ function App() {
         <Navbar isMobile={isMobile} />
         <Routes>
           <Route path="/" element={<Home isMobile={isMobile} />} />
-          <Route path="/Vision" element={<Vision isMobile={isMobile} />} />
-          <Route path="/Mission" element={<Mission isMobile={isMobile} />} />
-          <Route path="/Clients" element={<Clients isMobile={isMobile} />} />
-          <Route path="/Services" element={<Services isMobile={isMobile} />} />
-          <Route path="/Why-Us" element={<WhyUs isMobile={isMobile} />} />
+          <Route path="/vision" element={<Vision isMobile={isMobile} />} />
+          <Route path="/mission" element={<Mission isMobile={isMobile} />} />
+          <Route path="/clients" element={<Clients isMobile={isMobile} />} />
+          <Route path="/services" element={<Services isMobile={isMobile} />} />
+          <Route path="/why-us" element={<WhyUs isMobile={isMobile} />} />
           <Route
-            path="/Contact-Us"
+            path="/contact-us"
             element={<ContactUs isMobile={isMobile} />}
           />
-          <Route path="/Admin" element={<Admin isMobile={isMobile} />} />
+          <Route path="/login" element={<LogInPage isMobile={isMobile} />} />
+          <Route path="/admin" element={<Admin isMobile={isMobile} />} />
+          <Route path="/quote" element={<Quote isMobile={isMobile} />} />
         </Routes>
       </div>
     </AppContextProvider>
