@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 
 
-const Navbar = ({isMobile}) => {
+const Navbar = () => {
 
   const [isOpen, setIsOpen] = useState(false);
   

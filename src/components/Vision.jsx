@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 
-const Vision = ({isMobile}) => {
+const Vision = () => {
   return (
     <motion.section 
-    className="info" 
-    initial={{opacity:0}}
-    animate={{opacity:1}}
-    transition={{duration:0.3}}
+      className="info" 
+      initial={{opacity:0}}
+      animate={{opacity:1}}
+      transition={{duration:0.3}}
     >
     <div className=" title info__title">
         <div className="line line--blue">
