@@ -23,6 +23,9 @@ html {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+textarea{
+  resize: none;
+}
 /* alert */
 .alert{
     width: fit-content;
@@ -86,6 +89,7 @@ p {
 }
 input{
   font-size: 1.6rem;
+  outline: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -1172,28 +1176,57 @@ input{
 /* admin */
 .admin{
   height: 100vh;
+  padding-top: 4rem;
+}
+.admin__header{
+  width: 100%;
+  height: 5rem;
+  background-color: var(--color-primary);
+  text-align:center;
+  color:white;
+}
+.admin__content{
+  height: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
 }
 .admin__side{
   width: 12%;
-  height: 25%;
-  margin: 1rem;
+  height: 80%;
   background-color: var(--color-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin__section{
+  width:100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 .admin__btn{
+  text-align: center;
   border: none;
-  margin: 0 0.5rem;
-  width: 100%;
-  padding: 0.5rem;
+  margin: 1rem 0.5rem;
+  background-color: transparent;
+  color: white;
+  border-bottom: 1px solid white;
+  transition: width 0.6s;
 }
-.admin__btn ::hover{
-  
+.admin__btn:hover{
+  width: 100%;
+}
+.admin__table{
+  align-self: flex-start;
+  width: 100%;
+}
+.admin__table th{
+  font-size: 1.6rem;
+}
+.admin__table tr{
+  font-size: 1.2rem;
 }
 .admin__table,
 .admin__table th ,
@@ -1201,7 +1234,17 @@ input{
   {
   border: 1px solid black;
 }
-
+.logout__btn{
+  color: red;
+}
+@media screen and (min-width:768px) { 
+  .admin__table th{
+    font-size: 2rem;
+  }
+  .admin__table tr{
+    font-size: 1.6rem;
+  }
+}
 
 /* login page */
 .login__page {
@@ -1248,7 +1291,7 @@ input{
   border: none;
   margin: 15px 0 0 0;
   font-size: 1.8rem;
-  background: #d31d23;
+  background: var(--color-primary);
   color: white;
 }
 
@@ -1270,4 +1313,50 @@ input{
   background: red;
   color: white;
   padding: 0 10px;
+}
+/* quote */
+.quote{
+  height: 100vh;
+  width: 98vw;
+  padding: 4rem 0;
+  background-color: white;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.quote__field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.quote__field .label{
+  align-self: flex-start;
+  margin-top: 2rem;
+  margin-left: 0.7rem ;
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+  font-size: 2rem;
+}
+.quote__input{
+  border-radius: 5px;
+  border: 0;
+  width: 50vw;
+  padding: 1.5rem;
+  margin: 1rem;
+  color: #2c2e35;
+  box-shadow:0 0 2px #000;
+  -webkit-box-shadow: 0 0 2px #000;
+  -moz-box-shadow: 0 0 2px #000;
+  -webkit-appearance: none ;
+}
+.quote__textarea{
+  height: 20vh;
+}
+@media screen and (min-width:768px){
+  .quote__textarea{
+    height: 30vh;
+  }
 }

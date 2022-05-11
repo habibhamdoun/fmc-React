@@ -34,12 +34,14 @@ const LogInPage = () => {
                     value={email}
                     onChange={(e)=>setEmail(e.target.value)}
                     className='login__input'
+                    placeholder='Email...'
                 />
                 <input
                     type="password"
                     value={password}
                     onChange={(e)=>setPassword(e.target.value)}
                     className='login__input'
+                    placeholder='Password...'
                 />
                 <button
                     className='login__button'
