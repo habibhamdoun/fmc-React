@@ -10,6 +10,7 @@ import ContactUs from "./components/ContactUs";
 import Home from "./components/Home";
 import { Routes, Route } from "react-router-dom";
 import { AppContextProvider } from "./config/Context";
+import Admin from "./components/Admin";
 
 function App() {
   AOS.init();
@@ -34,7 +35,11 @@ function App() {
           <Route path="/Clients" element={<Clients isMobile={isMobile} />} />
           <Route path="/Services" element={<Services isMobile={isMobile} />} />
           <Route path="/Why-Us" element={<WhyUs isMobile={isMobile} />} />
-          <Route path="/Contact-Us" element={<ContactUs isMobile={isMobile} />} />
+          <Route
+            path="/Contact-Us"
+            element={<ContactUs isMobile={isMobile} />}
+          />
+          <Route path="/Admin" element={<Admin isMobile={isMobile} />} />
         </Routes>
       </div>
     </AppContextProvider>

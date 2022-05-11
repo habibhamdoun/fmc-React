@@ -1,6 +1,7 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 const Admin = () => {
+    const [content ,setContent]=useState('quote')
   return (
     <section className='admin'>
         <div className='admin__side'>
