@@ -1360,3 +1360,18 @@ input{
     height: 30vh;
   }
 }
+
+.messages{
+  background-color: #737373;
+  height: 80%;
+  width: 100%;
+}
+
+.message__btn {
+  background: none;
+  display: flex;
+  border: none;
+  flex-direction: column;
+  cursor: pointer;
+  border-bottom: 1px solid;
+}

@@ -5,39 +5,21 @@ import { useNavigate } from 'react-router-dom';
 
 const Admin = () => {
     const [display,setDisplay]=useState('quotes');
-    // hol henne el orders objects, el loading bisir false bas yousalo el data, shaklon hek bi koub: 
-    // docs = [
-    //  {
-    //     location: ..., 
-    //     companyName: ..., 
-    //     email: ..., 
-    //     name: ..., 
-    //     PhoneNumber: ..., 
-    //     additionalInfo: ...,
-    //     timeStamp: ...,
-    //  },
-    //  {
-    //     ...
-    //  },
-    //  ...
-    // ]
+    const [messageOpen, setMessageOpen] = useState('');
+
     const { docs, loading } = useFirestore('orders');
-
-    // hay same thing, bas el data chakla 8er: { email, name, message} kmn hay array of objects, ana 8ayyartella esma men docs la messages 3ashen ma ysir fi conflict 
     const { docs: messages, loading: messagesLoading } = useFirestore('messages');
-
-    // hay betkoun null eza ma fi user
-    const { currentUser} = useAppContext();
+    const { currentUser, logout } = useAppContext();
     const navigate = useNavigate();
-    const { logout } = useAppContext()
+
     React.useEffect(()=>{
         if(!currentUser) navigate('/login');
-    }, []);
+    }, [currentUser]);
+
     async function handleLogout(){
-        await logout;
-        
+        await logout();
     }
-    // eza ba3d ma fi data 7ottelle loading, bas ba3ed momkin ykoub ma fi data, so ma tensa t2ello eno ma fi data ena el arrays fadyin
+
     if(loading || messagesLoading){
         return(
             <div>
@@ -45,6 +27,7 @@ const Admin = () => {
             </div>
         )
     }
+
     return (
         <section className='admin'>
             <div className='admin__header'>
@@ -60,7 +43,7 @@ const Admin = () => {
                 </div>
                       {display === 'quotes' ?
                     <table className='admin__table'>
-                      <thead>
+                        <thead>
                             <th>Location</th>
                             <th>Company Name</th>
                             <th>Name</th>
@@ -68,35 +51,62 @@ const Admin = () => {
                             <th>Phone Number</th>
                             <th>Additional info</th>
                         </thead>
-                    {docs.map(doc=>{
-                            <tbody>
-                                <td>{doc.location}</td>
-                                <td>{doc.CompanyName}</td>
-                                <td>{doc.name}</td>
-                                <td>{doc.PhoneNumber}</td>
-                                <td>{doc.email}</td>
-                                <td>{doc.additionalInfo}</td>
-                            </tbody>
-
-                        })
-                    }
+                        <tbody>
+                            {docs.map(doc=>(
+                                <tr key={doc.id}>
+                                    <td>{doc.location}</td>
+                                    <td>{doc.CompanyName}</td>
+                                    <td>{doc.name}</td>
+                                    <td>{doc.email}</td>
+                                    <td>{doc.PhoneNumber}</td>
+                                    <td>{doc.additionalInfo}</td>
+                                </tr>
+                            ))}
+                        </tbody>
                     </table>
                     :
-                    <table className='admin__table'>
-                      <thead>
-                            <th>Email</th>
-                            <th>Name</th>
-                            <th>Messages</th>
-                        </thead>
-                    {messages.map(message=>{
-                            <tbody>
-                            <td>{message.email}</td>
-                            <td>{message.name}</td>
-                            <td>{message.message}</td>
-                        </tbody>
-                        })
-                    }
-                    </table>
+                    // <table className='admin__table'>
+                    //   <thead>
+                    //         <th>Email</th>
+                    //         <th>Name</th>
+                    //         <th>Messages</th>
+                    //     </thead>
+                    //     <tbody>
+                    // {messages.map(message=>(
+                    //         <tr key={message.id}>
+                    //             <td>{message.email}</td>
+                    //             <td>{message.name}</td>
+                    //             <td>{message.message}</td>
+                    //         </tr>
+                    //         ))
+                    //     }
+                    // </tbody>
+                    // </table>
+                    <div className='messages'>
+                        {messages.map(message=>(
+                            <div 
+                                className='message__btn'
+                                onClick={()=>setMessageOpen(old => old === message.id ? '' : message.id)}
+                            >
+                                <div style={{display: 'flex'}}>
+                                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                        <h3>Email: </h3>
+                                        <p>{message.email}</p>
+                                    </div>
+                                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                        <h3>Password: </h3>
+                                        <p>{message.name}</p>
+                                    </div>
+                                </div>
+                                {messageOpen === message.id && 
+                                    <div style={{display: 'flex', justifyContent: 'start', alignItems: 'center'}}>
+                                        <h3>message: </h3>
+                                        <p>{message.message}</p>
+                                    </div>
+                                }
+                            </div>
+                        ))}
+                    </div>
                 }           
             </div>
         </section>

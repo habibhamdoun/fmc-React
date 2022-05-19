@@ -5,22 +5,24 @@ import { motion } from 'framer-motion';
 
 
 const Quote = () => {
-    const { ordre } = useAppContext();
+    const { order } = useAppContext();
   const [location, setLocation] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
-  const [PhoneNumber, setNumber] = useState('');
+  const [PhoneNumber, setPhoneNumber] = useState('');
   const [additionalInfo, setInfo] = useState('');
   const [locationErrMsg, setLocationErrMsg] = useState('');
   const [nameErrMsg, setNameErrMsg] = useState('');
   const [emailErrMsg, setEmailErrMsg] = useState('');
   const [modal,setModal]=useState(false);
   const [isSending,setIsSending]=useState(false);
+
   function toggleModal(){
     setModal(old => old ? false : true);
   }
-  function sendOrdre(){
+
+  function handleClick(){
     setNameErrMsg('');
     setEmailErrMsg('');
     if(!email){
@@ -34,7 +36,7 @@ const Quote = () => {
     }
     else{
         setIsSending(true);
-        ordre(location, companyName,email,name, PhoneNumber,additionalInfo)
+        order(location, companyName,email,name, PhoneNumber,additionalInfo)
         .then(() => {
           setModal(true);
           setTimeout(()=>{
@@ -42,6 +44,10 @@ const Quote = () => {
           },3000)
           setName('');
           setEmail('');
+          setPhoneNumber('');
+          setInfo('');
+          setCompanyName('');
+          setLocation('');
         }, (error) => {
           console.log(error.text);
           }).finally(()=>{
@@ -67,26 +73,51 @@ const Quote = () => {
         )}
           <div className="title">
               <div className="line line--blue"></div>
-              <h2 className="title__header">Quote</h2>
+                <h2 className="title__header">Quote</h2>
               <div className="line line--blue"></div>
           </div>
           <div className="quote__field">
               <label className='label'>Location:</label>
-              <input value={location} onChange={(e)=>e.target.value} type="text" className='quote__input' />
+              <input 
+                value={location} 
+                onChange={(e)=>setLocation(e.target.value)} 
+                type="text" 
+                className='quote__input' 
+              />
               <label className='label'>Company Name (optional):</label>
-              <input value={companyName} onChange={(e)=>e.target.value} type="text" className='quote__input' />
+              <input 
+                value={companyName} 
+                onChange={(e)=>setCompanyName(e.target.value)} 
+                type="text" 
+                className='quote__input'
+              />
               <label className='label'>Email:</label>
-              <input value={email} onChange={(e)=>e.target.value} type="email" className='quote__input' />
+              <input 
+                value={email} 
+                onChange={(e)=>setEmail(e.target.value)} 
+                type="email" 
+                className='quote__input' 
+              />
               {emailErrMsg && <p className='errMsg'>{emailErrMsg}</p>}
               <label className='label'>Name:</label>
-              <input value={name} onChange={(e)=>e.target.value} type="text" className='quote__input' />
+              <input 
+                value={name} 
+                onChange={(e)=>setName(e.target.value)} 
+                type="text" 
+                className='quote__input' 
+              />
               {nameErrMsg && <p className='errMsg'>{nameErrMsg}</p>}
               <label className='label'>Phone Number (optional):</label>
-              <input value={PhoneNumber} onChange={(e)=>e.target.value} type="number" className='quote__input' />
+              <input 
+                value={PhoneNumber} 
+                onChange={(e)=>setPhoneNumber(e.target.value)} 
+                type="text" 
+                className='quote__input' 
+              />
               <label className='label'>Additional info(optional):</label>
-              <textarea value={additionalInfo} onChange={(e)=>e.target.value} type="text" className='quote__input quote__textarea' />
+              <textarea value={additionalInfo} onChange={(e)=>setInfo(e.target.value)} type="text" className='quote__input quote__textarea' />
           </div>
-          <button className='btn btn--secondary quote__btn' onClick={sendOrdre}>{isSending ? 'Sending...': 'Send Quote'}</button>
+          <button className='btn btn--secondary quote__btn' onClick={handleClick}>{isSending ? 'Sending...': 'Send Quote'}</button>
       </section>
   )
 }
