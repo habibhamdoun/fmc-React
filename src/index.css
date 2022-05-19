@@ -54,13 +54,14 @@ body {
   font-size: 3.3rem;
   line-height: 1.5;
   overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, serif;
 }
 /* fonts */
 h1,
 h2,
 h4 {
   font-weight: bold;
-  font-family: "Playfair Display", serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, serif;
 }
 
 h1 {
@@ -383,7 +384,8 @@ input{
   top:0%;
   z-index: 1;
   width: 100vw;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
+  background:transparent;
   box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
   -webkit-box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
   -moz-box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
@@ -395,10 +397,11 @@ input{
 
 .collapsible--expanded.nav {
   height: 100vh;
-  background-color: #ffffff;
+  background-color: var(--color-primary);
 }
 
 .nav__list {
+  padding-top: 10rem;
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -412,20 +415,26 @@ input{
   justify-content: space-between;
 }
 
+.nav__name{
+  color:white;
+  align-self: center;
+  margin: 1rem;
+}
 .nav__item {
-  margin-bottom: 1rem;
+  margin-bottom: 0.7rem;
+  padding: 1rem 0;
 }
 .nav__item .active{
-  color: var(--color-secondary);
+  color: white;
+  border-bottom: 1px solid var(--color-secondary);
 }
 .nav__item .inactive{
-  color: var(--color-primary);
+  color: white;
 }
 .nav__item a {
   font-size:2.5rem ;
   text-decoration: none;
-  color: var(--color-primary);
-  border-bottom: 1px solid var(--color-secondary);
+  padding: 0.5rem 0.3rem;
 }
 
 .nav__brand {
@@ -439,6 +448,9 @@ input{
   width: 10%;
   height:40%;
 }
+.nav .collapsible__toggle{
+  fill: white;
+}
 @media screen and (max-width:450px) {
   .nav__collapsible__container .collapsible__toggle{
     height: 100%;
@@ -447,30 +459,32 @@ input{
 @media screen and (min-width: 768px) {
   .nav {
     position: fixed;
-    background-color: #ffffff80;
-    backdrop-filter: blur(5px);
+    /* background-color: #ffffff20; */
+    background: transparent;
+    /* backdrop-filter: blur(5px); */
+    box-shadow: none;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     height: 6.5rem;
   }
-
   .nav__collapsible__container {
     display: none;
   }
-
+  
   .nav__list {
+    padding-top: 0;
     display: flex;
     flex-direction: row;
     flex-grow: 0;
     font-size: 2.2rem;
     opacity: 1;
   }
-
+  
   .nav__item :hover {
-    color: var(--color-secondary);
+    color: #ffffffb6;
   }
-
+  
   .nav__item {
     margin: 0 0 0 3rem;
     margin-right: 1rem;
@@ -481,8 +495,12 @@ input{
     border: 0;
     white-space: nowrap;
     transition: color 0.4s;
+    color: white;
   }
-
+  .nav__item .active{
+    color: white;
+    border-bottom: 1px solid rgba(255,255,255,.3);
+  }
   .nav__brand {
     padding-top: 1rem;
     height: 90%;
@@ -500,7 +518,6 @@ input{
   height: 95vh;
   width: 100vw;
 }
-
 .hero__content {
   position: absolute;
   top: 0;
@@ -522,7 +539,8 @@ input{
 }
 
 .hero__image {
-  background: url(./images/hero-bg-mobile.webp);
+  /* background: url(./images/hero-bg-mobile.webp); */
+  background: url(./images/fmc-logo-bg.webp);
   height: 100%;
   width: 100vw;
   background-size: cover;
@@ -536,7 +554,7 @@ input{
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
-  color: var(--color-primary);
+  color: white;
   text-align: center;
 }
 
@@ -577,6 +595,19 @@ input{
   padding-bottom: 1rem;
 }
 
+.hero__image::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: linear-gradient(to bottom,rgba(0,0,0,.3) 0,rgba(0,0,0,.5) 100%);
+  background-repeat: repeat-x;
+  opacity: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 @keyframes jumpingArrow {
   0% {
     transform: translateY(20px);
@@ -589,8 +620,12 @@ input{
   .hero{
     height: 100vh;
   }
+  .hero__header{
+    width: 100%;
+    font-size: 9rem;
+  }
   .hero__image {
-    background: url(./images/hero-image-blur.webp);
+    position: absolute;
     background-size: cover;
     background-position: center;
     height: 100%;
