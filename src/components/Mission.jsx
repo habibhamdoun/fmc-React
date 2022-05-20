@@ -50,9 +50,6 @@ const Mission = ({isMobile}) => {
                 are adaptable to the new  
                 business trends.
                 </p>
-                <Link to='/Clients'>
-                  <a className='btn btn--secondary section__btn'>Our Clients</a>
-                </Link>
         </motion.div>
     </motion.section>
   )
