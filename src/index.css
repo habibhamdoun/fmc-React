@@ -303,6 +303,7 @@ input{
 
 /* title */
 .title {
+  padding-top: 1rem;
   text-align: center;
   margin: 0%;
   width: fit-content;
@@ -325,7 +326,7 @@ input{
   .line {
     width: 4rem;
     height: 0;
-    border: 3px solid var(--color-primary);
+    border: 3px solid var(--color-secondary);
     margin: 5px 3px;
     display: inline-block;
   }
@@ -397,8 +398,7 @@ input{
 }
 
 .collapsible--expanded.nav {
-  height: fit-content;
-  max-height: 100vh;
+  height: 100vh;
   background-color: var(--color-primary);
 }
 
@@ -812,13 +812,15 @@ input{
   width: 100%;
 }
 .client__img:hover .client__content__item{
-  font-size: 1.6rem;
   opacity: 1;
+  font-size: 1.6rem;
 }
 .client__img:hover .client__content__title{
   font-size: 1.8rem;
 }
 .client__content{
+  height:100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
