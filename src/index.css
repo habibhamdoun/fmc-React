@@ -795,6 +795,7 @@ input{
 }
 .client__img:hover{
   transform: scale(1.3);
+  opacity: 0.8;
 }
 .client__img {
   width: 20rem;
@@ -832,15 +833,17 @@ input{
   font-size 0.3s;
 }
 .client__content__item{
-  display: flex;
-  align-items: center;
   font-size: 0;
   opacity: 0;
   transition: font-size 0.3s,
   transform 0.4s;
   text-decoration: none;
-  fill: var(--color-primary);
   color: var(--color-primary);
+}
+.client__content__icon{
+  width: 2rem;
+  height: 2rem;
+  fill: var(--color-primary);
 }
 .client__content__item:hover{
   transform: scale(1.3);
