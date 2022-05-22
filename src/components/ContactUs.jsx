@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useAppContext } from '../config/Context';
 
-const ContactUs = () => {
+const ContactUs = ({isEnglish}) => {
   const form = useRef();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');

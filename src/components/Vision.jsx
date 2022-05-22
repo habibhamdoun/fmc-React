@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 
-const Vision = () => {
+const Vision = ({isEnglish}) => {
   return (
     <motion.section 
       className="info" 

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import Alert from './Alert';
 
 
-const Services = ({isMobile}) => {
+const Services = ({isMobile,isEnglish}) => {
     const [more,setMore]=useState('0');
     // function toggleMore(){
     //     setMore(!more)

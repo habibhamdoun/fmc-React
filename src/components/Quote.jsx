@@ -56,7 +56,11 @@ const Quote = () => {
     }
   }
   return (
-      <section className='quote'>
+      <motion.section className='quote'
+      initial={{translateY:1000}}
+      animate={{translateY:0}}
+      transition={{duration:0.4}}
+        >
           {modal && (
           <div onClick={toggleModal} className="modal"
           >
@@ -118,7 +122,7 @@ const Quote = () => {
               <textarea value={additionalInfo} onChange={(e)=>setInfo(e.target.value)} type="text" className='quote__input quote__textarea' />
           </div>
           <button className='btn btn--secondary quote__btn' onClick={handleClick}>{isSending ? 'Sending...': 'Send Quote'}</button>
-      </section>
+      </motion.section>
   )
 }
 

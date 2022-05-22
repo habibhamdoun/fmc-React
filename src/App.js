@@ -16,7 +16,8 @@ import Quote from "./components/Quote";
 
 function App() {
   AOS.init();
-
+  const [isOpen, setIsOpen] = useState(false);
+  const [isEnglish, setIsEnglish] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -29,14 +30,32 @@ function App() {
   return (
     <AppContextProvider>
       <div style={{ position: "relative" }}>
-        <Navbar isMobile={isMobile} />
+        <Navbar isMobile={isMobile} isEnglish={isEnglish} />
         <Routes>
-          <Route path="/" element={<Home isMobile={isMobile} />} />
-          <Route path="/vision" element={<Vision isMobile={isMobile} />} />
-          <Route path="/mission" element={<Mission isMobile={isMobile} />} />
-          <Route path="/clients" element={<Clients isMobile={isMobile} />} />
-          <Route path="/services" element={<Services isMobile={isMobile} />} />
-          <Route path="/why-us" element={<WhyUs isMobile={isMobile} />} />
+          <Route
+            path="/"
+            element={<Home isMobile={isMobile} isEnglish={isEnglish} />}
+          />
+          <Route
+            path="/vision"
+            element={<Vision isMobile={isMobile} isEnglish={isEnglish} />}
+          />
+          <Route
+            path="/mission"
+            element={<Mission isMobile={isMobile} isEnglish={isEnglish} />}
+          />
+          <Route
+            path="/clients"
+            element={<Clients isMobile={isMobile} isEnglish={isEnglish} />}
+          />
+          <Route
+            path="/services"
+            element={<Services isMobile={isMobile} isEnglish={isEnglish} />}
+          />
+          <Route
+            path="/why-us"
+            element={<WhyUs isMobile={isMobile} isEnglish={isEnglish} />}
+          />
           <Route
             path="/contact-us"
             element={<ContactUs isMobile={isMobile} />}

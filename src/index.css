@@ -258,12 +258,12 @@ input {
 .btn--primary:hover {
   color: white;
   background-color: var(--color-primary);
-  border: 2px solid var(--color-primary);
+  border: 2px solid white;
 }
 .btn--secondary:hover {
   color: white;
   background-color: var(--color-secondary);
-  border: 2px solid var(--color-secondary);
+  border: 2px solid white;
 }
 .btn--primary:hover a {
   color: white;
@@ -1078,7 +1078,8 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  height: 100vh;
   max-height: fit-content;
 }
 .aboutUs__card__container{
@@ -1091,9 +1092,6 @@ input {
   width: fit-content;
   max-width: 25rem;
   background-color: white;
-  /* box-shadow: 10px 10px 0px 4px var(--color-secondary);
-  -webkit-box-shadow: 10px 10px 0px 4px var(--color-secondary);
-  -moz-box-shadow: 10px 10px 0px 4px var(--color-secondary); */
   border-bottom: 10px solid var(--color-secondary);
   display: flex;
   flex-direction: column;
@@ -1113,6 +1111,9 @@ input {
 .aboutUs__text{
   padding: 0.8rem;
   color: var(--color-primary);
+}
+.aboutUs__btn{
+  margin: 2rem 0;
 }
 @media screen and (min-width:768px) { 
   .aboutUs__card__container{
@@ -1493,4 +1494,16 @@ input {
   flex-direction: column;
   cursor: pointer;
   border-bottom: 1px solid;
+}
+/* language */
+.language__input{
+  background: transparent;
+  color: white;
+  border:none;
+}
+.language__input option{
+  color:#000
+}
+.arabic{
+  text-align: right;
 }

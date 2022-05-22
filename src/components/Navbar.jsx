@@ -1,15 +1,10 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
-import Image from "../images/logo-fmc-removebg-preview.webp";
 import { motion } from 'framer-motion';
 
-
-
 const Navbar = () => {
-
+  const [isEnglish, setIsEnglish] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
-  
-  
   return (
     <motion.nav 
       className={isOpen ? "nav collapsible collapsible--expanded" : "nav collapsible"} 
@@ -17,7 +12,6 @@ const Navbar = () => {
       animate={{translateY:0}}
     >
     <div className="nav__brand__container">
-      {/* <img src={Image} className="nav__brand" alt="" /> */}
       <h3 className='nav__name'>FMC</h3>
       <div onClick={()=>setIsOpen(old => old ? false : true)} className="nav__collapsible__container">
         <svg xmlns="http://www.w3.org/2000/svg" className="collapsible__toggle" viewBox="0 0 448 512">
@@ -33,7 +27,12 @@ const Navbar = () => {
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/why-us" >Why Us</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/contact-us" >Contact Us</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/quote" >Quote</NavLink></li>
+      <select name="language"  className='language__input'>
+        <option value="EN" onChange={()=>isEnglish ? setIsEnglish(false) : setIsEnglish(true)}> <span className='fi fi-gb'></span> EN</option>
+        <option value="AR" onChange={()=>isEnglish ? setIsEnglish(false) : setIsEnglish(true)}> <span className='fi fi-sa'></span>AR</option>
+      </select>
     </ul>
+
 </motion.nav>
   )
 }
