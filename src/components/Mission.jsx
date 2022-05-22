@@ -8,7 +8,7 @@ const Mission = ({isMobile}) => {
     <motion.section 
       className="section" 
       initial={isMobile ? '':{boxShadow:'0'}}
-      animate={isMobile ? '':{boxShadow:"38px 38px 0px 1px rgb(211, 29, 35)"}}
+      animate={isMobile ? '':{boxShadow:"9px 5px 0px 5px rgb(211, 29, 35)"}}
       transition={{duration:0.4}}
     >
         <motion.div 

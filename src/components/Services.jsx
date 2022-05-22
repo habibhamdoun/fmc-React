@@ -128,7 +128,7 @@ const Services = ({isMobile}) => {
                         <h4 className="icon__header">Warehousing & distribution</h4>
                     </div>
                     <div className="flip-card-back">
-                         <p>{more ==='4' ?"A warehouse is used for storing products while a distribution center, apart from storing products offers value-added services " : "A warehouse is used for storing products while a distribution center "} <a onClick={()=>{
+                         <p>{more ==='4' ?"A warehouse is used for storing products while a distribution center, apart from storing products offers value-added services " : "A warehouse is used for storing products "} <a onClick={()=>{
                             more ==='4' ? setMore('0') : setMore('4')
                         }} className='more__btn'>{more==='4' ? '...less':'...more'}</a></p>
                         
