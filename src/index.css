@@ -1,13 +1,10 @@
 html {
   font-size: 62.5%;
   height: fit-content;
-}
-@media screen and (max-width:400px) {
-  html{
-    overflow-x: hidden;
+  overflow-x: hidden;
   }  
     
-}
+
 ::placeholder {
   color: #cdcbd7;
   opacity: 0.6;
@@ -519,8 +516,33 @@ input{
 /* hero */
 .hero {
   position: relative;
-  height: 95vh;
+  height: 100vh;
   width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero__heading{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero__header {
+  font-size: 4rem;
+  margin: 0;
+  color: white;
+  text-align: center;
+}
+.hero__quote{
+  color: white;
+  font-family: 'Spirax', cursive;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 2rem;
+  text-align: center;
+  max-width: 300px;
 }
 .hero__content {
   position: absolute;
@@ -529,19 +551,9 @@ input{
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   height: 100%;
 }
-
-.hero a {
-  color: var(--color-primary);
-}
-
-.hero a:hover {
-  color: var(--color-secondary);
-}
-
 .hero__image {
   background: url(./images/fmc-logo-bg.webp);
   height: 100%;
@@ -549,42 +561,13 @@ input{
   background-size: cover;
   background-position: center;
 }
-
-.hero__header {
-  font-size: 4rem;
-  position: absolute;
-  top: 43%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  color: white;
-  text-align: center;
-}
-
-.hero__btn {
-  padding: 2rem 5rem;
-}
-
 .hero__toggle {
+  position: absolute;
+  bottom: 0%;
   display: flex;
-  flex-direction: column;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero__toggle > p {
-  margin: 0;
-  color: white;
-}
-.hero__link{
-  color: white;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-}
-.hero__link >p{
-  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 .hero__arrow {
   fill: white;
@@ -627,7 +610,11 @@ input{
     width: 100%;
     font-size: 9rem;
   }
+  .hero__quote{
+    max-width: 500px;
+  }
   .hero__image {
+    background-image: url(./images/hero-test.webp);
     position: absolute;
     background-size: cover;
     background-position: center;
@@ -782,6 +769,7 @@ input{
 }
 /* clients */
 .clients{
+    overflow-x:hidden;
     display: flex;
     flex-direction: column;
     padding-bottom: 2rem;
@@ -868,6 +856,7 @@ input{
 }
 /* services */
 .services {
+  overflow-x:hidden;
   height: 100vh;
   width: 100vw;
   padding-bottom: 2rem;
