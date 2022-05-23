@@ -1,9 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from "react-i18next";
+
 
 
 const Vision = () => {
+  const { t, i18n }=useTranslation('translation');
   return (
     <motion.section 
       className="info" 
@@ -14,15 +17,15 @@ const Vision = () => {
     <div className=" title info__title">
         <div className="line line--blue">
         </div>
-        <h1 className="title__header">Our Vision</h1>
+        <h1 className="title__header">{t("visionTitle")}</h1>
         <div className="line line--blue">
         </div>
     </div>
     <div className="info__text">
-        <p>Every customer is different, and every solution is unique.  FMC offers tailored solutions customized to meet the  specific needs and requirements of each customer.  Through our emphasis on precision, innovation and  continuous technological development, we are committed  to becoming industry pioneers in the MENA region.</p>
+        <p>{t("visionText")}</p>
     </div>
     <Link to='/mission'>
-      <a className='btn btn--primary info__btn'>Our Mission</a>
+      <a className='btn btn--primary info__btn'>{t("visionBtn")}</a>
     </Link>
     </motion.section>
   )

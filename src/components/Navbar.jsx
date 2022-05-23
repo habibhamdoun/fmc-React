@@ -2,12 +2,23 @@ import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { motion } from 'framer-motion';
 import i18n from '../i18n';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
+  const {t,i18n}=useTranslation('translation');
   const [isOpen, setIsOpen] = useState(false);
-  const onChange=(event)=>{
-    i18n.changeLanguage(event.target.value)
-  }
+  const [buttontext ,setButtonText]=useState('EN');
+  function handleClick() {
+    if(i18n.language=='en'){
+      i18n.changeLanguage('ar');
+      setButtonText('ع');
+    } 
+      else{
+        i18n.changeLanguage('en');
+        setButtonText('EN');
+      }
+    }
+  
   return (
     <motion.nav 
       className={isOpen ? "nav collapsible collapsible--expanded" : "nav collapsible"} 
@@ -22,18 +33,15 @@ const Navbar = () => {
       </div>
     </div>
     <ul className="list list--inline nav__list collapsible__content">
-      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/">Home</NavLink></li>
-      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/vision"  >Vision</NavLink></li>
-      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/mission"  >Mission</NavLink></li>
-      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/clients"  >Clients</NavLink></li>
-      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/services" >Services</NavLink></li>
-      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/why-us" >Why Us</NavLink></li>
-      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/contact-us" >Contact Us</NavLink></li>
-      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/quote" >Quote</NavLink></li>
-      <select name="language"  className='language__input'>
-        <option value="en"> <span className='fi fi-gb'></span> EN</option>
-        <option value="ar"> <span className='fi fi-sa'></span>AR</option>
-      </select>
+      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/">{t('home')}</NavLink></li>
+      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/vision"  >{t("vision")}</NavLink></li>
+      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/mission"  >{t("mission")}</NavLink></li>
+      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/clients"  >{t("clients")}</NavLink></li>
+      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/services" >{t("services")}</NavLink></li>
+      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/why-us" >{t("whyUs")}</NavLink></li>
+      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/contact-us" >{t('contactUs')}</NavLink></li>
+      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/quote" >{t('quote')}</NavLink></li>
+      <button className='language__input' onClick={handleClick}>{buttontext}</button>
     </ul>
 
 </motion.nav>
