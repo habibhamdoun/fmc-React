@@ -124,7 +124,7 @@ const Quote = () => {
               <label className='label'>{t("quoteAdditionalInfo")}</label>
               <textarea value={additionalInfo} onChange={(e)=>setInfo(e.target.value)} type="text" className='quote__input quote__textarea' />
           </div>
-          <button className='btn btn--secondary quote__btn' onClick={handleClick}>{isSending ? 'Sending...': 'Send Quote'}</button>
+          <button className='btn btn--secondary quote__btn' onClick={handleClick}>{isSending ? <span>{t('quoteBtnSending')}</span>: <span>{t('quoteBtn')}</span>}</button>
       </motion.section>
   )
 }

@@ -25,7 +25,7 @@ const Clients = ({isMobile}) => {
         </div>
       </h1>
       <Alert 
-        p={isMobile ?'Click on icons for details' :"Hover over icons for details"}
+        p={isMobile ?<span>{t('alertMsgMobile')}</span> :<span>{t('alertMsg')}</span>}
         />
       <div className="clients__icons">
         <div className="client__img">

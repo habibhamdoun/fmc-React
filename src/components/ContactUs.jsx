@@ -115,13 +115,12 @@ const ContactUs = () => {
             className="contact__item contact__message"
             />
             {messageErrMsg && <p className='errMsg'>{messageErrMsg}</p>}
-          <input
+            <button
           disabled={isSending}
           type="submit"
           id='contactBtn'
           className="btn btn--primary contact__btn"
-          value={isSending ? 'Sending...':'Send'}
-          />
+          >{isSending ? <span>{t('contactBtnSending')}</span>:<span>{t('contactBtn')}</span>}</button>
         </form>
         <div className="contact__alternative">
           <ul className="list list--inline">
