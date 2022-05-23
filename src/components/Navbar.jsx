@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { motion } from 'framer-motion';
+import i18n from '../i18n';
 
 const Navbar = () => {
-  const [isEnglish, setIsEnglish] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
+  const onChange=(event)=>{
+    i18n.changeLanguage(event.target.value)
+  }
   return (
     <motion.nav 
       className={isOpen ? "nav collapsible collapsible--expanded" : "nav collapsible"} 
@@ -28,8 +31,8 @@ const Navbar = () => {
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/contact-us" >Contact Us</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/quote" >Quote</NavLink></li>
       <select name="language"  className='language__input'>
-        <option value="EN" onChange={()=>isEnglish ? setIsEnglish(false) : setIsEnglish(true)}> <span className='fi fi-gb'></span> EN</option>
-        <option value="AR" onChange={()=>isEnglish ? setIsEnglish(false) : setIsEnglish(true)}> <span className='fi fi-sa'></span>AR</option>
+        <option value="en"> <span className='fi fi-gb'></span> EN</option>
+        <option value="ar"> <span className='fi fi-sa'></span>AR</option>
       </select>
     </ul>
 

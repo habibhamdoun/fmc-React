@@ -8,7 +8,7 @@ import Client6 from "../images/client-6-removebg-preview.webp"
 import Alert from './Alert'
 import { motion } from 'framer-motion';
 
-const Clients = ({isMobile , isEnglish}) => {
+const Clients = ({isMobile}) => {
   return (
     <motion.section className="clients"
       initial={{ scale: 2, opacity: 0 }}

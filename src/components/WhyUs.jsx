@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion';
 
 
-const WhyUs = ({isEnglish}) => {
+const WhyUs = () => {
   return (
     <motion.section 
       initial={{translateX:1000}}

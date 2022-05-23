@@ -5,6 +5,7 @@ import "./normalize.css";
 import App from "./App";
 import "aos/dist/aos.css"; // You can also use <link> for styles
 import { BrowserRouter } from "react-router-dom";
+import "./i18n";
 // ..
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 
 
-const Mission = ({isMobile,isEnglish}) => {
+const Mission = ({isMobile}) => {
   return (
     <motion.section 
       className="section" 
