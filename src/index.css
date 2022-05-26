@@ -1172,7 +1172,6 @@ input {
 }
 .section__btn {
   margin: 2rem 0;
-  align-self: center;
 }
 @media screen and (min-width: 768px) {
   .section {
@@ -1181,7 +1180,7 @@ input {
     justify-content: center;
     align-items: flex-end;
     width: 85vw;
-    height: 85vh;
+    height: fit-content;
     -moz-box-shadow: 9px 5px 0px 5px var(--color-secondary);
     -webkit-box-shadow: 9px 5px 0px 5px var(--color-secondary);
     box-shadow: 9px 5px 0px 5px var(--color-secondary);
@@ -1198,6 +1197,8 @@ input {
     border: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
+  }
+  .section__btn{
   }
 }
 .current-tab a {
@@ -1453,6 +1454,7 @@ input {
   background: transparent;
   color: white;
   border:none;
+  padding: 0%;
 }
 .language__input option{
   color:#000

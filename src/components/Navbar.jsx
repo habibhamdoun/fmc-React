@@ -41,7 +41,7 @@ const Navbar = () => {
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/why-us" >{t("whyUs")}</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/contact-us" >{t('contactUs')}</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/quote" >{t('quote')}</NavLink></li>
-      <button className='language__input' onClick={handleClick}>{buttontext}</button>
+      <button className='language__input nav__item' onClick={handleClick}>{buttontext}</button>
     </ul>
 
 </motion.nav>
