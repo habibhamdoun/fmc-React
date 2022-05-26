@@ -1092,6 +1092,9 @@ input {
   align-items: flex-start;
   justify-content: flex-start;
 }
+.whyUs__header--arabic{
+  align-items: flex-end;
+}
 .whyUs__text {
   font-size: 2.2rem;
   color: white;
@@ -1104,6 +1107,9 @@ input {
 @media screen and (min-width: 768px) {
   .whyUs {
     align-items: flex-start;
+  }
+  .whyUs--arabic{
+    align-items: flex-end;
   }
   .whyUs__header {
     margin: 2rem;
@@ -1122,6 +1128,11 @@ input {
     -moz-box-shadow: 23px 23px 0px 2px var(--color-secondary);
     -webkit-box-shadow: 23px 23px 0px 2px var(--color-secondary);
     box-shadow: 23px 23px 0px 2px var(--color-secondary);
+  }
+  .whyUs__img--arabic{
+    box-shadow: -23px 23px 0px 2px var(--color-secondary);
+    margin-right: 4rem;
+    align-self: flex-end;
   }
   .whyUs__btn {
     width: fit-content;
@@ -1447,5 +1458,6 @@ input {
   color:#000
 }
 .arabic{
+  direction: rtl;
   text-align: right;
 }
