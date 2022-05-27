@@ -1174,6 +1174,9 @@ input {
 .section__btn {
   margin: 2rem 0;
 }
+.section__title--arabic{
+  align-self: flex-end;
+}
 @media screen and (min-width: 768px) {
   .section {
     display: flex;
@@ -1185,9 +1188,6 @@ input {
     -moz-box-shadow: 9px 5px 0px 5px var(--color-secondary);
     -webkit-box-shadow: 9px 5px 0px 5px var(--color-secondary);
     box-shadow: 9px 5px 0px 5px var(--color-secondary);
-  }
-  .section__title--arabic{
-    align-self: flex-end;
   }
   .section__content {
     width: 75%;
@@ -1473,9 +1473,4 @@ input {
   margin-left: 0;
   margin-right: 0.7rem;
   align-self: flex-end;
-}
-@media screen and (max-width:768px){
-  .arabic{
-    font-size: 0.9rem;
-  }
 }
