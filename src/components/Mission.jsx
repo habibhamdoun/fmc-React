@@ -32,11 +32,12 @@ const Mission = ({isMobile}) => {
         animate={{translateY:0}}
         transition={{duration:0.4}}
         >
-            <div className="title">
+            <div className={i18n.language=='ar'?"title section__title--arabic":"title"}>
+                {i18n.language=='ar'&&<div className="line line--blue"></div>}
                 <h2 className="title__header">{t('missionTitle')}</h2>
-                <div className="line line--blue"></div>
+                {i18n.language=='en'&&<div className="line line--blue"></div>}
             </div>
-            <p>{t('missionText')}
+            <p className={i18n.language=='ar'?"arabic":''}>{t('missionText')}
                 </p>
         </motion.div>
     </motion.section>

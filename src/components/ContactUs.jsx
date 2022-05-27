@@ -86,7 +86,7 @@ const ContactUs = () => {
               <div className="line line--blue"></div>
           </div>
         <form ref={form} onSubmit={sendEmail} id="contact-form" className="contact__field" autoComplete="off">
-          <label className='label'>{t("contactName")}</label>
+          <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("contactName")}</label>
           <input
             type="text"
             value={name}
@@ -96,7 +96,7 @@ const ContactUs = () => {
             className="contact__item contact__input"
             />
           {nameErrMsg && <p className='errMsg'>{nameErrMsg}</p>}
-          <label className='label'>{t('contactEmail')}</label>
+          <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t('contactEmail')}</label>
           <input
             id="emailInput"
             value={email}
@@ -106,7 +106,7 @@ const ContactUs = () => {
             className="contact__item contact__input"
             />
           {emailErrMsg && <p className='errMsg'>{emailErrMsg}</p>}
-          <label className='label'>{t("contactMsg")}</label>
+          <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("contactMsg")}</label>
           <textarea
             id="messageInput"
             value={message}

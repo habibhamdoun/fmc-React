@@ -46,6 +46,7 @@ textarea {
   border: none;
   display: inline-block;
   background-color: transparent;
+  text-align: center;
   color: #ffffff;
   text-decoration: underline;
 }
@@ -1004,7 +1005,7 @@ input {
   }
   .contact__field .label {
     align-self: flex-start;
-    margin: 2rem 0 0 0.5rem;
+    margin: 2rem 0 0.5rem 0.5rem;
   }
   .contact__alternative {
     font-size: 3rem;
@@ -1131,7 +1132,7 @@ input {
   }
   .whyUs__img--arabic{
     box-shadow: -23px 23px 0px 2px var(--color-secondary);
-    margin-right: 4rem;
+    margin-right: 3rem;
     align-self: flex-end;
   }
   .whyUs__btn {
@@ -1180,10 +1181,13 @@ input {
     justify-content: center;
     align-items: flex-end;
     width: 85vw;
-    height: fit-content;
+    height: 85vh;
     -moz-box-shadow: 9px 5px 0px 5px var(--color-secondary);
     -webkit-box-shadow: 9px 5px 0px 5px var(--color-secondary);
     box-shadow: 9px 5px 0px 5px var(--color-secondary);
+  }
+  .section__title--arabic{
+    align-self: flex-end;
   }
   .section__content {
     width: 75%;
@@ -1197,8 +1201,6 @@ input {
     border: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
-  }
-  .section__btn{
   }
 }
 .current-tab a {
@@ -1462,4 +1464,18 @@ input {
 .arabic{
   direction: rtl;
   text-align: right;
+  align-self: left;
+}
+.contact__field .label--arabic{
+  align-self: flex-end;
+}
+.quote .label--arabic{
+  margin-left: 0;
+  margin-right: 0.7rem;
+  align-self: flex-end;
+}
+@media screen and (max-width:768px){
+  .arabic{
+    font-size: 0.9rem;
+  }
 }

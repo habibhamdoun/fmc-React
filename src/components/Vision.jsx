@@ -21,7 +21,7 @@ const Vision = () => {
         <div className="line line--blue">
         </div>
     </div>
-    <div className="info__text">
+    <div className={i18n.language=='ar'?"info__text arabic" :"info__text"}>
         <p>{t("visionText")}</p>
     </div>
     <Link to='/mission'>
