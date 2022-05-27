@@ -561,7 +561,7 @@ input {
   height: 100%;
 }
 .hero__image {
-  background: url(./images/fmc-logo-bg.webp);
+  background: url(./images/hero-mobile-bg.webp);
   height: 100%;
   width: 100vw;
   background-size: cover;
