@@ -957,7 +957,9 @@ input {
   color: white;
   font-size: 2rem;
 }
-
+.contact__field .label--arabic{
+  align-self: flex-end;
+}
 .contact__btn {
   align-self: center;
   margin-bottom: 2rem;
@@ -1174,9 +1176,9 @@ input {
 .section__btn {
   margin: 2rem 0;
 }
-  .section__title--arabic{
-    align-self: flex-end;
-  }
+.section__title--arabic{
+  align-self: flex-end;
+}
 @media screen and (min-width: 768px) {
   .section {
     display: flex;
@@ -1414,7 +1416,7 @@ input {
 .quote__field .label {
   align-self: flex-start;
   margin-top: 2rem;
-  margin-left: 0.7rem;
+  margin-left: 1rem;
   margin-bottom: 0.5rem;
   color: white;
   font-size: 2rem;
@@ -1422,7 +1424,7 @@ input {
 .quote__input {
   border-radius: 5px;
   border: 0;
-  width: 50vw;
+  width: 70vw;
   padding: 1.5rem;
   margin: 1rem;
   color: #2c2e35;
@@ -1433,6 +1435,11 @@ input {
 }
 .quote__textarea {
   height: 20vh;
+}
+.quote .label--arabic{
+  margin-left: 0;
+  margin-right: 1.5rem;
+  align-self: flex-end;
 }
 @media screen and (min-width: 768px) {
   .quote__textarea {
@@ -1470,10 +1477,5 @@ input {
   align-self: left;
 }
 .contact__field .label--arabic{
-  align-self: flex-end;
-}
-.quote .label--arabic{
-  margin-left: 0;
-  margin-right: 0.7rem;
   align-self: flex-end;
 }
