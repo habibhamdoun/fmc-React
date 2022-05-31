@@ -25,19 +25,19 @@ const ContactUs = () => {
     setEmailErrMsg('');
     setMessageErrMsg('');
     if(!name){
-      setNameErrMsg('Name is required');
+      setNameErrMsg('nameErrMsg');
     }
     else if(!email){
-      setEmailErrMsg('Email is required');
+      setEmailErrMsg('emailErrMsg');
     }
     else if(!message){
-      setMessageErrMsg('Message is required');
+      setMessageErrMsg('messageErrMsg');
     }
     else if(message.length > 1000){
-      setMessageErrMsg('Message is too long.')
+      setMessageErrMsg('longMessageErrMsg')
     }
     else if(name.length > 20){
-      setNameErrMsg('Your name is too long.')
+      setNameErrMsg('longNameErrMsg')
     }
     else {
       setIsSending(true);
@@ -95,7 +95,7 @@ const ContactUs = () => {
             name="user_name"
             className="contact__item contact__input"
             />
-          {nameErrMsg && <p className='errMsg'>{nameErrMsg}</p>}
+          {nameErrMsg && <p className='errMsg'>{t(nameErrMsg)}</p>}
           <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t('contactEmail')}</label>
           <input
             id="emailInput"
@@ -105,7 +105,7 @@ const ContactUs = () => {
             name="user_email"
             className="contact__item contact__input"
             />
-          {emailErrMsg && <p className='errMsg'>{emailErrMsg}</p>}
+          {emailErrMsg && <p className='errMsg'>{t(emailErrMsg)}</p>}
           <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("contactMsg")}</label>
           <textarea
             id="messageInput"
@@ -114,7 +114,7 @@ const ContactUs = () => {
             name="message"
             className="contact__item contact__message"
             />
-            {messageErrMsg && <p className='errMsg'>{messageErrMsg}</p>}
+            {messageErrMsg && <p className='errMsg'>{t(messageErrMsg)}</p>}
             <button
           disabled={isSending}
           type="submit"

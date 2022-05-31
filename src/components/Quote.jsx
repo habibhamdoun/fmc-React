@@ -29,13 +29,13 @@ const Quote = () => {
     setNameErrMsg('');
     setEmailErrMsg('');
     if(!email){
-      setEmailErrMsg('Email is required');
+      setEmailErrMsg('emailErrMsg');
     }
     else if(!name){
-      setNameErrMsg('Name is required');
+      setNameErrMsg('nameErrMsg');
     }
     else if(name.length > 20){
-      setNameErrMsg('Your name is too long.')
+      setNameErrMsg('LongNameErrMsg')
     }
     else{
         setIsSending(true);
@@ -105,7 +105,7 @@ const Quote = () => {
                 type="email" 
                 className='quote__input' 
               />
-              {emailErrMsg && <p className='errMsg'>{emailErrMsg}</p>}
+              {emailErrMsg && <p className='errMsg'>{t(emailErrMsg)}</p>}
               <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t('contactName')}</label>
               <input 
                 value={name} 
@@ -113,7 +113,7 @@ const Quote = () => {
                 type="text" 
                 className='quote__input' 
               />
-              {nameErrMsg && <p className='errMsg'>{nameErrMsg}</p>}
+              {nameErrMsg && <p className='errMsg'>{t(nameErrMsg)}</p>}
               <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("quotePhoneNumber")}</label>
               <input 
                 value={PhoneNumber} 
