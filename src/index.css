@@ -957,9 +957,6 @@ input {
   color: white;
   font-size: 2rem;
 }
-.contact__field .label--arabic{
-  align-self: flex-end;
-}
 .contact__btn {
   align-self: center;
   margin-bottom: 2rem;
@@ -983,9 +980,6 @@ input {
   fill: white;
 }
 @media screen and (min-width: 768px) {
-  .contact__item {
-    width: 90vw;
-  }
   .contact__inputs {
     display: flex;
     flex-direction: row;
@@ -994,6 +988,7 @@ input {
     font-size: 1.8rem;
   }
   .contact__item {
+    width: 90vw;
     max-width: 60rem;
     height: 8.5vh;
   }
@@ -1007,7 +1002,7 @@ input {
   }
   .contact__field .label {
     align-self: flex-start;
-    margin: 2rem 0 0.5rem 0.5rem;
+    margin: 2rem 0 1rem 0.5rem;
   }
   .contact__alternative {
     font-size: 3rem;
@@ -1095,9 +1090,6 @@ input {
   align-items: flex-start;
   justify-content: flex-start;
 }
-.whyUs__header--arabic{
-  align-items: flex-end;
-}
 .whyUs__text {
   font-size: 2.2rem;
   color: white;
@@ -1110,9 +1102,6 @@ input {
 @media screen and (min-width: 768px) {
   .whyUs {
     align-items: flex-start;
-  }
-  .whyUs--arabic{
-    align-items: flex-end;
   }
   .whyUs__header {
     margin: 2rem;
@@ -1131,11 +1120,6 @@ input {
     -moz-box-shadow: 23px 23px 0px 2px var(--color-secondary);
     -webkit-box-shadow: 23px 23px 0px 2px var(--color-secondary);
     box-shadow: 23px 23px 0px 2px var(--color-secondary);
-  }
-  .whyUs__img--arabic{
-    box-shadow: -23px 23px 0px 2px var(--color-secondary);
-    margin-right: 3rem;
-    align-self: flex-end;
   }
   .whyUs__btn {
     width: fit-content;
@@ -1176,9 +1160,7 @@ input {
 .section__btn {
   margin: 2rem 0;
 }
-.section__title--arabic{
-  align-self: flex-end;
-}
+
 @media screen and (min-width: 768px) {
   .section {
     display: flex;
@@ -1436,14 +1418,14 @@ input {
 .quote__textarea {
   height: 20vh;
 }
-.quote .label--arabic{
-  margin-left: 0;
-  margin-right: 1.5rem;
-  align-self: flex-end;
-}
 @media screen and (min-width: 768px) {
   .quote__textarea {
     height: 30vh;
+  }
+  .quote__input{
+    width: 90vw;
+    max-width: 60rem;
+    height: 8.5vh;
   }
 }
 
@@ -1476,6 +1458,27 @@ input {
   text-align: right;
   align-self: left;
 }
+.whyUs__header--arabic{
+  align-items: flex-end;
+}
+.section__title--arabic{
+  align-self: flex-end;
+}
 .contact__field .label--arabic{
   align-self: flex-end;
+}
+.quote .label--arabic{
+  margin-left: 0;
+  margin-right: 1.5rem;
+  align-self: flex-end;
+}
+@media screen and (min-width:768px){
+  .whyUs--arabic{
+    align-items: flex-end;
+  }
+  .whyUs__img--arabic{
+    box-shadow: -23px 23px 0px 2px var(--color-secondary);
+    margin-right: 3rem;
+    align-self: flex-end;
+  }
 }
