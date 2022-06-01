@@ -64,6 +64,8 @@
     "contactName":"Name:",
     "contactEmail":"Return Email:",
     "contactMsg":"Message:",
+    "contactComment":"Comment:",
+    "comment":"Comment",
     "contactBtn":"SEND",
     "contactBtnSending":"Sending...",
     "saudiArabiaLocation":"Saudi Arabia- Al Riyadh",
