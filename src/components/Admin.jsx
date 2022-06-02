@@ -97,21 +97,21 @@ const Admin = () => {
                                 className='message__btn'
                                 onClick={()=>setMessageOpen(old => old === message.id ? '' : message.id)}
                             >
-                                <div style={{display: 'flex'}}>
-                                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                        <h3>Email: </h3>
-                                        <p>{message.email}</p>
+                                <div  className="message__item">
+                                    <div className='message__content'>
+                                        <h6 className='message__email'>Email : </h6>
+                                        <span>{message.email}</span>
                                     </div>
-                                    <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                        <h3>Password: </h3>
-                                        <p>{message.name}</p>
+                                    <div  className="message__content">
+                                        <h6 className='message__name'>Name : </h6>
+                                        <span>{message.name}</span>
                                     </div>
                                 </div>
-                                <td><button onClick={()=>handleMessageDelete(message.id)}>Delete</button></td>
+                                <button className='btn message__delete' onClick={()=>handleMessageDelete(message.id)}>Delete</button>
                                 {messageOpen === message.id && 
-                                    <div style={{display: 'flex', justifyContent: 'start', alignItems: 'center'}}>
-                                        <h3>message: </h3>
-                                        <p>{message.message}</p>
+                                    <div  className="message__content--msg">
+                                        <h6 className='message__msg'>message: </h6>
+                                        <span>{message.message}</span>
                                     </div>
                                 }
                             </div>

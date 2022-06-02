@@ -86,7 +86,6 @@ h4 {
 
 h6 {
   margin: 0%;
-  color: red;
 }
 p {
   margin: 0;
@@ -1299,6 +1298,8 @@ input {
 }
 .admin__btn {
   text-align: center;
+  width: fit-content;
+  font-size: 1rem;
   border: none;
   margin: 1rem 0.5rem;
   background-color: transparent;
@@ -1315,10 +1316,10 @@ input {
   color: white;
 }
 .admin__table th {
-  font-size: 1.6rem;
+  font-size: 1rem;
 }
 .admin__table tr {
-  font-size: 1.2rem;
+  font-size: 0.7rem;
 }
 .admin__table,
 .admin__table th,
@@ -1335,8 +1336,30 @@ input {
   .admin__table tr {
     font-size: 1.6rem;
   }
+  .admin__btn{
+    font-size: 1.6rem;
+  }
 }
-
+/* messages */
+.message__item{
+  display: flex;
+}
+.message__content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+}
+.message__content--msg{
+  display: 'flex' ;
+  justify-content: 'start';
+  align-items: 'center';
+  padding: 2rem;
+}
+.message__delete{
+  width: fit-content;
+  padding: 0.3rem 0.5rem;
+}
 /* login page */
 .login__page {
   width: 100vw;
