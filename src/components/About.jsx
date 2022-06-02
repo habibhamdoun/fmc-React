@@ -18,12 +18,14 @@ function About({isMobile}) {
       if(audioEnglish.paused !== true){
         audioEnglish.pause();
       }
+    audioArabic.currentTime=0;
     audioArabic.play();
     }
     else{
       if(audioArabic.paused !== true){
         audioArabic.pause();
       }
+    audioEnglish.currentTime=0;
     audioEnglish.play();
     }
   }
@@ -50,6 +52,8 @@ function About({isMobile}) {
               <p onClick={audioPlay}>
               {t("whoText")}
               </p>
+                <h5 className="title--small">{t('workingHrsTitle')}</h5>
+                 <p className="title--small__text">{t('workingHrs')}</p>
             </div>
             </div>
 
@@ -69,6 +73,8 @@ function About({isMobile}) {
               <p onClick={audioPlay}>
                 {t("locationText")}
                </p>
+               <h5 className="title--small">{t('addressTitle')}</h5>
+               <p className="title--small__text">{t('addressText')}</p>
             </div>
             </div>
 

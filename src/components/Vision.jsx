@@ -19,12 +19,14 @@ const Vision = () => {
       if(audioEnglish.paused !== true){
         audioEnglish.pause();
       }
+    audioArabic.currentTime=0;
     audioArabic.play();
     }
     else{
       if(audioArabic.paused !== true){
         audioArabic.pause();
       }
+    audioEnglish.currentTime=0;
     audioEnglish.play();
     }
   }
