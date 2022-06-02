@@ -50,13 +50,13 @@ const WhyUs = () => {
           <motion.p
            initial={{ translateX: 1000 }}
            animate={{ translateX: 0 }}
-           transition={{ duration: 0.4, delay:0.1 }}
+           transition={{ duration: 0.5}}
            className={i18n.language=='ar'?"whyUs__text arabic":"whyUs__text"} onClick={audioPlay}> {t('whyUsText')}
           </motion.p>
           <motion.ul 
           initial={{ translateX: 1000 }}
           animate={{ translateX: 0 }}
-          transition={{ duration: 0.4, delay:0.15 }}
+          transition={{ duration: 0.65 }}
           className={i18n.language=='ar'?'whyUs__list arabic' : 'whyUs__list'}>
             <h4 className='whyUs__list__title'>{t('whyUslistTitle')}</h4>
             <li><span className='whyUs__list__header'>{t('whyUsList1Header')}</span> {t('whyUsList1')}</li>
