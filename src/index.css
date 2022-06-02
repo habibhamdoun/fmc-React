@@ -1350,6 +1350,12 @@ input {
   align-items: center;
   margin: 1rem;
 }
+.message{
+  font-size: 1.5rem;
+}
+.message__title{
+  font-size: 1.8rem;
+}
 .message__content--msg{
   display: 'flex' ;
   justify-content: 'start';
@@ -1359,6 +1365,15 @@ input {
 .message__delete{
   width: fit-content;
   padding: 0.3rem 0.5rem;
+  font-size: 1.2rem;
+}
+@media screen and (min-width:768px) {
+  .message{
+    font-size: 2rem;
+  }
+  .message__title{
+    font-size: 2.5rem;
+  }
 }
 /* login page */
 .login__page {

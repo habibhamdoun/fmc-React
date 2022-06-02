@@ -99,19 +99,19 @@ const Admin = () => {
                             >
                                 <div  className="message__item">
                                     <div className='message__content'>
-                                        <h6 className='message__email'>Email : </h6>
-                                        <span>{message.email}</span>
+                                        <h6 className='message__title'>Email : </h6>
+                                        <span className='message'>{message.email}</span>
                                     </div>
                                     <div  className="message__content">
-                                        <h6 className='message__name'>Name : </h6>
-                                        <span>{message.name}</span>
+                                        <h6 className='message__title'>Name : </h6>
+                                        <span className='message'>{message.name}</span>
                                     </div>
                                 </div>
                                 <button className='btn message__delete' onClick={()=>handleMessageDelete(message.id)}>Delete</button>
                                 {messageOpen === message.id && 
                                     <div  className="message__content--msg">
-                                        <h6 className='message__msg'>message: </h6>
-                                        <span>{message.message}</span>
+                                        <h6 className='message__title'>message: </h6>
+                                        <span className='message'>{message.message}</span>
                                     </div>
                                 }
                             </div>
