@@ -365,10 +365,9 @@ input {
 }
 
 .collapsible__content {
-  /* max-height: 0; */
-  display: none;
   overflow: hidden;
-  opacity: 0;
+  max-height: 0%;
+  transition: max-height 0.5s;
 }
 
 .collapsible--expanded .collapsible__toggle {
@@ -376,7 +375,7 @@ input {
 }
 
 .collapsible--expanded .collapsible__content {
-  opacity: 1;
+  max-height: 100%;
 }
 
 .collapsible__container {
