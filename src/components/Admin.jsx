@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import useFirestore from './../hooks/useFirestore';
 import { useAppContext } from './../config/Context';
 import { useNavigate } from 'react-router-dom';
@@ -9,9 +9,16 @@ const Admin = () => {
 
     const { docs, loading } = useFirestore('orders');
     const { docs: messages, loading: messagesLoading } = useFirestore('messages');
+    const { deleteOrder } = useAppContext();
+    const { deleteMessage } = useAppContext();
     const { currentUser, logout } = useAppContext();
     const navigate = useNavigate();
-
+    async function handleOrderDelete(id){
+        await deleteOrder(id)
+    }
+    async function handleMessageDelete(id){
+        await deleteMessage(id)
+    }
     React.useEffect(()=>{
         if(!currentUser) navigate('/login');
     }, [currentUser]);
@@ -50,6 +57,7 @@ const Admin = () => {
                             <th>Email</th>
                             <th>Phone Number</th>
                             <th>Additional info</th>
+                            <th>Delete Order</th>
                         </thead>
                         <tbody>
                             {docs.map(doc=>(
@@ -60,6 +68,7 @@ const Admin = () => {
                                     <td>{doc.email}</td>
                                     <td>{doc.PhoneNumber}</td>
                                     <td>{doc.additionalInfo}</td>
+                                    <td><button onClick={()=>handleOrderDelete(doc.id)}>Delete</button></td>
                                 </tr>
                             ))}
                         </tbody>
@@ -98,6 +107,7 @@ const Admin = () => {
                                         <p>{message.name}</p>
                                     </div>
                                 </div>
+                                <td><button onClick={()=>handleMessageDelete(message.id)}>Delete</button></td>
                                 {messageOpen === message.id && 
                                     <div style={{display: 'flex', justifyContent: 'start', alignItems: 'center'}}>
                                         <h3>message: </h3>
