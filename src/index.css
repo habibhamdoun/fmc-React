@@ -480,7 +480,7 @@ input {
   .nav__collapsible__container {
     display: none;
   }
-
+  
   .nav__list {
     padding-top: 0;
     display: flex;
@@ -488,6 +488,7 @@ input {
     flex-grow: 0;
     font-size: 2.2rem;
     opacity: 1;
+    max-height: 100%;
   }
 
   .nav__item :hover {
