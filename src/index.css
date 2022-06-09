@@ -1266,13 +1266,13 @@ input {
   color: white;
 }
 .admin__content {
-  height: 100%;
+  height: calc(100vh - 130px);
   display: flex;
   flex-direction: row;
 }
 .admin__side {
   width: 12%;
-  height: 80%;
+  /* height: 80%; */
   background-color: var(--color-primary);
   display: flex;
   flex-direction: column;
@@ -1304,6 +1304,7 @@ input {
 .admin__table {
   align-self: flex-start;
   width: 100%;
+  margin: 10px 10px;
   color: white;
 }
 .admin__table th {
@@ -1319,7 +1320,22 @@ input {
 }
 .logout__btn {
   color: red;
+  position: fixed;
+  bottom: 0;
 }
+
+.delete__btn__col {
+  text-align: center;
+}
+
+td{
+  padding: 5px;
+}
+
+.delete__btn__col button {
+  color: red;
+}
+
 @media screen and (min-width: 768px) {
   .admin__table th {
     font-size: 2rem;

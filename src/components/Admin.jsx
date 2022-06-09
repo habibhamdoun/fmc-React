@@ -68,55 +68,57 @@ const Admin = () => {
                                     <td>{doc.email}</td>
                                     <td>{doc.PhoneNumber}</td>
                                     <td>{doc.additionalInfo}</td>
-                                    <td><button onClick={()=>handleOrderDelete(doc.id)}>Delete</button></td>
+                                    <td className='delete__btn__col'><button className='admin__btn' onClick={()=>handleOrderDelete(doc.id)}>Delete</button></td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
                     :
-                    // <table className='admin__table'>
-                    //   <thead>
-                    //         <th>Email</th>
-                    //         <th>Name</th>
-                    //         <th>Messages</th>
-                    //     </thead>
-                    //     <tbody>
-                    // {messages.map(message=>(
-                    //         <tr key={message.id}>
-                    //             <td>{message.email}</td>
-                    //             <td>{message.name}</td>
-                    //             <td>{message.message}</td>
-                    //         </tr>
-                    //         ))
-                    //     }
-                    // </tbody>
-                    // </table>
-                    <div className='messages'>
-                        {messages.map(message=>(
-                            <div 
-                                className='message__btn'
-                                onClick={()=>setMessageOpen(old => old === message.id ? '' : message.id)}
-                            >
-                                <div  className="message__item">
-                                    <div className='message__content'>
-                                        <h6 className='message__title'>Email : </h6>
-                                        <span className='message'>{message.email}</span>
-                                    </div>
-                                    <div  className="message__content">
-                                        <h6 className='message__title'>Name : </h6>
-                                        <span className='message'>{message.name}</span>
-                                    </div>
-                                </div>
-                                <button className='btn message__delete' onClick={()=>handleMessageDelete(message.id)}>Delete</button>
-                                {messageOpen === message.id && 
-                                    <div  className="message__content--msg">
-                                        <h6 className='message__title'>message: </h6>
-                                        <span className='message'>{message.message}</span>
-                                    </div>
-                                }
-                            </div>
-                        ))}
-                    </div>
+                    <table className='admin__table'>
+                      <thead>
+                            <th>Email</th>
+                            <th>Name</th>
+                            <th>Messages</th>
+                            <th>Delete Message</th>
+                        </thead>
+                        <tbody>
+                    {messages.map(message=>(
+                            <tr key={message.id}>
+                                <td>{message.email}</td>
+                                <td>{message.name}</td>
+                                <td>{message.message}</td>
+                                <td className='delete__btn__col'><button className='admin__btn' onClick={()=>handleMessageDelete(message.id)}>Delete</button></td>
+                            </tr>
+                            ))
+                        }
+                    </tbody>
+                    </table>
+                    // <div className='messages'>
+                    //     {messages.map(message=>(
+                    //         <div 
+                    //             className='message__btn'
+                    //             onClick={()=>setMessageOpen(old => old === message.id ? '' : message.id)}
+                    //         >
+                    //             <div  className="message__item">
+                    //                 <div className='message__content'>
+                    //                     <h6 className='message__title'>Email : </h6>
+                    //                     <span className='message'>{message.email}</span>
+                    //                 </div>
+                    //                 <div  className="message__content">
+                    //                     <h6 className='message__title'>Name : </h6>
+                    //                     <span className='message'>{message.name}</span>
+                    //                 </div>
+                    //             </div>
+                    //             <button className='btn message__delete' onClick={()=>handleMessageDelete(message.id)}>Delete</button>
+                    //             {messageOpen === message.id && 
+                    //                 <div  className="message__content--msg">
+                    //                     <h6 className='message__title'>message: </h6>
+                    //                     <span className='message'>{message.message}</span>
+                    //                 </div>
+                    //             }
+                    //         </div>
+                    //     ))}
+                    // </div>
                 }           
             </div>
         </section>

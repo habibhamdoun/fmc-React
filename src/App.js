@@ -7,6 +7,7 @@ import WhyUs from "./components/WhyUs";
 import Services from "./components/Services";
 import Clients from "./components/Clients";
 import ContactUs from "./components/ContactUs";
+import Comment from "./components/Comment";
 import Home from "./components/Home";
 import { Routes, Route } from "react-router-dom";
 import { AppContextProvider } from "./config/Context";
@@ -59,6 +60,10 @@ function App() {
           <Route
             path="/contact-us"
             element={<ContactUs isMobile={isMobile} />}
+          />          
+          <Route
+            path="/comment"
+            element={<Comment isMobile={isMobile} />}
           />
           <Route path="/login" element={<LogInPage isMobile={isMobile} />} />
           <Route path="/admin" element={<Admin isMobile={isMobile} />} />

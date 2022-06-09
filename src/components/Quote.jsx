@@ -39,7 +39,7 @@ const Quote = () => {
     }
     else{
         setIsSending(true);
-        order(location, companyName,email,name, PhoneNumber,additionalInfo)
+        order(location, companyName, email, name, PhoneNumber, additionalInfo)
         .then(() => {
           setModal(true);
           setTimeout(()=>{
