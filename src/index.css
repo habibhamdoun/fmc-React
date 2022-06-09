@@ -1019,14 +1019,14 @@ input {
   margin: 3rem 0;
 }
 .aboutUs__card {
-  width: 40rem;
+  width: 35rem;
   background-color: white;
   border-bottom: 10px solid var(--color-secondary);
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem 1rem;
-  margin: 2rem 0;
+  margin: 3rem 0;
   text-align: justify;
 }
 .aboutUs__title{
