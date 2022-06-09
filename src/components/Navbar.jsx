@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from "react-router-dom";
 import { motion } from 'framer-motion';
-import i18n from '../i18n';
 import { useTranslation } from 'react-i18next';
 
 const Navbar = ({isMobile}) => {
@@ -40,6 +39,7 @@ const Navbar = ({isMobile}) => {
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/services" >{t("services")}</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/why-us" >{t("whyUs")}</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/contact-us" >{t('contactUs')}</NavLink></li>
+      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/comment" >{t('comment')}</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/quote" >{t('quote')}</NavLink></li>
       <button className='language__input nav__item' onClick={handleClick}>{buttontext}</button>
     </ul>
