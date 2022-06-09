@@ -8,7 +8,6 @@ const Comment = () => {
   const [name, setName] = useState('');
   const [comment, setComment] = useState('');
   const [nameErrMsg, setNameErrMsg] = useState('');
-  const [emailErrMsg, setEmailErrMsg] = useState('');
   const [commentErrMsg, setCommentErrMsg] = useState('');
   const [isSending,setIsSending]=useState(false);
   const [modal,setModal]=useState(false);
@@ -90,7 +89,7 @@ const Comment = () => {
             className="contact__item contact__input"
             />
           {nameErrMsg && <p className='errMsg'>{nameErrMsg}</p>}
-          <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("contactComment")}</label>
+          <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("comment")} :</label>
           <textarea
             id="commentInput"
             value={comment}

@@ -100,7 +100,7 @@ const Quote = () => {
               />
               <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t('contactEmail')}</label>
               <input 
-                type="email" 
+                type="email"
                 value={email} 
                 onChange={(e)=>setEmail(e.target.value)} 
                 className='quote__input' 
