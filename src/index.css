@@ -1019,15 +1019,15 @@ input {
   margin: 3rem 0;
 }
 .aboutUs__card {
-  width: fit-content;
-  max-width: 35rem;
+  width: 40rem;
   background-color: white;
   border-bottom: 10px solid var(--color-secondary);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 0;
+  padding: 2rem 1rem;
   margin: 2rem 0;
+  text-align: justify;
 }
 .aboutUs__title{
   margin: 0;
@@ -1053,7 +1053,7 @@ input {
     grid-column-gap: 3rem;
   }
   .aboutUs__card{
-    max-width: 25rem;
+    width: 35rem;
   }
 }
   /* Why Us */
