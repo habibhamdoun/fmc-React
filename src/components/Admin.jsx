@@ -38,13 +38,13 @@ const Admin = () => {
     return (
         <section className='admin'>
             <div className='admin__header'>
-                <h3 className='admin__heading'>Admin Panel</h3>
+                <h3 className='admin__heading'>Admin Panel : {display}</h3>
             </div>
             <div className="admin__content">
                 <div className='admin__side'>
                     <div className="admin__section">
-                        <button className='admin__btn quotes__btn' onClick={()=>setDisplay('quotes')}>Quotes</button>
-                        <button className='admin__btn msg__btn' onClick={()=>setDisplay('messages')}>Messages</button>
+                        <button className={display =='quotes' ? 'admin__btn quotes__btn active__display' :'admin__btn'} onClick={()=>setDisplay('quotes')}>Quotes</button>
+                        <button className={display=='messages'?'admin__btn msg__btn active__display' :'admin__btn'} onClick={()=>setDisplay('messages')}>Messages</button>
                     </div>
                     <button className='admin__btn logout__btn'onClick={handleLogout}>Log out</button>
                 </div>
@@ -63,7 +63,7 @@ const Admin = () => {
                             {docs.map(doc=>(
                                 <tr key={doc.id}>
                                     <td>{doc.location}</td>
-                                    <td>{doc.CompanyName}</td>
+                                    <td>{doc.companyName}</td>
                                     <td>{doc.name}</td>
                                     <td>{doc.email}</td>
                                     <td>{doc.PhoneNumber}</td>
@@ -93,32 +93,6 @@ const Admin = () => {
                         }
                     </tbody>
                     </table>
-                    // <div className='messages'>
-                    //     {messages.map(message=>(
-                    //         <div 
-                    //             className='message__btn'
-                    //             onClick={()=>setMessageOpen(old => old === message.id ? '' : message.id)}
-                    //         >
-                    //             <div  className="message__item">
-                    //                 <div className='message__content'>
-                    //                     <h6 className='message__title'>Email : </h6>
-                    //                     <span className='message'>{message.email}</span>
-                    //                 </div>
-                    //                 <div  className="message__content">
-                    //                     <h6 className='message__title'>Name : </h6>
-                    //                     <span className='message'>{message.name}</span>
-                    //                 </div>
-                    //             </div>
-                    //             <button className='btn message__delete' onClick={()=>handleMessageDelete(message.id)}>Delete</button>
-                    //             {messageOpen === message.id && 
-                    //                 <div  className="message__content--msg">
-                    //                     <h6 className='message__title'>message: </h6>
-                    //                     <span className='message'>{message.message}</span>
-                    //                 </div>
-                    //             }
-                    //         </div>
-                    //     ))}
-                    // </div>
                 }           
             </div>
         </section>

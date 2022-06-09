@@ -1265,6 +1265,9 @@ input {
   text-align: center;
   color: white;
 }
+.admin__heading{
+  text-transform: capitalize;
+}
 .admin__content {
   height: calc(100vh - 130px);
   display: flex;
@@ -1272,7 +1275,6 @@ input {
 }
 .admin__side {
   width: 12%;
-  /* height: 80%; */
   background-color: var(--color-primary);
   display: flex;
   flex-direction: column;
@@ -1296,9 +1298,10 @@ input {
   background-color: transparent;
   color: white;
   border-bottom: 1px solid white;
-  transition: width 0.6s;
+  transition: border-width 0.6s;
 }
-.admin__btn:hover {
+.active__display{
+  border-color: red;
   width: 100%;
 }
 .admin__table {
