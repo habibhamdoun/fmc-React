@@ -1,7 +1,7 @@
 import React from "react";
 import { auth } from './Firebase';
 import { onAuthStateChanged, signInWithEmailAndPassword } from '@firebase/auth';
-import { collection, addDoc, deleteDoc, doc } from '@firebase/firestore';
+import { collection, addDoc, deleteDoc, doc, updateDoc } from '@firebase/firestore';
 import { projectFireStore } from './Firebase';
 import { Timestamp } from '@firebase/firestore';
 
@@ -53,6 +53,28 @@ export const AppContextProvider = ({ children }) => {
     async function deleteMessage(id){
         await deleteDoc(doc(projectFireStore,'messages',id));
     }
+
+    async function AddReview(name, comment, review) {
+        const collectionRef = collection(projectFireStore, 'reviews');
+        return addDoc(collectionRef, {
+            name,
+            review,
+            comment,
+            accepted: false,
+            timeStamp: Timestamp.now(),
+        })
+    }
+
+    async function DeleteReview(id) {
+        await deleteDoc(doc(projectFireStore, 'reviews', id));
+    }
+
+    async function AcceptReview(id){
+        const DocRef = doc(projectFireStore, 'reviews', id)
+        await updateDoc(DocRef, {
+            accepted: true,
+        })
+    }
     
     React.useEffect(()=>{
         const unsub = onAuthStateChanged(auth, (currentUser)=>{
@@ -73,6 +95,9 @@ export const AppContextProvider = ({ children }) => {
         deleteOrder,
         sendMessage,
         deleteMessage,
+        AddReview,
+        AcceptReview,
+        DeleteReview,
         currentUser
     }
 
