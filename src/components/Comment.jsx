@@ -79,8 +79,11 @@ const Comment = () => {
           {<>
             {reviews.map(review =>(
               <div className='review'>
-              <h2>{review.name}<span className='timeStamp'>{review.timestamp}</span></h2>
-              <p>{review.comment}</p>
+              <div className="review__id">
+                <div className='profile__logo'></div>
+                <h3 className='review__name'>{review.name}</h3><p className='timeStamp'>Days Ago</p>
+              </div>
+              <p className='review__comment'>{review.comment}</p>
               </div>
             ))}
             </>}

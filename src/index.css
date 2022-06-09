@@ -1473,18 +1473,53 @@ td{
   color: var(--color-primary);
   background-color: white;
   display: flex;
-  width: 100rem;
   flex-direction: column;
-  max-width: 500px;
+  width: 70vw;
   padding: 1.5rem;
   -webkit-box-shadow: 5px 8px 20px 3px rgba(0,0,0,0.63); 
   box-shadow: 5px 8px 20px 3px rgba(0,0,0,0.63);
+  border-radius: 5px;
+}
+.profile__logo{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #b8b6b6d0;
+    margin-right: 0.5rem;
+}
+.review__id{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.review__name{
+  font-size: 1.6rem;
 }
 .timeStamp{
-  opacity: 0.5;
+  opacity: 0.7;
   color: rgb(151, 146, 146);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: normal;
+  margin-left: auto;
+}
+.review__comment{
+  font-size: 1.2rem;
+}
+@media screen and (min-width:768px) {
+  .review{
+    width: 50vw;
+  }
+  .profile__logo{
+    width: 5rem;
+    height: 5rem;
+  }
+  .review__name{
+    font-size: 3rem;
+  }
+  .review__comment{
+    font-size: 1.6rem;
+  }
+  
 }
 /* quote */
 .quote {
