@@ -1453,6 +1453,39 @@ td{
   color: white;
   padding: 0 10px;
 }
+/* feedback */
+.feedback{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+/* reviews */
+.reviews__container{
+  margin-top: 2rem;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+}
+.review{
+  color: var(--color-primary);
+  background-color: white;
+  display: flex;
+  width: 100rem;
+  flex-direction: column;
+  max-width: 500px;
+  padding: 1.5rem;
+  -webkit-box-shadow: 5px 8px 20px 3px rgba(0,0,0,0.63); 
+  box-shadow: 5px 8px 20px 3px rgba(0,0,0,0.63);
+}
+.timeStamp{
+  opacity: 0.5;
+  color: rgb(151, 146, 146);
+  font-size: 1.5rem;
+  font-weight: normal;
+}
 /* quote */
 .quote {
   height: 100vh;

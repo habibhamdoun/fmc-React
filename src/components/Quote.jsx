@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 
 const Quote = () => {
-    const { order } = useAppContext();
+  const { order } = useAppContext();
   const [location, setLocation] = useState('');
   const [companyName, setCompanyName] = useState('');
   const [email, setEmail] = useState('');
@@ -83,48 +83,50 @@ const Quote = () => {
                 <h2 className="title__header">{t("quote")}</h2>
               <div className="line line--blue"></div>
           </div>
-          <div className="quote__field">
-              <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("quoteLocation")}</label>
-              <input 
-                value={location} 
-                onChange={(e)=>setLocation(e.target.value)} 
-                type="text" 
-                className='quote__input' 
-              />
-              <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t('quoteCompanyName')}</label>
-              <input 
-                value={companyName} 
-                onChange={(e)=>setCompanyName(e.target.value)} 
-                type="text" 
-                className='quote__input'
-              />
-              <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t('contactEmail')}</label>
-              <input 
-                type="email"
-                value={email} 
-                onChange={(e)=>setEmail(e.target.value)} 
-                className='quote__input' 
-              />
-              {emailErrMsg && <p className='errMsg'>{t(emailErrMsg)}</p>}
-              <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t('contactName')}</label>
-              <input 
-                value={name} 
-                onChange={(e)=>setName(e.target.value)} 
-                type="text" 
-                className='quote__input' 
-              />
-              {nameErrMsg && <p className='errMsg'>{t(nameErrMsg)}</p>}
-              <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("quotePhoneNumber")}</label>
-              <input 
-                value={PhoneNumber} 
-                onChange={(e)=>setPhoneNumber(e.target.value)} 
-                type="text" 
-                className='quote__input' 
-              />
-              <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("quoteAdditionalInfo")}</label>
-              <textarea value={additionalInfo} onChange={(e)=>setInfo(e.target.value)} type="text" className='quote__input quote__textarea' />
-          </div>
-          <button className='btn btn--secondary quote__btn' onClick={handleClick}>{isSending ? <span>{t('quoteBtnSending')}</span>: <span>{t('quoteBtn')}</span>}</button>
+          <form>
+            <div className="quote__field">
+                <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("quoteLocation")}</label>
+                <input
+                  value={location}
+                  onChange={(e)=>setLocation(e.target.value)}
+                  type="text"
+                  className='quote__input'
+                />
+                <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t('quoteCompanyName')}</label>
+                <input
+                  value={companyName}
+                  onChange={(e)=>setCompanyName(e.target.value)}
+                  type="text"
+                  className='quote__input'
+                />
+                <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t('contactEmail')}</label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e)=>setEmail(e.target.value)}
+                  className='quote__input'
+                />
+                {emailErrMsg && <p className='errMsg'>{t(emailErrMsg)}</p>}
+                <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t('contactName')}</label>
+                <input
+                  value={name}
+                  onChange={(e)=>setName(e.target.value)}
+                  type="text"
+                  className='quote__input'
+                />
+                {nameErrMsg && <p className='errMsg'>{t(nameErrMsg)}</p>}
+                <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("quotePhoneNumber")}</label>
+                <input
+                  value={PhoneNumber}
+                  onChange={(e)=>setPhoneNumber(e.target.value)}
+                  type="text"
+                  className='quote__input'
+                />
+                <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("quoteAdditionalInfo")}</label>
+                <textarea value={additionalInfo} onChange={(e)=>setInfo(e.target.value)} type="text" className='quote__input quote__textarea' />
+            </div>
+            <button className='btn btn--secondary quote__btn' onClick={handleClick}>{isSending ? <span>{t('quoteBtnSending')}</span>: <span>{t('quoteBtn')}</span>}</button>
+          </form>
       </motion.section>
   )
 }

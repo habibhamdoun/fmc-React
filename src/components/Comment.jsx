@@ -1,23 +1,26 @@
 import React, { useRef, useState } from 'react';
+import useFirestore from './../hooks/useFirestore';
 import { motion } from 'framer-motion';
 import { useAppContext } from '../config/Context';
 import { useTranslation } from 'react-i18next';
+import useReviews from '../hooks/useReviews';
 
 const Comment = () => {
   const form = useRef();
+  const {docs:reviews} = useReviews(true);
   const [name, setName] = useState('');
   const [comment, setComment] = useState('');
   const [nameErrMsg, setNameErrMsg] = useState('');
   const [commentErrMsg, setCommentErrMsg] = useState('');
   const [isSending,setIsSending]=useState(false);
   const [modal,setModal]=useState(false);
-  const { sendComment } = useAppContext();
+  const { AddReview } = useAppContext();
   const { t,i18n }=useTranslation('translation');
 
   function toggleModal(){
     setModal(old => old ? false : true);
   }
-  const sendEmail = (e) => {
+  const handleClick = (e) => {
     e.preventDefault();
     setNameErrMsg('');
     setCommentErrMsg('');
@@ -35,7 +38,7 @@ const Comment = () => {
     }
     else {
       setIsSending(true);
-      sendComment(name, comment)
+      AddReview(name, comment)
       .then(() => {
         setModal(true);
         setTimeout(()=>{
@@ -52,7 +55,7 @@ const Comment = () => {
   };
 
   return (
-    <>
+    <section className='feedback'>
       {modal && (
           <div onClick={toggleModal} className="modal"
           >
@@ -67,6 +70,21 @@ const Comment = () => {
             </motion.div>
           </div>
         )}
+        <section className='reviews__container'>
+        <div className="title">
+              <div className="line line--blue"></div>
+              <h2 className="title__header">{t("review")}</h2>
+              <div className="line line--blue"></div>
+          </div>
+          {<>
+            {reviews.map(review =>(
+              <div className='review'>
+              <h2>{review.name}<span className='timeStamp'>{review.timestamp}</span></h2>
+              <p>{review.comment}</p>
+              </div>
+            ))}
+            </>}
+        </section>
       <motion.section 
         className="contact" 
         initial={{translateY:1000}}
@@ -78,7 +96,7 @@ const Comment = () => {
               <h2 className="title__header">{t("comment")}</h2>
               <div className="line line--blue"></div>
           </div>
-        <form ref={form} onSubmit={sendEmail} id="contact-form" className="contact__field" autoComplete="off">
+        <form ref={form} onSubmit={handleClick} id="contact-form" className="contact__field" autoComplete="off">
           <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("contactName")}</label>
           <input
             type="text"
@@ -105,18 +123,8 @@ const Comment = () => {
           className="btn btn--primary contact__btn"
           >{isSending ? <span>{t('contactBtnSending')}</span>:<span>{t('comment')}</span>}</button>
         </form>
-        <div className="contact__alternative">
-          <ul className="list list--inline">
-            <li>www.fmc-supplychain.com</li>
-            <li><a href="mailto:info@fmc-supplychain.com">info@fmc-supplychain.com</a></li>
-            <li>{t('saudiArabiaLocation')}</li>
-            <li>00966507885696</li>
-            <li><a href="https://www.linkedin.com/in/first-modern-company-fmc-99bb90231/" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" className='contact__icon'viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
-            </li>
-          </ul>
-        </div>
       </motion.section>
-    </>
+    </section>
   );
 };
 export default Comment

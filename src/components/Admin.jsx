@@ -2,15 +2,17 @@ import React, { useContext, useState } from 'react'
 import useFirestore from './../hooks/useFirestore';
 import { useAppContext } from './../config/Context';
 import { useNavigate } from 'react-router-dom';
+import useReviews from '../hooks/useReviews';
 
 const Admin = () => {
     const [display,setDisplay]=useState('quotes');
-    const [messageOpen, setMessageOpen] = useState('');
-
     const { docs, loading } = useFirestore('orders');
     const { docs: messages, loading: messagesLoading } = useFirestore('messages');
+    const { docs: reviews } = useFirestore('reviews');
     const { deleteOrder } = useAppContext();
     const { deleteMessage } = useAppContext();
+    const { AcceptReview } = useAppContext();
+    const { DeleteReview } = useAppContext();
     const { currentUser, logout } = useAppContext();
     const navigate = useNavigate();
     async function handleOrderDelete(id){
@@ -45,10 +47,11 @@ const Admin = () => {
                     <div className="admin__section">
                         <button className={display =='quotes' ? 'admin__btn quotes__btn active__display' :'admin__btn'} onClick={()=>setDisplay('quotes')}>Quotes</button>
                         <button className={display=='messages'?'admin__btn msg__btn active__display' :'admin__btn'} onClick={()=>setDisplay('messages')}>Messages</button>
+                        <button className={display=='reviews'?'admin__btn msg__btn active__display' :'admin__btn'} onClick={()=>setDisplay('reviews')}>Reviews</button>
                     </div>
                     <button className='admin__btn logout__btn'onClick={handleLogout}>Log out</button>
                 </div>
-                      {display === 'quotes' ?
+                      {display === 'quotes' &&
                     <table className='admin__table'>
                         <thead>
                             <th>Location</th>
@@ -73,7 +76,8 @@ const Admin = () => {
                             ))}
                         </tbody>
                     </table>
-                    :
+                    }
+                    {display =='messages' && 
                     <table className='admin__table'>
                       <thead>
                             <th>Email</th>
@@ -91,6 +95,28 @@ const Admin = () => {
                             </tr>
                             ))
                         }
+                        </tbody>
+                        </table>
+                    }
+                    
+                        {display =='reviews' && 
+                        <table className='admin__table'>
+                        <thead>
+                              <th>Name</th>
+                              <th>Comment</th>
+                              <th>Accept</th>
+                              <th>Delete Message</th>
+                          </thead>
+                          <tbody>
+                        {reviews.map(review =>(
+                            <tr key={review.id}>
+                                <td>{review.name}</td>
+                                <td>{review.comment}</td>
+                                <td>{review.accepted == false && <button  className="delete__btn__col"onClick={()=>AcceptReview(review.id)}>Accept</button>}</td>
+                                <td className='delete__btn__col'><button className='admin__btn' onClick={()=>DeleteReview(review.id)}>Delete</button></td>
+                            </tr>
+
+                        ))}
                     </tbody>
                     </table>
                 }           
