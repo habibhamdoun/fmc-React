@@ -903,13 +903,13 @@ input {
 }
 /* contact */
 .contact {
-  padding-block: 5rem;
   height: fit-content;
   width: 98vw;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding-top: 2rem;
   padding-bottom: 2rem;
   z-index: 0;
 }
@@ -1459,7 +1459,7 @@ td{
   flex-direction: column;
   align-items:center;
 }
-/* reviews */
+/* reviews comments */
 .reviews__container{
   margin-top: 2rem;
   width: 100vw;
@@ -1504,6 +1504,30 @@ td{
 }
 .review__comment{
   font-size: 1.2rem;
+}
+.comments__toggle__container{
+  margin-top: 5rem;
+}
+.comments__toggle{
+  animation-name: spin;
+  animation-duration: 2000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-delay: 1s;
+  width: 5rem;
+  height: 5rem;
+  fill: white;
+}
+@keyframes spin {
+  0% {
+      transform:rotate(0deg);
+  }
+  50%{
+    transform:rotate(360deg);
+  }
+  100% {
+      transform:rotate(360deg);
+  }
 }
 @media screen and (min-width:768px) {
   .review{

@@ -3,11 +3,12 @@ import useFirestore from './../hooks/useFirestore';
 import { motion } from 'framer-motion';
 import { useAppContext } from '../config/Context';
 import { useTranslation } from 'react-i18next';
+import Moment from 'react-moment';
 import useReviews from '../hooks/useReviews';
 
 const Comment = () => {
   const form = useRef();
-  const {docs:reviews} = useReviews(true);
+  const {docs:reviews , loading :reviewsLoading} = useReviews(true);
   const [name, setName] = useState('');
   const [comment, setComment] = useState('');
   const [nameErrMsg, setNameErrMsg] = useState('');
@@ -16,7 +17,18 @@ const Comment = () => {
   const [modal,setModal]=useState(false);
   const { AddReview } = useAppContext();
   const { t,i18n }=useTranslation('translation');
-
+  let Scroll   = require('react-scroll');
+  let Element  = Scroll.Element;
+  let scroller = Scroll.scroller;
+  function handleScroll(){
+      scroller.scrollTo("comment", {
+        duration: 400,
+        delay: 0,
+        smooth: true,
+        offset:100,
+      });
+    
+  }
   function toggleModal(){
     setModal(old => old ? false : true);
   }
@@ -53,7 +65,13 @@ const Comment = () => {
         })
     }
   };
-
+  if(reviewsLoading){
+    return(
+      <div>
+        Loading...
+      </div>
+    )
+  }
   return (
     <section className='feedback'>
       {modal && (
@@ -81,22 +99,28 @@ const Comment = () => {
               <div className='review'>
               <div className="review__id">
                 <div className='profile__logo'></div>
-                <h3 className='review__name'>{review.name}</h3><p className='timeStamp'>Days Ago</p>
+                <h3 className='review__name'>{review.name}</h3><Moment format='DD MMM' date={Date(review.timeStamp)} className='timeStamp' />
               </div>
               <p className='review__comment'>{review.comment}</p>
               </div>
             ))}
             </>}
         </section>
+        <div className="comments__toggle__container">
+          <a onClick={handleScroll}>
+            <svg className='comments__toggle' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M432 256c0 17.69-14.33 32.01-32 32.01H256v144c0 17.69-14.33 31.99-32 31.99s-32-14.3-32-31.99v-144H48c-17.67 0-32-14.32-32-32.01s14.33-31.99 32-31.99H192v-144c0-17.69 14.33-32.01 32-32.01s32 14.32 32 32.01v144h144C417.7 224 432 238.3 432 256z"/></svg>
+          </a>
+        </div>
       <motion.section 
-        className="contact" 
+        className="contact"
+        name='comment' 
         initial={{translateY:1000}}
         animate={{translateY:0}}
         transition={{duration:0.4}}
       >
           <div className="title">
               <div className="line line--blue"></div>
-              <h2 className="title__header">{t("comment")}</h2>
+              <h2 className="title__header">{t("commentsTitle")}</h2>
               <div className="line line--blue"></div>
           </div>
         <form ref={form} onSubmit={handleClick} id="contact-form" className="contact__field" autoComplete="off">

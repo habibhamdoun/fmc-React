@@ -30,7 +30,7 @@ function About({isMobile}) {
     }
   }
   return (
-    <section className='aboutUs' id="aboutUs">
+    <section className='aboutUs' name="aboutUs">
     <audio id='aboutAudioAr' src={audioAr}></audio>
     <audio id='aboutAudioEn' src={audioEn}></audio>
     <div className="title">

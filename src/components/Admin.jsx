@@ -1,14 +1,15 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import useFirestore from './../hooks/useFirestore';
 import { useAppContext } from './../config/Context';
 import { useNavigate } from 'react-router-dom';
-import useReviews from '../hooks/useReviews';
+import Moment from 'react-moment';
+
 
 const Admin = () => {
     const [display,setDisplay]=useState('quotes');
     const { docs, loading } = useFirestore('orders');
     const { docs: messages, loading: messagesLoading } = useFirestore('messages');
-    const { docs: reviews } = useFirestore('reviews');
+    const { docs: reviews ,loading:reviewsLoading } = useFirestore('reviews');
     const { deleteOrder } = useAppContext();
     const { deleteMessage } = useAppContext();
     const { AcceptReview } = useAppContext();
@@ -29,7 +30,7 @@ const Admin = () => {
         await logout();
     }
 
-    if(loading || messagesLoading){
+    if(loading || messagesLoading || reviewsLoading){
         return(
             <div>
                 <p>loading...</p>
@@ -104,6 +105,7 @@ const Admin = () => {
                         <thead>
                               <th>Name</th>
                               <th>Comment</th>
+                              <th>Date</th>
                               <th>Accept</th>
                               <th>Delete Message</th>
                           </thead>
@@ -112,6 +114,7 @@ const Admin = () => {
                             <tr key={review.id}>
                                 <td>{review.name}</td>
                                 <td>{review.comment}</td>
+                                <td><Moment format='DD MMM' date={Date(review.timeStamp)} /></td>
                                 <td>{review.accepted == false && <button  className="delete__btn__col"onClick={()=>AcceptReview(review.id)}>Accept</button>}</td>
                                 <td className='delete__btn__col'><button className='admin__btn' onClick={()=>DeleteReview(review.id)}>Delete</button></td>
                             </tr>
