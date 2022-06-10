@@ -83,7 +83,7 @@ const Quote = () => {
                 <h2 className="title__header">{t("quote")}</h2>
               <div className="line line--blue"></div>
           </div>
-          <form>
+          <form action='submit' className='quote__field'>
             <div className="quote__field">
                 <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("quoteLocation")}</label>
                 <input

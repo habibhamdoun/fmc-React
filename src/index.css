@@ -399,6 +399,7 @@ input {
   -moz-box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   height: 6rem;
   transition: height 0.5s;
 }
@@ -412,6 +413,7 @@ input {
   flex-grow: 1;
   display: flex;
   justify-content: center;
+  margin: 0 2rem;
 }
 .nav__brand__container {
   width: 100%;
@@ -426,9 +428,6 @@ input {
   align-self: center;
   margin: 1rem;
 }
-.nav__item {
-  padding: 0.5rem 0;
-}
 .nav__item .active {
   color: white;
   border-bottom: 1px solid var(--color-secondary);
@@ -437,7 +436,7 @@ input {
   color: white;
 }
 .nav__item a {
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-decoration: none;
 }
 
