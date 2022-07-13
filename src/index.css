@@ -487,7 +487,7 @@ input {
   }
 
   .nav__item :hover {
-    color: #ffffffb6;
+    color: rgba(255, 255, 255, 0.833);
   }
 
   .nav__item {
