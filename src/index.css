@@ -429,11 +429,11 @@ input {
   margin: 1rem;
 }
 .nav__item .active {
-  color: white;
   border-bottom: 1px solid var(--color-secondary);
+  color: white;
 }
 .nav__item .inactive {
-  color: white;
+  color: rgba(255, 255, 255, 0.58);
 }
 .nav__item a {
   font-size: 2rem;
@@ -677,6 +677,7 @@ input {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    filter: brightness(85%);
   }
   .info__title {
     text-align: center;
