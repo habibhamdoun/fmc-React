@@ -730,7 +730,7 @@ input {
   opacity: 0.8;
 }
 .client__img img {
-  width: 100%;
+  width: 80%;
 }
 .client__img:hover .client__content__item {
   opacity: 1;
@@ -742,6 +742,7 @@ input {
 .client__content {
   height: 100%;
   width: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -784,6 +785,11 @@ input {
   }
   .clients {
     overflow: hidden;
+  }
+}
+@media screen and (min-width:2560px) {
+  .client__img img {
+    width: 50%;
   }
 }
 /* services */
