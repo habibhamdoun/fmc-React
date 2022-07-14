@@ -393,7 +393,7 @@ input {
   top: 0%;
   z-index: 1;
   width: 100vw;
-  background: transparent;
+  background: #ffffff95;
   box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
   -webkit-box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
   -moz-box-shadow: 0px 0px 21px 4px rgba(0, 0, 0, 0.07);
@@ -406,7 +406,7 @@ input {
 
 .collapsible--expanded.nav {
   height: 100vh;
-  background-color: var(--color-primary);
+  background-color: #ffffff;
 }
 
 .nav__list {
@@ -422,18 +422,12 @@ input {
   align-items: center;
   justify-content: space-between;
 }
-
-.nav__name {
-  color: white;
-  align-self: center;
-  margin: 1rem;
-}
 .nav__item .active {
   border-bottom: 1px solid var(--color-secondary);
-  color: white;
+  color: var(--color-secondary);
 }
 .nav__item .inactive {
-  color: rgba(255, 255, 255, 0.58);
+  color: var(--color-primary);
 }
 .nav__item a {
   font-size: 2rem;
@@ -451,8 +445,12 @@ input {
   width: 10%;
   height: 40%;
 }
+.nav__brand{
+  height: 7.5vh;
+  padding: 0.5rem;
+}
 .nav .collapsible__toggle {
-  fill: white;
+  fill: var(--color-primary);
 }
 @media screen and (max-width: 450px) {
   .nav__collapsible__container .collapsible__toggle {
@@ -461,11 +459,9 @@ input {
 }
 @media screen and (min-width: 768px) {
   .nav {
-    position: absolute;
     top: 0%;
     left: 0%;
     right: 0%;
-    background: transparent;
     box-shadow: none;
     flex-direction: row;
     justify-content: space-around;
@@ -487,7 +483,7 @@ input {
   }
 
   .nav__item :hover {
-    color: rgba(255, 255, 255, 0.833);
+    color: var(--color-secondary);
   }
 
   .nav__item {
@@ -499,14 +495,16 @@ input {
     padding-bottom: 0.3rem;
     white-space: nowrap;
     transition: color 0.4s;
-    color: white;
+    color: var(--color-primary);
   }
   .nav__item .active {
-    color: white;
-    border-bottom: 1px solid #fdfafaa9;
+    color: var(--color-secondary);
   }
   .nav__brand__container {
     width: auto;
+  }
+  .nav__brand{
+    height: 7rem;
   }
 }
 
@@ -1635,7 +1633,7 @@ td{
 .language__input{
   background: transparent;
   align-self: center;
-  color: white;
+  color: var(--color-primary);
   border:none;
   padding: 0%;
 }

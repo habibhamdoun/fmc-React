@@ -60,11 +60,8 @@ function App() {
           <Route
             path="/contact-us"
             element={<ContactUs isMobile={isMobile} />}
-          />          
-          <Route
-            path="/comment"
-            element={<Comment isMobile={isMobile} />}
           />
+          <Route path="/comment" element={<Comment isMobile={isMobile} />} />
           <Route path="/login" element={<LogInPage isMobile={isMobile} />} />
           <Route path="/admin" element={<Admin isMobile={isMobile} />} />
           <Route path="/quote" element={<Quote isMobile={isMobile} />} />
