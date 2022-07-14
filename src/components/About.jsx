@@ -76,7 +76,7 @@ function About({isMobile}) {
             </div>
             
     </div>
-    <Link to='/vision'>
+    <Link to='/why-us' onClick={()=> window.scrollTo(0,0)}>
            <a className="btn btn--outline btn--primary aboutUs__btn">
              {t("aboutBtn")}
            </a>

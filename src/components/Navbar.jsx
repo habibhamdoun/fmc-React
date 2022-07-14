@@ -34,11 +34,11 @@ const Navbar = ({isMobile}) => {
     </div> : ''}
     <ul className={i18n.language=='ar'  ? "list list--inline nav__list nav__list--arabic collapsible__content" : "list list--inline nav__list collapsible__content"}>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/">{t('home')}</NavLink></li>
+      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/why-us" >{t("whyUs")}</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/vision"  >{t("vision")}</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/mission"  >{t("mission")}</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/clients"  >{t("clients")}</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/services" >{t("services")}</NavLink></li>
-      <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}   to="/why-us" >{t("whyUs")}</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/contact-us" >{t('contactUs')}</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/quote" >{t('quote')}</NavLink></li>
       <li className="nav__item"><NavLink className={({ isActive }) => (isActive ? 'active' : 'inactive')} onClick={()=> setIsOpen(false)}  to="/comment" >{t('review')}</NavLink></li>

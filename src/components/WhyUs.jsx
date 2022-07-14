@@ -41,7 +41,7 @@ const WhyUs = () => {
           </motion.ul>
         </div>
       </div>
-      <Link to="/contact-us">
+      <Link to="/vision">
         <motion.button
           className="btn btn--secondary whyUs__btn"
           initial={{ translateX: 1000 }}
