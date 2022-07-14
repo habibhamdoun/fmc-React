@@ -19,9 +19,9 @@ const Clients = ({isMobile}) => {
     >
       <h1 className="clients__header">
         <div className="title">
-          <div className="line"></div>
+          <div className="line line--blue"></div>
           <h2 className="title__header">{t('clientsTitle')}</h2>
-          <div className="line"></div>
+          <div className="line line--blue"></div>
         </div>
       </h1>
       <Alert 
