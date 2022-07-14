@@ -666,7 +666,6 @@ input {
 @media screen and (min-width: 768px) {
   .info {
     padding-top: 0%;
-    /* filter: opacity(0.4) drop-shadow(0 0 0 var(--color-primary)); */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -674,7 +673,7 @@ input {
     background: url(./images/vision-bg.webp);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center top;
     filter: brightness(85%);
   }
   .info__title {
@@ -687,7 +686,7 @@ input {
     max-width: 700px;
     font-size: 2.5rem;
     height: fit-content;
-    margin-top: 15rem;
+    margin-top: auto;
     overflow: scroll;
     box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
     -webkit-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);

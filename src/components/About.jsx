@@ -1,38 +1,13 @@
 import React,{useState} from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import audioEn from "../audio/home2.mp3"
-import audioAr from "../audio/homear.mp3"
+
 
 
 function About({isMobile}) {
   const { t, i18n }=useTranslation('translation');
-    let audioArabic=document.getElementById("aboutAudioAr");
-    let audioEnglish=document.getElementById("aboutAudioEn");
-  function audioPlay(){
-    if(audioEnglish.paused !== true || audioArabic.paused !== true ){
-      audioEnglish.pause();
-      audioArabic.pause();
-    }
-    else if(i18n.language=='ar'){
-      if(audioEnglish.paused !== true){
-        audioEnglish.pause();
-      }
-    audioArabic.currentTime=0;
-    audioArabic.play();
-    }
-    else{
-      if(audioArabic.paused !== true){
-        audioArabic.pause();
-      }
-    audioEnglish.currentTime=0;
-    audioEnglish.play();
-    }
-  }
   return (
     <section className='aboutUs' name="aboutUs">
-    <audio id='aboutAudioAr' src={audioAr}></audio>
-    <audio id='aboutAudioEn' src={audioEn}></audio>
     <div className="title">
              <h3 className={i18n.language=='ar'?"title__header aboutUs__title arabic":"title__header aboutUs__title"}>{t("aboutTitle")}
            </h3>
@@ -49,7 +24,7 @@ function About({isMobile}) {
            <div className="line"></div>
        </div>
             <div className={i18n.language=='ar'?'aboutUs__text arabic':'aboutUs__text'}>
-              <p onClick={audioPlay}>
+              <p>
               {t("whoText")}
               </p>
                 <h5 className="title--small">{t('workingHrsTitle')}</h5>
@@ -70,7 +45,7 @@ function About({isMobile}) {
            <div className="line"></div>
        </div>
             <div className={i18n.language=='ar'?'aboutUs__text arabic':'aboutUs__text'}>
-              <p onClick={audioPlay}>
+              <p>
                 {t("locationText")}
                </p>
                <h5 className="title--small">{t('addressTitle')}</h5>
@@ -88,7 +63,7 @@ function About({isMobile}) {
            <div className="line"></div>
        </div>
             <div className={i18n.language=='ar'?'aboutUs__text arabic':'aboutUs__text'}>
-              <p onClick={audioPlay}>
+              <p>
                 {t('scaleText')}
               </p>
             </div>

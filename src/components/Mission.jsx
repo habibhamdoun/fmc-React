@@ -2,34 +2,9 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import audioEn from "../audio/our-mission2.mp3"
-import audioAr from "../audio/missionar.mp3"
-
 
 const Mission = ({isMobile}) => {
   const { t, i18n }=useTranslation('translation');
-  let audioArabic=document.getElementById("missionAudioAr");
-  let audioEnglish=document.getElementById("missionAudioEn");
-  function audioPlay(){
-    if(audioEnglish.paused !== true || audioArabic.paused !== true ){
-      audioEnglish.pause();
-      audioArabic.pause();
-    }
-    else if(i18n.language=='ar'){
-      if(audioEnglish.paused !== true){
-        audioEnglish.pause();
-      }
-    audioArabic.currentTime=0;
-    audioArabic.play();
-  }
-  else{
-    if(audioArabic.paused !== true){
-      audioArabic.pause();
-    }
-    audioEnglish.currentTime=0;
-    audioEnglish.play();
-    }
-  }
   return (
     <motion.section 
       className="section" 
@@ -37,8 +12,6 @@ const Mission = ({isMobile}) => {
       animate={isMobile ? '':{boxShadow:"9px 5px 0px 5px rgb(211, 29, 35)"}}
       transition={{duration:0.4}}
     >
-      <audio id='missionAudioAr' src={audioAr}></audio>
-      <audio id='missionAudioEn' src={audioEn}></audio>
         <motion.div 
           className="section__img" 
           initial={isMobile ? 
@@ -63,7 +36,7 @@ const Mission = ({isMobile}) => {
                 <h2 className="title__header">{t('missionTitle')}</h2>
                 {i18n.language=='en'&&<div className="line line--blue"></div>}
             </div>
-            <p className={i18n.language=='ar'?"arabic":''} onClick={audioPlay}>{t('missionText')}
+            <p className={i18n.language=='ar'?"arabic":''} >{t('missionText')}
                 </p>
         </motion.div>
     </motion.section>
