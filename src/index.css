@@ -661,7 +661,7 @@ input {
   box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
   -webkit-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
   -moz-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
-  background: #ffffff70;
+  background: #ffffff80;
   color: var(--color-primary);
   border-radius: 5px;
   overflow: hidden;
@@ -680,7 +680,7 @@ input {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center top;
-    filter: brightness(85%);
+    filter: brightness(70%);
   }
   .info__title {
     text-align: center;
@@ -698,7 +698,7 @@ input {
     -webkit-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
     -moz-box-shadow: 4px 5px 42px 3px rgba(54, 54, 54, 0.16);
     align-self: center;
-    background: #ffffff80;
+    background: #ffffff99;
     overflow-y: hidden;
     overflow-x: hidden;
   }
