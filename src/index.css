@@ -394,7 +394,7 @@ input {
 
 /* nav */
 .nav {
-  position: fixed;
+  position: absolute;
   top: 0%;
   z-index: 1;
   width: 100vw;
@@ -429,7 +429,7 @@ input {
 }
 .nav__item .active {
   border-bottom: 1px solid var(--color-secondary);
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 .nav__item .inactive {
   color: var(--color-primary);
@@ -451,8 +451,8 @@ input {
   height: 40%;
 }
 .nav__brand{
-  height: 7.5vh;
-  padding: 0.5rem;
+  height: 6.5vh;
+  padding-top: 0.7rem;
 }
 .nav .collapsible__toggle {
   fill: var(--color-primary);
@@ -502,14 +502,11 @@ input {
     transition: color 0.4s;
     color: var(--color-primary);
   }
-  .nav__item .active {
-    color: var(--color-secondary);
-  }
   .nav__brand__container {
     width: auto;
   }
   .nav__brand{
-    height: 7rem;
+    height: 6.5rem;
   }
 }
 
