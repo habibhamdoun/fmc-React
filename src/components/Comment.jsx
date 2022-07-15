@@ -99,7 +99,8 @@ const Comment = () => {
               <div className='review'>
               <div className="review__id">
                 <div className='profile__logo'></div>
-                <h3 className='review__name'>{review.name}</h3><Moment format='DD MMM' date={Date(review.timeStamp)} className='timeStamp' />
+                <h3 className='review__name'>{review.name}</h3>
+                {/* <Moment format='DD MMM' date={Date(review.timeStamp)} className='timeStamp' /> */}
               </div>
               <p className='review__comment'>{review.comment}</p>
               </div>

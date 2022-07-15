@@ -16,7 +16,7 @@ html {
 }
 *{
   scrollbar-color: var(--color-secondary) var(--color-primary);
-  scrollbar-width: 5px;
+  scrollbar-width: 2px;
 }
 :root {
   --color-primary: #243370;
