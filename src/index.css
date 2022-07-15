@@ -8,13 +8,16 @@ html {
   color: #cdcbd7;
   opacity: 0.6;
 }
-::-webkit-scrollbar{
+::-webkit-scrollbar {
   width: 5px;
 }
-::-webkit-scrollbar-thumb{
+::-webkit-scrollbar-thumb  {
   background-color: var(--color-secondary);
 }
-
+*{
+  scrollbar-color: var(--color-secondary) var(--color-primary);
+  scrollbar-width: 5px;
+}
 :root {
   --color-primary: #243370;
   --color-secondary: #d31d23;
@@ -36,6 +39,7 @@ textarea {
   border: 4px solid var(--color-secondary);
   transform: skew(-10deg);
   margin: auto;
+  margin-bottom: 3rem;
 }
 @media screen and (min-width: 768px) {
   .alert {
@@ -748,7 +752,7 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-bottom: 1rem;
+  margin-bottom: 12%;
   align-items: center;
   position: absolute;
   text-align: center;
@@ -779,6 +783,7 @@ input {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    gap: 2rem;
   }
   .client__img {
     align-self: center;
