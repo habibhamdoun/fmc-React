@@ -105,7 +105,7 @@ const Admin = () => {
                         <thead>
                               <th>Name</th>
                               <th>Comment</th>
-                              <th>Date</th>
+                              {/* <th>Date</th> */}
                               <th>Accept</th>
                               <th>Delete Message</th>
                           </thead>
@@ -114,7 +114,7 @@ const Admin = () => {
                             <tr key={review.id}>
                                 <td>{review.name}</td>
                                 <td>{review.comment}</td>
-                                <td><Moment format='DD MMM' date={Date(review.timeStamp)} /></td>
+                                {/* <td><Moment format='DD MMM' date={Date(review.timeStamp)} /></td> */}
                                 <td>{review.accepted == false && <button  className="delete__btn__col"onClick={()=>AcceptReview(review.id)}>Accept</button>}</td>
                                 <td className='delete__btn__col'><button className='admin__btn' onClick={()=>DeleteReview(review.id)}>Delete</button></td>
                             </tr>
