@@ -1484,8 +1484,9 @@ td{
   flex-direction: column;
   width: 70vw;
   padding: 1.5rem;
-  -webkit-box-shadow: 5px 8px 20px 3px rgba(0,0,0,0.63); 
-  box-shadow: 5px 8px 20px 3px rgba(0,0,0,0.63);
+  box-shadow: 0px 0px 29px -5px rgba(69,69,69,0.75);
+  -webkit-box-shadow: 0px 0px 29px -5px rgba(69,69,69,0.75);
+  -moz-box-shadow: 0px 0px 29px -5px rgba(69,69,69,0.75);
   border-radius: 5px;
 }
 @keyframes shimmer{
