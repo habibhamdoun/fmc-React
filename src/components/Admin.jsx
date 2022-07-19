@@ -3,7 +3,6 @@ import useFirestore from './../hooks/useFirestore';
 import { useAppContext } from './../config/Context';
 import { useNavigate } from 'react-router-dom';
 // import Moment from 'react-moment';
-import Split from 'react-split';
 
 
 const Admin = () => {
@@ -46,11 +45,6 @@ const Admin = () => {
                 <h3 className='admin__heading'>Admin Panel : {display}</h3>
             </div>
             <div className="admin__content">
-            <Split className='split'
-            sizes={[5,95]}
-            gutterSize= {15}
-            cursor="col-resize"
-            >
                 <div className='admin__side'>
                     <div className="admin__section">
                         <button className={display =='quotes' ? 'admin__btn quotes__btn active__display' :'admin__btn'} onClick={()=>setDisplay('quotes')}>Quotes</button>
@@ -130,7 +124,6 @@ const Admin = () => {
                     </tbody>
                     </table>
                 }           
-            </Split>
             </div>
         </section>
     )
