@@ -1286,6 +1286,7 @@ input {
   height: calc(100vh - 130px);
   display: flex;
   flex-direction: row;
+  width: 100vw;
 }
 .admin__side {
   width: 12%;
@@ -1297,7 +1298,6 @@ input {
   border-right: solid 1px black;
 }
 .admin__section {
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1318,8 +1318,8 @@ input {
   width: 100%;
 }
 .admin__table {
-  align-self: flex-start;
   width: 100%;
+  align-self: flex-start;
   margin: 10px 10px;
   color: var(--color-primary);
 }
@@ -1681,4 +1681,12 @@ td{
     margin-right: 3rem;
     align-self: flex-end;
   }
+}
+.split{
+  display: flex;
+  width: 100vw;
+}
+.gutter{
+ background-color: rgba(137, 136, 136, 0.416);
+ cursor: col-resize;
 }
