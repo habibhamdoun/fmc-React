@@ -1682,11 +1682,3 @@ td{
     align-self: flex-end;
   }
 }
-.split{
-  display: flex;
-  width: 100vw;
-}
-.gutter{
- background-color: rgba(137, 136, 136, 0.416);
- cursor: col-resize;
-}

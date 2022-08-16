@@ -25,7 +25,8 @@ const Quote = () => {
     setModal(old => old ? false : true);
   }
 
-  function handleClick(){
+  function handleClick(e){
+    e.preventDefault()
     setNameErrMsg('');
     setEmailErrMsg('');
     if(!email){
@@ -83,7 +84,7 @@ const Quote = () => {
                 <h2 className="title__header">{t("quote")}</h2>
               <div className="line line--blue"></div>
           </div>
-          <form action='submit' className='quote__field'>
+          <form onSubmit={(e)=>handleClick(e)} className='quote__field'>
             <div className="quote__field">
                 <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("quoteLocation")}</label>
                 <input
@@ -125,7 +126,7 @@ const Quote = () => {
                 <label className={i18n.language=='ar'?'label arabic label--arabic':'label'}>{t("quoteAdditionalInfo")}</label>
                 <textarea value={additionalInfo} onChange={(e)=>setInfo(e.target.value)} type="text" className='quote__input quote__textarea' />
             </div>
-            <button className='btn btn--secondary quote__btn' onClick={handleClick}>{isSending ? <span>{t('quoteBtnSending')}</span>: <span>{t('quoteBtn')}</span>}</button>
+            <button className='btn btn--secondary quote__btn' type='submit'>{isSending ? <span>{t('quoteBtnSending')}</span>: <span>{t('quoteBtn')}</span>}</button>
           </form>
       </motion.section>
   )
